@@ -1,0 +1,4 @@
+Feature: View matching availabilities time and feature
+  In order that I can find a someone to pair with me on a specific feature of a project
+  As an open source developer
+  I want highlighted any matching pairs for the exact feature and product I have specified

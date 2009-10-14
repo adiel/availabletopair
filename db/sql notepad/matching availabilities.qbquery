@@ -1,0 +1,19 @@
+﻿SELECT
+  a1.developer as dev1,
+  a2.developer as dev2,
+  CASE
+    WHEN a1.start_time >= a2.start_time THEN a1.start_time
+    ELSE a2.start_time
+  END start_time,
+  CASE
+    WHEN a1.end_time <= a2.end_time THEN a1.end_time
+    ELSE a2.end_time
+  END end_time
+
+FROM availabilities a1
+JOIN availabilities a2 ON
+  a1.developer != a2.developer AND
+  (
+    (a1.start_time < a2.end_time AND a2.start_time < a1.end_time) OR
+    (a2.start_time < a1.end_time AND a1.start_time < a2.end_time)
+  )

@@ -1,0 +1,4 @@
+Feature: Register new availability with particular skills
+  In order that I can find someone who wants a pair with my skills on whatever they are doing
+  As an open source developer with specific skills
+  I want to publish my availability to pair and skills in advance

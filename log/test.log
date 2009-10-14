@@ -1,0 +1,30 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAvailabilities (20091014095413)
+  [4;36;1mSQL (114.0ms)[0m   [0;1mCREATE TABLE `availabilities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `developer` varchar(255), `start_time` datetime, `duration_mins` int(11), `contact` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (49.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091014095413')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `availabilities`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAvailabilities (20091014095413)
+Migrating to CreatePossiblePairs (20091014143300)
+  [4;36;1mSQL (71.0ms)[0m   [0;1mCREATE VIEW `possible_pairs` AS select `a1`.`id` AS `availability1`,`a2`.`id` AS `availability2`,`a1`.`developer` AS `dev1`,`a2`.`developer` AS `dev2`,(case when (`a1`.`start_time` >= `a2`.`start_time`) then `a1`.`start_time` else `a2`.`start_time` end) AS `start_time`,(case when (`a1`.`end_time` <= `a2`.`end_time`) then `a1`.`end_time` else `a2`.`end_time` end) AS `end_time` from (`availabilities` `a1` join `availabilities` `a2` on(((`a1`.`developer` <> `a2`.`developer`) and (((`a1`.`start_time` < `a2`.`end_time`) and (`a2`.`start_time` < `a1`.`end_time`)) or ((`a2`.`start_time` < `a1`.`end_time`) and (`a1`.`start_time` < `a2`.`end_time`))))));[0m
+  [4;35;1mSQL (41.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091014143300')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `availabilities`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `availabilities`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `possible_pairs`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `possible_pairs`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `possible_pairs`[0m

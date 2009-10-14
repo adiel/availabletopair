@@ -1,0 +1,1398 @@
+# Logfile created on Tue Oct 13 21:20:29 +0100 2009  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (41.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mMysql::Error: Table 'availabletopair_test.availabilities' doesn't exist: DELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-14 11:28:32) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 11:30:40) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6899ms (View: 6895, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 11:32:06) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7379ms (View: 7375, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 11:32:45) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6907ms (View: 6902, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-14 11:32:52) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 188ms (View: 184, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 11:34:03) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7184ms (View: 7180, DB: 2) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-14 11:34:10) [GET]
+  [4;35;1mAvailability Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 214ms (View: 207, DB: 5) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2008", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "start_time(4i)"=>"10", "contact"=>"http://github.com/philip_j_fry", "start_time(5i)"=>"00", "duration_mins"=>"6.5", "developer"=>"Philip.J.Fry"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-14 11:34:11) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2008", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "contact"=>"http://github.com/philip_j_fry", "start_time(4i)"=>"10", "duration_mins"=>"6.5", "start_time(5i)"=>"00", "developer"=>"Philip.J.Fry"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 10:34:11', 'http://github.com/philip_j_fry', 6, 'Philip.J.Fry', '2008-12-25 10:00:00', '2009-10-14 10:34:11')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/1
+Completed in 6ms (DB: 1) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/1 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-14 11:34:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAvailability Load (39.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 45ms (View: 5, DB: 39) | 200 OK [http://www.example.com/availabilities/1]
+  [4;36;1mSQL (51.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 11:37:28) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7608ms (View: 7604, DB: 2) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-14 11:37:35) [GET]
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 202ms (View: 196, DB: 4) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2008", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "start_time(4i)"=>"10", "contact"=>"http://github.com/philip_j_fry", "start_time(5i)"=>"00", "duration_mins"=>"6.5", "developer"=>"Philip.J.Fry"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-14 11:37:36) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2008", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "contact"=>"http://github.com/philip_j_fry", "start_time(4i)"=>"10", "duration_mins"=>"6.5", "start_time(5i)"=>"00", "developer"=>"Philip.J.Fry"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 10:37:36', 'http://github.com/philip_j_fry', 6, 'Philip.J.Fry', '2008-12-25 10:00:00', '2009-10-14 10:37:36')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/2
+Completed in 6ms (DB: 0) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/2 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-14 11:37:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://www.example.com/availabilities/2]
+  [4;36;1mSQL (87.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 11:44:02) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7383ms (View: 7379, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-14 11:44:10) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 206ms (View: 200, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "start_time(4i)"=>"10", "contact"=>"http://github.com/philip_j_fry", "start_time(5i)"=>"00", "duration_mins"=>"600", "developer"=>"Philip.J.Fry"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-14 11:44:10) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "contact"=>"http://github.com/philip_j_fry", "start_time(4i)"=>"10", "duration_mins"=>"600", "start_time(5i)"=>"00", "developer"=>"Philip.J.Fry"}}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 10:44:10', 'http://github.com/philip_j_fry', 600, 'Philip.J.Fry', '2009-12-25 10:00:00', '2009-10-14 10:44:10')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/3
+Completed in 6ms (DB: 1) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/3 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-14 11:44:10) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://www.example.com/availabilities/3]
+  [4;36;1mSQL (65.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 11:50:26) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7105ms (View: 7101, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-14 11:50:33) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 188ms (View: 183, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "start_time(4i)"=>"10", "contact"=>"http://github.com/philip_j_fry", "start_time(5i)"=>"00", "duration_mins"=>"600", "developer"=>"Philip.J.Fry"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-14 11:50:33) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "contact"=>"http://github.com/philip_j_fry", "start_time(4i)"=>"10", "duration_mins"=>"600", "start_time(5i)"=>"00", "developer"=>"Philip.J.Fry"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 10:50:33', 'http://github.com/philip_j_fry', 600, 'Philip.J.Fry', '2009-12-25 10:00:00', '2009-10-14 10:50:33')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/4
+Completed in 6ms (DB: 1) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/4 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-14 11:50:33) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://www.example.com/availabilities/4]
+  [4;36;1mSQL (96.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 11:51:33) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7788ms (View: 7783, DB: 2) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-14 11:51:41) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 193ms (View: 187, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "start_time(4i)"=>"10", "contact"=>"http://github.com/philip_j_fry", "start_time(5i)"=>"00", "duration_mins"=>"600", "developer"=>"Philip.J.Fry"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-14 11:51:42) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "contact"=>"http://github.com/philip_j_fry", "start_time(4i)"=>"10", "duration_mins"=>"600", "start_time(5i)"=>"00", "developer"=>"Philip.J.Fry"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 10:51:42', 'http://github.com/philip_j_fry', 600, 'Philip.J.Fry', '2009-12-25 10:00:00', '2009-10-14 10:51:42')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/5
+Completed in 7ms (DB: 0) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/5 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-14 11:51:42) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://www.example.com/availabilities/5]
+  [4;36;1mSQL (87.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 11:54:50) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7371ms (View: 7367, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-14 11:54:57) [GET]
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 201ms (View: 196, DB: 2) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "start_time(4i)"=>"10", "contact"=>"http://github.com/philip_j_fry", "start_time(5i)"=>"00", "duration_mins"=>"600", "developer"=>"Philip.J.Fry"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-14 11:54:58) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "contact"=>"http://github.com/philip_j_fry", "start_time(4i)"=>"10", "duration_mins"=>"600", "start_time(5i)"=>"00", "developer"=>"Philip.J.Fry"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 10:54:58', 'http://github.com/philip_j_fry', 600, 'Philip.J.Fry', '2009-12-25 10:00:00', '2009-10-14 10:54:58')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/6
+Completed in 6ms (DB: 0) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/6 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-14 11:54:58) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 6) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://www.example.com/availabilities/6]
+  [4;36;1mSQL (91.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 11:55:56) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7230ms (View: 7226, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-14 11:56:03) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 193ms (View: 188, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "start_time(4i)"=>"10", "contact"=>"http://github.com/philip_j_fry", "start_time(5i)"=>"00", "duration_mins"=>"600", "developer"=>"Philip.J.Fry"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-14 11:56:03) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "contact"=>"http://github.com/philip_j_fry", "start_time(4i)"=>"10", "duration_mins"=>"600", "start_time(5i)"=>"00", "developer"=>"Philip.J.Fry"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 10:56:03', 'http://github.com/philip_j_fry', 600, 'Philip.J.Fry', '2009-12-25 10:00:00', '2009-10-14 10:56:03')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/7
+Completed in 7ms (DB: 0) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/7 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-14 11:56:03) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 7) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://www.example.com/availabilities/7]
+  [4;36;1mSQL (69.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 11:58:01) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7256ms (View: 7252, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-14 11:58:09) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 196ms (View: 191, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "start_time(4i)"=>"10", "contact"=>"http://github.com/philip_j_fry", "start_time(5i)"=>"00", "duration_mins"=>"600", "developer"=>"Philip.J.Fry"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-14 11:58:09) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "contact"=>"http://github.com/philip_j_fry", "start_time(4i)"=>"10", "duration_mins"=>"600", "start_time(5i)"=>"00", "developer"=>"Philip.J.Fry"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 10:58:09', 'http://github.com/philip_j_fry', 600, 'Philip.J.Fry', '2009-12-25 10:00:00', '2009-10-14 10:58:09')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/8
+Completed in 6ms (DB: 1) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/8 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-14 11:58:09) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 8) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://www.example.com/availabilities/8]
+  [4;36;1mSQL (58.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:01:37', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:01:37')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (68.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:03:36', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:03:36')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (70.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:04:16', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:04:16')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:04:16) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7236ms (View: 7232, DB: 3) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (44.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:06:44', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:06:44')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:06:44) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7228ms (View: 7224, DB: 7) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (62.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:07:37', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:07:37')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:07:37) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7146ms (View: 7143, DB: 6) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (63.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:09:13', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:09:13')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:09:14) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7239ms (View: 7235, DB: 5) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (69.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:21:58', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:21:58')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:21:58) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7181ms (View: 7177, DB: 3) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (64.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (2.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:24:44', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:24:44')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:24:45) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7280ms (View: 7274, DB: 9) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (85.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:26:09', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:26:09')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:26:09) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7254ms (View: 7250, DB: 7) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (60.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:26:54', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:26:54')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:26:54) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7167ms (View: 7162, DB: 4) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (45.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:27:40', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:27:40')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:27:40) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7221ms (View: 7218, DB: 3) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (67.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:32:45', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:32:45')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:32:45) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7160ms (View: 7156, DB: 4) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (66.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:33:36', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:33:36')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:33:36', 'http://github.com/philip_j_fry', 330, 'Bender', '2009-11-01 22:00:00', '2009-10-14 11:33:36')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:33:36', 'http://github.com/philip_j_fry', 210, 'MalcolmTucker', '2009-12-13 22:00:00', '2009-10-14 11:33:36')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:33:36', 'http://github.com/philip_j_fry', 120, 'LarryDavid', '2009-12-13 21:59:00', '2009-10-14 11:33:36')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:33:36) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7369ms (View: 7365, DB: 6) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (147.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:36:51', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:36:51')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:36:51', 'http://github.com/philip_j_fry', 330, 'Bender', '2009-11-01 22:00:00', '2009-10-14 11:36:51')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:36:51', 'http://github.com/philip_j_fry', 210, 'MalcolmTucker', '2009-12-13 22:00:00', '2009-10-14 11:36:51')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:36:51', 'http://github.com/philip_j_fry', 120, 'LarryDavid', '2009-12-13 21:59:00', '2009-10-14 11:36:51')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:36:51) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7262ms (View: 7257, DB: 4) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (55.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:37:45', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:37:45')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:37:45', 'http://github.com/philip_j_fry', 330, 'Bender', '2009-11-01 22:00:00', '2009-10-14 11:37:45')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:37:45', 'http://github.com/philip_j_fry', 210, 'MalcolmTucker', '2009-12-13 22:00:00', '2009-10-14 11:37:45')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:37:45', 'http://github.com/philip_j_fry', 120, 'LarryDavid', '2009-12-13 21:59:00', '2009-10-14 11:37:45')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:37:45) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7433ms (View: 7427, DB: 6) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (60.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:38:12) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7514ms (View: 7511, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-14 12:38:19) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 188ms (View: 183, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "start_time(4i)"=>"10", "contact"=>"http://github.com/philip_j_fry", "start_time(5i)"=>"00", "duration_mins"=>"600", "developer"=>"Philip.J.Fry"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-14 12:38:19) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "contact"=>"http://github.com/philip_j_fry", "start_time(4i)"=>"10", "duration_mins"=>"600", "start_time(5i)"=>"00", "developer"=>"Philip.J.Fry"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:38:19', 'http://github.com/philip_j_fry', 600, 'Philip.J.Fry', '2009-12-25 10:00:00', '2009-10-14 11:38:19')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/33
+Completed in 6ms (DB: 1) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/33 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-14 12:38:19) [GET]
+  Parameters: {"id"=>"33"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 33) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://www.example.com/availabilities/33]
+  [4;36;1mSQL (139.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:38:20', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:38:20')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:38:20) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 8ms (View: 5, DB: 141) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (56.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:38:20', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:38:20')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:38:20', 'http://github.com/philip_j_fry', 330, 'Bender', '2009-11-01 22:00:00', '2009-10-14 11:38:20')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:38:20', 'http://github.com/philip_j_fry', 210, 'MalcolmTucker', '2009-12-13 22:00:00', '2009-10-14 11:38:20')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:38:20', 'http://github.com/philip_j_fry', 120, 'LarryDavid', '2009-12-13 21:59:00', '2009-10-14 11:38:20')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:38:20) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 19ms (View: 17, DB: 59) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (57.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:41:06', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:41:06')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:41:06', 'http://github.com/philip_j_fry', 330, 'Bender', '2009-11-01 22:00:00', '2009-10-14 11:41:06')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:41:06', 'http://github.com/philip_j_fry', 210, 'MalcolmTucker', '2009-12-13 22:00:00', '2009-10-14 11:41:06')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:41:06', 'http://github.com/philip_j_fry', 120, 'LarryDavid', '2009-12-13 21:59:00', '2009-10-14 11:41:06')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:41:06) [GET]
+  [4;36;1mAvailability Load (2.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7285ms (View: 7278, DB: 4) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (63.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:42:37', 'http://github.com/philip_j_fry', 390, 'Philip.J.Fry', '2010-01-01 22:00:00', '2009-10-14 11:42:37')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:42:37', 'http://github.com/philip_j_fry', 330, 'Bender', '2009-11-01 22:00:00', '2009-10-14 11:42:37')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:42:37', 'http://github.com/philip_j_fry', 210, 'MalcolmTucker', '2009-12-13 22:00:00', '2009-10-14 11:42:37')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:42:37', 'http://github.com/philip_j_fry', 120, 'LarryDavid', '2009-12-13 21:59:00', '2009-10-14 11:42:37')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:42:37) [GET]
+  [4;36;1mAvailability Load (3.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7277ms (View: 7270, DB: 8) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (65.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:51:30', 'http://github.com/philip_j_fry', 10, 'Philip.J.Fry', '2010-01-01 11:20:00', '2009-10-14 11:51:30')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:51:30', 'http://github.com/bender', 20, 'Bender', '2009-12-01 22:00:00', '2009-10-14 11:51:30')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:51:30', 'http://github.com/malcolm_tucker', 390, 'MalcolmTucker', '2009-12-13 22:00:00', '2009-10-14 11:51:30')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `duration_mins`, `developer`, `start_time`, `created_at`) VALUES('2009-10-14 11:51:30', 'http://github.com/larry_david', 300, 'LarryDavid', '2009-12-13 21:30:00', '2009-10-14 11:51:30')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 12:51:30) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6608ms (View: 6604, DB: 3) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (55.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mPossiblePair Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `possible_pairs`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 14:01:48', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2009-10-10 00:00:00', '2009-10-14 14:01:48')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 14:01:48', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-10-20 00:00:00', '2009-10-14 14:01:48')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 14:01:48', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-10-14 14:01:48', '2009-10-14 14:01:48')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 14:01:48', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-10-14 14:01:48', '2009-10-14 14:01:48')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 15:01:48) [GET]
+  [4;36;1mAvailability Load (2.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7322ms (View: 7316, DB: 5) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (54.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:06:45', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2009-10-10 00:00:00', '2009-10-14 15:06:45')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:06:45', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-10-20 00:00:00', '2009-10-14 15:06:45')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:06:45', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-10-14 15:06:45', '2009-10-14 15:06:45')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:06:45', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-10-14 15:06:45', '2009-10-14 15:06:45')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:06:45) [GET]
+  [4;36;1mAvailability Load (2.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7118ms (View: 7111, DB: 7) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (56.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:08:31', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2009-10-10 00:00:00', '2009-10-14 15:08:31')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:08:32', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-10-20 00:00:00', '2009-10-14 15:08:32')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:08:32', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-10-14 15:08:32', '2009-10-14 15:08:32')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:08:32', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-10-14 15:08:32', '2009-10-14 15:08:32')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:08:32) [GET]
+  [4;36;1mAvailability Load (4.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6845ms (View: 6837, DB: 9) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (61.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:10:04', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2009-10-10 00:00:00', '2009-10-14 15:10:04')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:10:04', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-10-20 00:00:00', '2009-10-14 15:10:04')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:10:04', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-10-14 15:10:04', '2009-10-14 15:10:04')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:10:04', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-10-14 15:10:04', '2009-10-14 15:10:04')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:10:04) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7026ms (View: 7019, DB: 10) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/pairs/65 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-14 16:10:11) [GET]
+  Parameters: {"id"=>"65"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 65) [0m
+  [4;36;1mPossiblePair Load (1.0ms)[0m   [0;1mSELECT * FROM `possible_pairs` WHERE (availability1 = 65) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://www.example.com/availabilities/pairs/65]
+  [4;35;1mSQL (54.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:15:08', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-14 15:15:08')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:15:08', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-14 15:15:08')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:15:08', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-14 15:15:08')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:15:08', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-14 15:15:08')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:15:08) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6961ms (View: 6957, DB: 5) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/pairs/69 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-14 16:15:15) [GET]
+  Parameters: {"id"=>"69"}
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 69) [0m
+  [4;36;1mPossiblePair Load (0.0ms)[0m   [0;1mSELECT * FROM `possible_pairs` WHERE (availability1 = 69) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mPossiblePair Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `possible_pairs`[0m
+Completed in 14ms (View: 8, DB: 4) | 200 OK [http://www.example.com/availabilities/pairs/69]
+  [4;36;1mSQL (62.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:17:00', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-14 15:17:00')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:17:00', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-14 15:17:00')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:17:00', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-14 15:17:00')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:17:00', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-14 15:17:00')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:17:00) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6893ms (View: 6889, DB: 5) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/pairs/73 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-14 16:17:07) [GET]
+  Parameters: {"id"=>"73"}
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 73) [0m
+  [4;36;1mPossiblePair Load (1.0ms)[0m   [0;1mSELECT * FROM `possible_pairs` WHERE (availability1 = 73) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mPossiblePair Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `possible_pairs`[0m
+Completed in 15ms (View: 7, DB: 7) | 200 OK [http://www.example.com/availabilities/pairs/73]
+  [4;36;1mSQL (70.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:18:15', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-14 15:18:15')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:18:15', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-14 15:18:15')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:18:15', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-14 15:18:15')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:18:15', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-14 15:18:15')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:18:15) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6958ms (View: 6954, DB: 6) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/pairs/77 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-14 16:18:22) [GET]
+  Parameters: {"id"=>"77"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 77) [0m
+  [4;36;1mPossiblePair Load (1.0ms)[0m   [0;1mSELECT * FROM `possible_pairs` WHERE (availability1 = 77) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mPossiblePair Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `possible_pairs`[0m
+Completed in 14ms (View: 8, DB: 4) | 200 OK [http://www.example.com/availabilities/pairs/77]
+  [4;36;1mSQL (66.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:19:07', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-14 15:19:07')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:19:07', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-14 15:19:07')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:19:07', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-14 15:19:07')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:19:07', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-14 15:19:07')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:19:07) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6955ms (View: 6949, DB: 8) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/pairs/81 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-14 16:19:14) [GET]
+  Parameters: {"id"=>"81"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 81) [0m
+  [4;36;1mPossiblePair Load (1.0ms)[0m   [0;1mSELECT * FROM `possible_pairs` WHERE (availability1 = 81) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mPossiblePair Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `possible_pairs`[0m
+Completed in 14ms (View: 8, DB: 4) | 200 OK [http://www.example.com/availabilities/pairs/81]
+  [4;36;1mSQL (73.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:19:58', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-14 15:19:58')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:19:58', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-14 15:19:58')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:19:58', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-14 15:19:58')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:19:58', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-14 15:19:58')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:19:58) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6901ms (View: 6896, DB: 7) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/pairs/85 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-14 16:20:05) [GET]
+  Parameters: {"id"=>"85"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 85) [0m
+  [4;36;1mPossiblePair Load (1.0ms)[0m   [0;1mSELECT * FROM `possible_pairs` WHERE (availability1 = 85) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mPossiblePair Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `possible_pairs`[0m
+Completed in 14ms (View: 8, DB: 4) | 200 OK [http://www.example.com/availabilities/pairs/85]
+  [4;36;1mSQL (67.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:20:37', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-14 15:20:37')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:20:37', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-14 15:20:37')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:20:37', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-14 15:20:37')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:20:37', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-14 15:20:37')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:20:37) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6875ms (View: 6871, DB: 4) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/pairs/89 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-14 16:20:44) [GET]
+  Parameters: {"id"=>"89"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 89) [0m
+  [4;36;1mPossiblePair Load (1.0ms)[0m   [0;1mSELECT * FROM `possible_pairs` WHERE (availability1 = 89) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mPossiblePair Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `possible_pairs`[0m
+Completed in 15ms (View: 8, DB: 4) | 200 OK [http://www.example.com/availabilities/pairs/89]
+  [4;36;1mSQL (61.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:21:58', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-14 15:21:58')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:21:58', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-14 15:21:58')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:21:58', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-14 15:21:58')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:21:58', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-14 15:21:58')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:21:58) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7180ms (View: 7174, DB: 10) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/pairs/93 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-14 16:22:06) [GET]
+  Parameters: {"id"=>"93"}
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 93) [0m
+  [4;36;1mPossiblePair Load (1.0ms)[0m   [0;1mSELECT * FROM `possible_pairs` WHERE (availability1 = 93) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mPossiblePair Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `possible_pairs`[0m
+Completed in 15ms (View: 8, DB: 6) | 200 OK [http://www.example.com/availabilities/pairs/93]
+  [4;36;1mSQL (119.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:24:31', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-14 15:24:31')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:24:31', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-14 15:24:31')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:24:31', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-14 15:24:31')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:24:31', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-14 15:24:31')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:24:31) [GET]
+  [4;36;1mAvailability Load (2.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6980ms (View: 6974, DB: 9) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/pairs/97 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-14 16:24:38) [GET]
+  Parameters: {"id"=>"97"}
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 97) [0m
+  [4;36;1mPossiblePair Load (1.0ms)[0m   [0;1mSELECT * FROM `possible_pairs` WHERE (availability1 = 97) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mPossiblePair Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `possible_pairs`[0m
+Completed in 14ms (View: 7, DB: 6) | 200 OK [http://www.example.com/availabilities/pairs/97]
+  [4;36;1mSQL (63.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:25:20', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-14 15:25:20')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:25:20', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-14 15:25:20')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:25:20', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-14 15:25:20')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:25:20', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-14 15:25:20')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:25:20) [GET]
+  [4;36;1mAvailability Load (3.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6928ms (View: 6921, DB: 10) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/pairs/101 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-14 16:25:27) [GET]
+  Parameters: {"id"=>"101"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 101) [0m
+  [4;36;1mPossiblePair Load (0.0ms)[0m   [0;1mSELECT * FROM `possible_pairs` WHERE (availability1 = 101) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mPossiblePair Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `possible_pairs`[0m
+Completed in 14ms (View: 8, DB: 3) | 200 OK [http://www.example.com/availabilities/pairs/101]
+  [4;36;1mSQL (68.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:25:51', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-14 15:25:51')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:25:51', 'http://github.com/philip_j_fry', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-14 15:25:51')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:25:51', 'http://github.com/philip_j_fry', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 03:00:00', '2009-10-14 15:25:51')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:25:51', 'http://github.com/philip_j_fry', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-14 15:25:51')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:25:51) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7125ms (View: 7120, DB: 5) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (66.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:27:26', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-14 15:27:26')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:27:26', 'http://github.com/philip_j_fry', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-14 15:27:26')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:27:26', 'http://github.com/philip_j_fry', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 03:00:00', '2009-10-14 15:27:26')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:27:26', 'http://github.com/philip_j_fry', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-14 15:27:26')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:27:27) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7135ms (View: 7130, DB: 6) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (60.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:28:02', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-14 15:28:02')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:28:02', 'http://github.com/bender', 'Bender', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-14 15:28:02')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:28:02', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-14 15:28:02')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-14 15:28:02', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-14 15:28:02')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-14 16:28:02) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 6987ms (View: 6982, DB: 6) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/pairs/113 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-14 16:28:09) [GET]
+  Parameters: {"id"=>"113"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 113) [0m
+  [4;36;1mPossiblePair Load (1.0ms)[0m   [0;1mSELECT * FROM `possible_pairs` WHERE (availability1 = 113) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mPossiblePair Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `possible_pairs`[0m
+Completed in 14ms (View: 8, DB: 4) | 200 OK [http://www.example.com/availabilities/pairs/113]
+  [4;36;1mSQL (71.0ms)[0m   [0;1mROLLBACK[0m

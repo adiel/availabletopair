@@ -1,0 +1,4 @@
+Feature: Register intention to work on a specific project
+  In order that I can find a someone to pair with me on a specific project
+  As an open source developer
+  I want to publish my availability to pair on a specific project in advance

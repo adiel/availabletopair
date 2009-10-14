@@ -1,0 +1,5 @@
+Feature: View matching availabilities time and skills
+  In order that I can find someone who wants a pair with my skills on whatever they are doing
+  As an open source developer
+  I want to see any matching pairs for my skills and the times I am available
+

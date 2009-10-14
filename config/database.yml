@@ -21,20 +21,20 @@ development:
   database: AvailableToPair_development
   pool: 5
   username: root
-  password:
+  password: asdf
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
+test: &TEST
   adapter: mysql
   encoding: utf8
   reconnect: false
   database: AvailableToPair_test
   pool: 5
   username: root
-  password:
+  password: asdf
   host: localhost
 
 production:
@@ -44,5 +44,8 @@ production:
   database: AvailableToPair_production
   pool: 5
   username: root
-  password: 
+  password: asdf
   host: localhost
+
+cucumber:
+  <<: *TEST

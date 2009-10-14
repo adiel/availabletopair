@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  developer: MyString
+  start_time: 2009-10-14 10:54:13
+  duration_mins: 1
+  contact: MyString
+
+two:
+  developer: MyString
+  start_time: 2009-10-14 10:54:13
+  duration_mins: 1
+  contact: MyString

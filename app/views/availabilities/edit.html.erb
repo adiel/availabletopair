@@ -1,0 +1,28 @@
+<h1>Editing availability</h1>
+
+<% form_for(@availability) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :developer %><br />
+    <%= f.text_field :developer %>
+  </p>
+  <p>
+    <%= f.label :start_time %><br />
+    <%= f.datetime_select :start_time %>
+  </p>
+  <p>
+    <%= f.label :end_time %><br />
+    <%= f.text_field :end_time %>
+  </p>
+  <p>
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @availability %> |
+<%= link_to 'Back', availabilities_path %>

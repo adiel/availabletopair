@@ -1,0 +1,23 @@
+<p>
+  <b>Developer:</b>
+  <%=h @availability.developer %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%=h @availability.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%=h @availability.end_time %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%=h @availability.contact %>
+</p>
+
+
+<%= link_to 'Edit', edit_availability_path(@availability) %> |
+<%= link_to 'Back', availabilities_path %>
