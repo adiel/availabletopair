@@ -3581,3 +3581,1451 @@ Rendering availabilities/index
   [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
 Completed in 21ms (View: 19, DB: 70) | 200 OK [http://www.example.com/availabilities]
   [4;35;1mSQL (61.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:28:09) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7990ms (View: 7986, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 20:28:17) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 224ms (View: 219, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "project"=>"http://github.com/aslakhellesoy/cucumber", "end_time(1i)"=>"2009", "start_time(4i)"=>"10", "contact"=>"http://github.com/aslakhellesoy", "end_time(2i)"=>"12", "start_time(5i)"=>"00", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 20:28:18) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "project"=>"http://github.com/aslakhellesoy/cucumber", "start_time(3i)"=>"25", "contact"=>"http://github.com/aslakhellesoy", "start_time(4i)"=>"10", "end_time(1i)"=>"2009", "start_time(5i)"=>"00", "end_time(2i)"=>"12", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:28:18', 'http://github.com/aslakhellesoy/cucumber', 'http://github.com/aslakhellesoy', 'aslakhellesoy', '2009-12-25 10:00:00', '2009-12-25 12:30:00', '2009-10-16 19:28:18')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/2053932964
+Completed in 8ms (DB: 1) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/2053932964 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 20:28:18) [GET]
+  Parameters: {"id"=>"2053932964"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932964) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'aslakhellesoy' and start_time < '2009-12-25 12:30:00' and end_time > '2009-12-25 10:00:00' and (project = 'http://github.com/aslakhellesoy/cucumber' or project = '')) [0m
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://www.example.com/availabilities/2053932964]
+  [4;35;1mSQL (75.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:28:18', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 19:28:18')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:28:18) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 10ms (View: 8, DB: 76) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (81.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:28:18', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 19:28:18')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:28:18', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 19:28:18')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:28:18', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 19:28:18')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:28:18) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 21ms (View: 20, DB: 82) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (62.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:29:33) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7879ms (View: 7875, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 20:29:41) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 228ms (View: 222, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "project"=>"http://github.com/aslakhellesoy/cucumber", "end_time(1i)"=>"2009", "start_time(4i)"=>"10", "contact"=>"http://github.com/aslakhellesoy", "end_time(2i)"=>"12", "start_time(5i)"=>"00", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 20:29:41) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "project"=>"http://github.com/aslakhellesoy/cucumber", "start_time(3i)"=>"25", "contact"=>"http://github.com/aslakhellesoy", "start_time(4i)"=>"10", "end_time(1i)"=>"2009", "start_time(5i)"=>"00", "end_time(2i)"=>"12", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:29:41', 'http://github.com/aslakhellesoy/cucumber', 'http://github.com/aslakhellesoy', 'aslakhellesoy', '2009-12-25 10:00:00', '2009-12-25 12:30:00', '2009-10-16 19:29:41')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/2053932969
+Completed in 7ms (DB: 1) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/2053932969 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 20:29:41) [GET]
+  Parameters: {"id"=>"2053932969"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932969) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'aslakhellesoy' and start_time < '2009-12-25 12:30:00' and end_time > '2009-12-25 10:00:00' and (project = 'http://github.com/aslakhellesoy/cucumber' or project = '')) [0m
+Completed in 10ms (View: 7, DB: 1) | 200 OK [http://www.example.com/availabilities/2053932969]
+  [4;35;1mSQL (66.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:29:41', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 19:29:41')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:29:41) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 9ms (View: 6, DB: 69) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (70.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:29:41', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 19:29:41')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:29:41', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 19:29:41')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:29:41', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 19:29:41')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:29:41) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 22ms (View: 16, DB: 74) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (64.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:41:22) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 8082ms (View: 8078, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 20:41:30) [GET]
+  [4;35;1mAvailability Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 224ms (View: 217, DB: 5) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "project"=>"Cucumber", "end_time(1i)"=>"2009", "start_time(4i)"=>"10", "contact"=>"http://github.com/aslakhellesoy", "end_time(2i)"=>"12", "start_time(5i)"=>"00", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 20:41:30) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "project"=>"Cucumber", "start_time(3i)"=>"25", "contact"=>"http://github.com/aslakhellesoy", "start_time(4i)"=>"10", "end_time(1i)"=>"2009", "start_time(5i)"=>"00", "end_time(2i)"=>"12", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:41:30', 'Cucumber', 'http://github.com/aslakhellesoy', 'aslakhellesoy', '2009-12-25 10:00:00', '2009-12-25 12:30:00', '2009-10-16 19:41:30')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/2053932974
+Completed in 7ms (DB: 2) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/2053932974 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 20:41:30) [GET]
+  Parameters: {"id"=>"2053932974"}
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932974) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (3.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'aslakhellesoy' and start_time < '2009-12-25 12:30:00' and end_time > '2009-12-25 10:00:00' and (project = 'Cucumber' or project = '')) [0m
+Completed in 13ms (View: 7, DB: 4) | 200 OK [http://www.example.com/availabilities/2053932974]
+  [4;35;1mSQL (66.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:41:31', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 19:41:31')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:41:31) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 9ms (View: 7, DB: 68) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (64.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:41:31', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 19:41:31')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:41:31', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 19:41:31')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:41:31', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 19:41:31')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:41:31) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 23ms (View: 19, DB: 68) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (66.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:42:22) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7856ms (View: 7852, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 20:42:30) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 224ms (View: 219, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "project"=>"Cucumber", "end_time(1i)"=>"2009", "start_time(4i)"=>"10", "contact"=>"http://github.com/aslakhellesoy", "end_time(2i)"=>"12", "start_time(5i)"=>"00", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 20:42:31) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "project"=>"Cucumber", "start_time(3i)"=>"25", "contact"=>"http://github.com/aslakhellesoy", "start_time(4i)"=>"10", "end_time(1i)"=>"2009", "start_time(5i)"=>"00", "end_time(2i)"=>"12", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:42:31', 'Cucumber', 'http://github.com/aslakhellesoy', 'aslakhellesoy', '2009-12-25 10:00:00', '2009-12-25 12:30:00', '2009-10-16 19:42:31')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/2053932979
+Completed in 6ms (DB: 0) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/2053932979 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 20:42:31) [GET]
+  Parameters: {"id"=>"2053932979"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932979) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'aslakhellesoy' and start_time < '2009-12-25 12:30:00' and end_time > '2009-12-25 10:00:00' and (project = 'Cucumber' or project = '')) [0m
+Completed in 10ms (View: 7, DB: 1) | 200 OK [http://www.example.com/availabilities/2053932979]
+  [4;35;1mSQL (96.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:42:31', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 19:42:31')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:42:31) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 9ms (View: 6, DB: 100) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (65.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:42:31', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 19:42:31')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:42:31', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 19:42:31')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:42:31', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 19:42:31')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:42:31) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 22ms (View: 19, DB: 70) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (72.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:43:06) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7901ms (View: 7897, DB: 2) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 20:43:14) [GET]
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 226ms (View: 220, DB: 2) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "project"=>"Cucumber", "end_time(1i)"=>"2009", "start_time(4i)"=>"10", "contact"=>"http://github.com/aslakhellesoy", "end_time(2i)"=>"12", "start_time(5i)"=>"00", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 20:43:15) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "project"=>"Cucumber", "start_time(3i)"=>"25", "contact"=>"http://github.com/aslakhellesoy", "start_time(4i)"=>"10", "end_time(1i)"=>"2009", "start_time(5i)"=>"00", "end_time(2i)"=>"12", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:43:15', 'Cucumber', 'http://github.com/aslakhellesoy', 'aslakhellesoy', '2009-12-25 10:00:00', '2009-12-25 12:30:00', '2009-10-16 19:43:15')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/2053932984
+Completed in 7ms (DB: 0) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/2053932984 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 20:43:15) [GET]
+  Parameters: {"id"=>"2053932984"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932984) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'aslakhellesoy' and start_time < '2009-12-25 12:30:00' and end_time > '2009-12-25 10:00:00' and (project = 'Cucumber' or project = '')) [0m
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://www.example.com/availabilities/2053932984]
+  [4;35;1mSQL (68.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:43:15', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 19:43:15')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:43:15) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 10ms (View: 8, DB: 69) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (52.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:43:15', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 19:43:15')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:43:15', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 19:43:15')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 19:43:15', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 19:43:15')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 20:43:15) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 22ms (View: 19, DB: 54) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (64.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 21:57:28) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7957ms (View: 7952, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 21:57:35) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 219ms (View: 213, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "project"=>"Cucumber", "end_time(1i)"=>"2009", "start_time(4i)"=>"10", "contact"=>"http://github.com/aslakhellesoy", "end_time(2i)"=>"12", "start_time(5i)"=>"00", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 21:57:36) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "project"=>"Cucumber", "start_time(3i)"=>"25", "contact"=>"http://github.com/aslakhellesoy", "start_time(4i)"=>"10", "end_time(1i)"=>"2009", "start_time(5i)"=>"00", "end_time(2i)"=>"12", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 20:57:36', 'Cucumber', 'http://github.com/aslakhellesoy', 'aslakhellesoy', '2009-12-25 10:00:00', '2009-12-25 12:30:00', '2009-10-16 20:57:36')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/2053932989
+Completed in 7ms (DB: 0) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/2053932989 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 21:57:36) [GET]
+  Parameters: {"id"=>"2053932989"}
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932989) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'aslakhellesoy' and start_time < '2009-12-25 12:30:00' and end_time > '2009-12-25 10:00:00' and (project = 'Cucumber' or project = '')) [0m
+Completed in 9ms (View: 6, DB: 2) | 200 OK [http://www.example.com/availabilities/2053932989]
+  [4;35;1mSQL (64.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 20:57:36', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 20:57:36')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 21:57:36) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (2.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 12ms (View: 7, DB: 68) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (68.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 20:57:36', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 20:57:36')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 20:57:36', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 20:57:36')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 20:57:36', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 20:57:36')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 21:57:36) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 24ms (View: 20, DB: 74) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (71.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:02:55', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-16 21:02:55')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:02:55', 'The Thick Of It', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-16 21:02:55')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:02:55', '', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:02:55')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:02:55', '', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:02:55')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:02:55) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'MalcolmTucker' and start_time < '2009-12-01 22:20:00' and end_time > '2009-12-01 22:00:00' and (project = 'The Thick Of It' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-01-01 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 14553ms (View: 14546, DB: 10) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/2053932996 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 22:03:10) [GET]
+  Parameters: {"id"=>"2053932996"}
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932996) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00') [0m
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://www.example.com/availabilities/2053932996]
+  [4;36;1mSQL (64.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:10', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-16 21:03:10')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:10', 'The Thick Of It', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-16 21:03:10')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:10', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:03:10')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:10', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:03:10')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:03:10) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'MalcolmTucker' and start_time < '2009-12-01 22:20:00' and end_time > '2009-12-01 22:00:00' and (project = 'The Thick Of It' or project = '')) [0m
+  [4;35;1mAvailability Load (2.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (3.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (2.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-01-01 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 40ms (View: 29, DB: 75) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/2053933000 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 22:03:10) [GET]
+  Parameters: {"id"=>"2053933000"}
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053933000) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+Completed in 7ms (View: 4, DB: 2) | 200 OK [http://www.example.com/availabilities/2053933000]
+  [4;36;1mSQL (66.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:10', 'Curb', 'http://github.com/philip_j_fry', 'LarryDavid', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-16 21:03:10')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:10', 'The Thick Of It', 'http://github.com/bender', 'MalcolmTucker', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-16 21:03:10')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:10', 'Futurama', 'http://github.com/malcolm_tucker', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:03:10')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:10', 'Futurama The Movie', 'http://github.com/larry_david', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:03:10')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:03:10) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'MalcolmTucker' and start_time < '2009-12-01 22:20:00' and end_time > '2009-12-01 22:00:00' and (project = 'The Thick Of It' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama The Movie' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-01-01 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 29ms (View: 25, DB: 69) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/2053933004 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 22:03:11) [GET]
+  Parameters: {"id"=>"2053933004"}
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053933004) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://www.example.com/availabilities/2053933004]
+  [4;36;1mSQL (67.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:11', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-16 21:03:11')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:11', 'The Thick Of It', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-16 21:03:11')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:11', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:03:11')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:11', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:03:11')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:03:11', '', 'http://github.com/prof_farnsworth', 'Prof Farnsworth', '2009-12-13 21:15:00', '2009-12-14 01:30:00', '2009-10-16 21:03:11')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:03:11) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'MalcolmTucker' and start_time < '2009-12-01 22:20:00' and end_time > '2009-12-01 22:00:00' and (project = 'The Thick Of It' or project = '')) [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Prof Farnsworth' and start_time < '2009-12-14 01:30:00' and end_time > '2009-12-13 21:15:00') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-01-01 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 39ms (View: 35, DB: 75) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/2053933008 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 22:03:11) [GET]
+  Parameters: {"id"=>"2053933008"}
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053933008) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://www.example.com/availabilities/2053933008]
+  [4;36;1mSQL (98.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:19:08) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 15271ms (View: 15258, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 22:19:24) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 230ms (View: 225, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "project"=>"Cucumber", "end_time(1i)"=>"2009", "start_time(4i)"=>"10", "contact"=>"http://github.com/aslakhellesoy", "end_time(2i)"=>"12", "start_time(5i)"=>"00", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 22:19:24) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "project"=>"Cucumber", "start_time(3i)"=>"25", "contact"=>"http://github.com/aslakhellesoy", "start_time(4i)"=>"10", "end_time(1i)"=>"2009", "start_time(5i)"=>"00", "end_time(2i)"=>"12", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:19:24', 'Cucumber', 'http://github.com/aslakhellesoy', 'aslakhellesoy', '2009-12-25 10:00:00', '2009-12-25 12:30:00', '2009-10-16 21:19:24')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/2053933011
+Completed in 7ms (DB: 1) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/2053933011 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 22:19:24) [GET]
+  Parameters: {"id"=>"2053933011"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053933011) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'aslakhellesoy' and start_time < '2009-12-25 12:30:00' and end_time > '2009-12-25 10:00:00' and (project = 'Cucumber' or project = '')) [0m
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://www.example.com/availabilities/2053933011]
+  [4;35;1mSQL (75.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:19:24', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:19:24')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:19:24) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 11ms (View: 9, DB: 76) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (70.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:19:24', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:19:24')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:19:24', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 21:19:24')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:19:24', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 21:19:24')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:19:24) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 23ms (View: 20, DB: 72) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (66.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:19:25', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-16 21:19:25')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:19:25', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:19:25')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:19:25', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:19:25')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:19:25', '', 'http://github.com/prof_farnsworth', 'Prof Farnsworth', '2009-12-13 21:15:00', '2009-12-14 01:30:00', '2009-10-16 21:19:25')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:19:25) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Prof Farnsworth' and start_time < '2009-12-14 01:30:00' and end_time > '2009-12-13 21:15:00') [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-01-01 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 35ms (View: 32, DB: 66) | 200 OK [http://www.example.com/availabilities]
+  [4;35;1mSQL (63.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:21:38) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7590ms (View: 7585, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 22:21:46) [GET]
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 357ms (View: 350, DB: 4) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "project"=>"Cucumber", "end_time(1i)"=>"2009", "start_time(4i)"=>"10", "contact"=>"http://github.com/aslakhellesoy", "end_time(2i)"=>"12", "start_time(5i)"=>"00", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 22:21:46) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "project"=>"Cucumber", "start_time(3i)"=>"25", "contact"=>"http://github.com/aslakhellesoy", "start_time(4i)"=>"10", "end_time(1i)"=>"2009", "start_time(5i)"=>"00", "end_time(2i)"=>"12", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:21:46', 'Cucumber', 'http://github.com/aslakhellesoy', 'aslakhellesoy', '2009-12-25 10:00:00', '2009-12-25 12:30:00', '2009-10-16 21:21:46')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/2053933020
+Completed in 6ms (DB: 1) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/2053933020 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 22:21:46) [GET]
+  Parameters: {"id"=>"2053933020"}
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053933020) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'aslakhellesoy' and start_time < '2009-12-25 12:30:00' and end_time > '2009-12-25 10:00:00' and (project = 'Cucumber' or project = '')) [0m
+Completed in 9ms (View: 6, DB: 2) | 200 OK [http://www.example.com/availabilities/2053933020]
+  [4;35;1mSQL (69.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:22:11', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:22:11')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:22:11) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 14194ms (View: 14188, DB: 6) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (67.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (1.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:22:25', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:22:25')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:22:25', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 21:22:25')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:22:25', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 21:22:25')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:22:25) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 24ms (View: 19, DB: 72) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (63.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:22:26', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-16 21:22:26')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:22:26', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:22:26')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:22:26', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:22:26')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:22:26', '', 'http://github.com/prof_farnsworth', 'Prof Farnsworth', '2009-12-13 21:15:00', '2009-12-14 01:30:00', '2009-10-16 21:22:26')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:22:26) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Prof Farnsworth' and start_time < '2009-12-14 01:30:00' and end_time > '2009-12-13 21:15:00') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-01-01 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 36ms (View: 32, DB: 67) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (49.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:23:36', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:23:36')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:23:36) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 14509ms (View: 14505, DB: 5) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (66.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (1.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:23:50', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:23:50')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:23:50', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 21:23:50')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:23:50', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 21:23:50')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:23:50) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (4.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 28ms (View: 20, DB: 76) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (71.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (1.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:23:51', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2010-12-13 11:20:00', '2010-01-01 11:30:00', '2009-10-16 21:23:51')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:23:51', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:23:51')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:23:51', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:23:51')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:23:51', '', 'http://github.com/prof_farnsworth', 'Prof Farnsworth', '2009-12-13 21:15:00', '2009-12-14 01:30:00', '2009-10-16 21:23:51')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:23:51) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Prof Farnsworth' and start_time < '2009-12-14 01:30:00' and end_time > '2009-12-13 21:15:00') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-12-13 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 33ms (View: 31, DB: 75) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (62.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mAvailability Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:32:02', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:32:02')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:32:02) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 14302ms (View: 14297, DB: 5) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (97.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (1.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:32:17', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:32:17')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:32:17', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 21:32:17')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:32:17', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 21:32:17')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:32:17) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;35;1mAvailability Load (4.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 27ms (View: 18, DB: 108) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (121.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (1.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:32:17', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2010-12-13 11:20:00', '2010-01-01 11:30:00', '2009-10-16 21:32:17')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:32:17', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:32:17')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:32:17', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:32:17')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:32:17', '', 'http://github.com/prof_farnsworth', 'Prof Farnsworth', '2009-12-13 21:15:00', '2009-12-14 01:30:00', '2009-10-16 21:32:17')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:32:17) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Prof Farnsworth' and start_time < '2009-12-14 01:30:00' and end_time > '2009-12-13 21:15:00') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-12-13 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 32ms (View: 27, DB: 129) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (66.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:33:40', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:33:40')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:33:41) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 14233ms (View: 14228, DB: 4) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (65.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:33:55', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:33:55')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:33:55', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 21:33:55')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:33:55', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 21:33:55')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:33:55) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 22ms (View: 18, DB: 68) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (75.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (1.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:33:55', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 11:20:00', '2009-12-14 05:00:00', '2009-10-16 21:33:55')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:33:55', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:33:55')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:33:55', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:33:55')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:33:55', '', 'http://github.com/prof_farnsworth', 'Prof Farnsworth', '2009-12-13 21:15:00', '2009-12-14 01:30:00', '2009-10-16 21:33:55')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:33:55) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 05:00:00' and end_time > '2009-12-13 11:20:00' and (project = 'Curb' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Prof Farnsworth' and start_time < '2009-12-14 01:30:00' and end_time > '2009-12-13 21:15:00') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+Completed in 36ms (View: 30, DB: 83) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (65.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:34:40', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:34:40')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:34:40) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 14062ms (View: 14056, DB: 5) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (64.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:34:54', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:34:54')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:34:54', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 21:34:54')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:34:54', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 21:34:54')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:34:54) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 24ms (View: 20, DB: 65) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (66.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:34:55', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 11:20:00', '2009-12-14 05:00:00', '2009-10-16 21:34:55')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:34:55', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:34:55')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:34:55', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:34:55')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:34:55', '', 'http://github.com/prof_farnsworth', 'Prof Farnsworth', '2009-12-13 21:15:00', '2009-12-14 01:30:00', '2009-10-16 21:34:55')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:34:55) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 05:00:00' and end_time > '2009-12-13 11:20:00' and (project = 'Curb' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Prof Farnsworth' and start_time < '2009-12-14 01:30:00' and end_time > '2009-12-13 21:15:00') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+Completed in 37ms (View: 34, DB: 69) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (39.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:36:27', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:36:27')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:36:27) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 14003ms (View: 13996, DB: 6) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (63.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (1.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:36:42', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:36:42')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:36:42', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 21:36:42')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:36:42', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 21:36:42')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:36:42) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 24ms (View: 20, DB: 68) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (71.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:36:42', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:00:00', '2009-12-14 05:00:00', '2009-10-16 21:36:42')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:36:42', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:36:42')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:36:42', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:36:42')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:36:42', '', 'http://github.com/prof_farnsworth', 'Prof Farnsworth', '2009-12-13 21:15:00', '2009-12-14 01:30:00', '2009-10-16 21:36:42')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:36:42) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 05:00:00' and end_time > '2009-12-13 21:00:00' and (project = 'Curb' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Prof Farnsworth' and start_time < '2009-12-14 01:30:00' and end_time > '2009-12-13 21:15:00') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+Completed in 34ms (View: 29, DB: 74) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (101.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (0.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:38:09', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:38:09')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:38:09) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 14279ms (View: 14272, DB: 6) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (80.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:38:23', 'futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2010-01-01 22:00:00', '2010-01-01 23:00:00', '2009-10-16 21:38:23')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:38:23', 'futurama', 'http://github.com/Bender', 'Bender', '2009-11-01 22:00:00', '2009-11-02 05:00:00', '2009-10-16 21:38:23')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:38:23', 'curb', 'http://github.com/LarryDavid', 'LarryDavid', '2009-12-13 21:59:00', '2009-12-14 00:00:00', '2009-10-16 21:38:23')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:38:23) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-11-02 05:00:00' and end_time > '2009-11-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (2.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 00:00:00' and end_time > '2009-12-13 21:59:00' and (project = 'curb' or project = '')) [0m
+  [4;35;1mAvailability Load (2.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2010-01-01 23:00:00' and end_time > '2010-01-01 22:00:00' and (project = 'futurama' or project = '')) [0m
+Completed in 26ms (View: 19, DB: 87) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (65.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:38:24', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2009-12-13 21:00:00', '2009-12-14 05:00:00', '2009-10-16 21:38:24')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:38:24', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 21:38:24')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:38:24', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 21:38:24')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:38:24', '', 'http://github.com/prof_farnsworth', 'Prof Farnsworth', '2009-12-13 21:15:00', '2009-12-14 01:30:00', '2009-10-16 21:38:24')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:38:24) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2009-12-14 05:00:00' and end_time > '2009-12-13 21:00:00' and (project = 'Curb' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Prof Farnsworth' and start_time < '2009-12-14 01:30:00' and end_time > '2009-12-13 21:15:00') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+Completed in 35ms (View: 31, DB: 71) | 200 OK [http://www.example.com/availabilities]
+  [4;36;1mSQL (70.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 22:39:52) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 7018ms (View: 7013, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /availabilities/new with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 22:39:59) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 225ms (View: 221, DB: 3) | 200 OK [http://www.example.com/availabilities/new]
+REQUESTING PAGE: POST /availabilities with {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "start_time(3i)"=>"25", "project"=>"Cucumber", "end_time(1i)"=>"2009", "start_time(4i)"=>"10", "contact"=>"http://github.com/aslakhellesoy", "end_time(2i)"=>"12", "start_time(5i)"=>"00", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}} and HTTP headers {"HTTP_REFERER"=>"/availabilities/new"}
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 22:39:59) [POST]
+  Parameters: {"commit"=>"Publish availability", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"12", "project"=>"Cucumber", "start_time(3i)"=>"25", "contact"=>"http://github.com/aslakhellesoy", "start_time(4i)"=>"10", "end_time(1i)"=>"2009", "start_time(5i)"=>"00", "end_time(2i)"=>"12", "end_time(3i)"=>"25", "end_time(4i)"=>"12", "end_time(5i)"=>"30", "developer"=>"aslakhellesoy"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 21:39:59', 'Cucumber', 'http://github.com/aslakhellesoy', 'aslakhellesoy', '2009-12-25 10:00:00', '2009-12-25 12:30:00', '2009-10-16 21:39:59')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/availabilities/2053933077
+Completed in 7ms (DB: 0) | 302 Found [http://www.example.com/availabilities]
+REQUESTING PAGE: GET http://www.example.com/availabilities/2053933077 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 22:39:59) [GET]
+  Parameters: {"id"=>"2053933077"}
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053933077) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'aslakhellesoy' and start_time < '2009-12-25 12:30:00' and end_time > '2009-12-25 10:00:00' and (project = 'Cucumber' or project = '')) [0m
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://www.example.com/availabilities/2053933077]
+  [4;35;1mSQL (67.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Delete all (1.0ms)[0m   [0mDELETE FROM `availabilities` [0m
+  [4;36;1mAvailability Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:49:54', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-16 22:49:54')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:49:55', 'The Thick Of It', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-16 22:49:55')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:49:55', '', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 22:49:55')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:49:55', '', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 22:49:55')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 23:49:55) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'MalcolmTucker' and start_time < '2009-12-01 22:20:00' and end_time > '2009-12-01 22:00:00' and (project = 'The Thick Of It' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-01-01 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 15547ms (View: 15537, DB: 12) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/2053933080 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 23:50:10) [GET]
+  Parameters: {"id"=>"2053933080"}
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053933080) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00') [0m
+Completed in 11ms (View: 8, DB: 2) | 200 OK [http://www.example.com/availabilities/2053933080]
+  [4;36;1mSQL (161.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:10', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-16 22:50:10')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:10', 'The Thick Of It', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-16 22:50:10')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:10', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 22:50:10')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:10', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 22:50:10')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 23:50:11) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'MalcolmTucker' and start_time < '2009-12-01 22:20:00' and end_time > '2009-12-01 22:00:00' and (project = 'The Thick Of It' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-01-01 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 30ms (View: 24, DB: 172) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/2053933084 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 23:50:11) [GET]
+  Parameters: {"id"=>"2053933084"}
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053933084) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://www.example.com/availabilities/2053933084]
+  [4;36;1mSQL (852.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:12', 'Curb', 'http://github.com/philip_j_fry', 'LarryDavid', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-16 22:50:12')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:12', 'The Thick Of It', 'http://github.com/bender', 'MalcolmTucker', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-16 22:50:12')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:12', 'Futurama', 'http://github.com/malcolm_tucker', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 22:50:12')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:12', 'Futurama The Movie', 'http://github.com/larry_david', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 22:50:12')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 23:50:12) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'MalcolmTucker' and start_time < '2009-12-01 22:20:00' and end_time > '2009-12-01 22:00:00' and (project = 'The Thick Of It' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama The Movie' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-01-01 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 26ms (View: 24, DB: 857) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/2053933088 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 23:50:12) [GET]
+  Parameters: {"id"=>"2053933088"}
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053933088) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://www.example.com/availabilities/2053933088]
+  [4;36;1mSQL (384.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Delete all (0.0ms)[0m   [0;1mDELETE FROM `availabilities` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:12', 'Curb', 'http://github.com/larry_david', 'LarryDavid', '2010-01-01 11:20:00', '2010-01-01 11:30:00', '2009-10-16 22:50:12')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:12', 'The Thick Of It', 'http://github.com/malcolm_tucker', 'MalcolmTucker', '2009-12-01 22:00:00', '2009-12-01 22:20:00', '2009-10-16 22:50:12')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (0.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:12', 'Futurama', 'http://github.com/bender', 'Bender', '2009-12-13 22:00:00', '2009-12-14 04:30:00', '2009-10-16 22:50:12')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:12', 'Futurama', 'http://github.com/philip_j_fry', 'Philip.J.Fry', '2009-12-13 21:30:00', '2009-12-14 02:30:00', '2009-10-16 22:50:12')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Create (1.0ms)[0m   [0;1mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 22:50:12', '', 'http://github.com/prof_farnsworth', 'Prof Farnsworth', '2009-12-13 21:15:00', '2009-12-14 01:30:00', '2009-10-16 22:50:12')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET /availabilities with {} and HTTP headers {}
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 23:50:12) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'MalcolmTucker' and start_time < '2009-12-01 22:20:00' and end_time > '2009-12-01 22:00:00' and (project = 'The Thick Of It' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Prof Farnsworth' and start_time < '2009-12-14 01:30:00' and end_time > '2009-12-13 21:15:00') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Philip.J.Fry' and start_time < '2009-12-14 02:30:00' and end_time > '2009-12-13 21:30:00' and (project = 'Futurama' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'LarryDavid' and start_time < '2010-01-01 11:30:00' and end_time > '2010-01-01 11:20:00' and (project = 'Curb' or project = '')) [0m
+Completed in 69ms (View: 63, DB: 390) | 200 OK [http://www.example.com/availabilities]
+REQUESTING PAGE: GET /availabilities/2053933092 with {} and HTTP headers {"HTTP_REFERER"=>"/availabilities"}
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 23:50:12) [GET]
+  Parameters: {"id"=>"2053933092"}
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053933092) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bender' and start_time < '2009-12-14 04:30:00' and end_time > '2009-12-13 22:00:00' and (project = 'Futurama' or project = '')) [0m
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://www.example.com/availabilities/2053933092]
+  [4;36;1mSQL (93.0ms)[0m   [0;1mROLLBACK[0m

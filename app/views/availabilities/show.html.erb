@@ -20,7 +20,7 @@
     <% @availability.pairs.each do |pair| %>
       <tr>
         <td><%=h pair.developer %></td>
-        <td><%=h display_project(pair) %></td>
+        <td><%= project_link(pair) %></td>
         <td><%=h display_when(pair) %></td>
         <td><%=h display_duration(pair) %></td>
         <td><%= contact_link(pair) %></td>

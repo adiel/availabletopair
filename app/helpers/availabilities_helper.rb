@@ -3,10 +3,17 @@ module AvailabilitiesHelper
     email?(availability.contact) ? mail_to(h(availability.contact)) : link_to(h(availability.contact),h(availability.contact))
   end
 
+  def project_link(availability)
+    http?(availability.project) ? link_to(h(availability.project),h(availability.project)) : display_project(availability)
+  end
+
+  def http?(url)
+    url =~ /^http:\/\//
+  end
+  
   def email?(url)
     url =~ /\A([\w\.\-\+]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   end
-
 
   def display_duration(availability)
     "#{(availability.duration_sec / 3600).floor}h #{((availability.duration_sec % 3600) / 60).to_i}m"
