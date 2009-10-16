@@ -1,4 +1,0 @@
-Feature: View matching availabilities time and project
-  In order that I can find a someone to pair with me on a specific project
-  As an open source developer
-  I want highlighted any matching pairs for the exact project I have specified
