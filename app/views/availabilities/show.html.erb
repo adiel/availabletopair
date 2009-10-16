@@ -1,11 +1,11 @@
-<h1><%=h @availability.developer %> is available to pair on <%= display_project(@availability) %> for <span class="duration"><%= display_duration(@availability) %></span> from <span class="time"><%=h display_when(@availability) %></span></h1>
+<h1><%=h @availability.developer %> is available to pair on <%= project_link(@availability) %> for <span class="duration"><%= display_duration(@availability) %></span> from <span class="time"><%=h display_when(@availability) %></span></h1>
 <% if @availability.pairs.length == 0 %>
     <p>
-      No developers are available to pair on <%= display_project(@availability) %> with <%=h @availability.developer %> over this period.
+      No developers are available to pair on <%= project_link(@availability) %> with <%=h @availability.developer %> over this period.
     </p>
 <% else %>
     <p>
-      The following developers are available to pair on <%= display_project(@availability) %> with <%=h @availability.developer %> over this period:
+      The following developers are available to pair on <%= project_link(@availability) %> with <%=h @availability.developer %> over this period:
     </p>
 
     <table class="pairs">
@@ -28,6 +28,7 @@
     <% end %>
     </table>
 <% end %>
-<br />
 
-<%= link_to 'Back', availabilities_path %>
+<div class="nav">
+  <%= link_to 'Back', availabilities_path %>
+</div>

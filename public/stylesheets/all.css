@@ -53,3 +53,17 @@ input,select {
     font-size:1.3em;
     padding:0.2em;
 }
+
+#logo {float:left;}
+#how {float:right;}
+.clear{
+    clear:both;
+    font-size:0;
+}
+#logo a {
+    color:#000;
+    text-decoration:none;
+}
+.nav{
+    margin:1em;
+}
