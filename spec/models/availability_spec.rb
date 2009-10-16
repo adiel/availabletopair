@@ -17,6 +17,26 @@ describe Availability do
     actual_pairs.should be(expected_pairs)
   end
 
+  describe "when a project has been specified" do
+
+    it "should set the end time of each pair to the earlier of the two end times" do
+      availability = Availability.new(:start_time => Time.now,:end_time => Time.now)
+      availability.developer = "currentDev"
+      availability.project = "some proj"
+      expected_pairs = [Availability.new(:start_time => Time.now,:end_time => Time.now)]
+      Availability.stub!(:find).with(:all,
+                                     :conditions => ["developer != :developer and start_time < :end_time and end_time > :start_time and (project = :project or project = '')",
+                                                    {:developer => availability.developer,
+                                                     :start_time => availability.start_time,
+                                                     :end_time => availability.end_time,
+                                                     :project => availability.project}]).and_return(expected_pairs)
+
+      actual_pairs = availability.pairs
+
+      actual_pairs.should be(expected_pairs)
+    end
+  end
+
   it "should set the start time of each pair to the later of the two start times" do
     availability = Availability.new(:start_time => Time.parse("2012-06-01 15:25"),:end_time => Time.now)
 

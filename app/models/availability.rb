@@ -11,7 +11,7 @@ class Availability < ActiveRecord::Base
                         :start_time => start_time,
                         :end_time => end_time}
     if project.to_s != ""
-      conditions += " and project = :project"
+      conditions += " and (project = :project or project = '')"
       condition_values[:project] = project
     end
     

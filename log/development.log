@@ -8945,3 +8945,436 @@ Rendering template within layouts/availabilities
 Rendering availabilities/show
   [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
 Completed in 21ms (View: 9, DB: 5) | 200 OK [http://127.0.0.1/availabilities/4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 19:16:07) [GET]
+  [4;35;1mAvailability Load (2.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Aslak' and start_time < '2009-10-14 19:40:00' and end_time > '2009-10-14 00:00:00' and project = 'Cucumber') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00' and project = 'Cucumber') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Henry' and start_time < '2009-10-20 17:00:00' and end_time > '2009-10-20 14:00:00') [0m
+Completed in 62ms (View: 38, DB: 8) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 19:16:08) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Aslak' and start_time < '2009-10-14 19:40:00' and end_time > '2009-10-14 00:00:00' and project = 'Cucumber') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00' and project = 'Cucumber') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Henry' and start_time < '2009-10-20 17:00:00' and end_time > '2009-10-20 14:00:00') [0m
+Completed in 133ms (View: 117, DB: 7) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#edit (for 127.0.0.1 at 2009-10-16 19:16:10) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 7) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/edit
+Completed in 160ms (View: 148, DB: 3) | 200 OK [http://127.0.0.1/availabilities/7/edit]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#edit (for 127.0.0.1 at 2009-10-16 19:16:31) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 7) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/edit
+Completed in 62ms (View: 45, DB: 5) | 200 OK [http://127.0.0.1/availabilities/7/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#edit (for 127.0.0.1 at 2009-10-16 19:16:52) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 7) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/edit
+Completed in 85ms (View: 50, DB: 5) | 200 OK [http://127.0.0.1/availabilities/7/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:16:59) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 7) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Aslak' and start_time < '2009-10-14 19:40:00' and end_time > '2009-10-14 00:00:00' and project = 'Cucumber') [0m
+Completed in 21ms (View: 6, DB: 5) | 200 OK [http://127.0.0.1/availabilities/7]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 19:17:02) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Aslak' and start_time < '2009-10-14 19:40:00' and end_time > '2009-10-14 00:00:00' and project = 'Cucumber') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00' and project = 'Cucumber') [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Henry' and start_time < '2009-10-20 17:00:00' and end_time > '2009-10-20 14:00:00') [0m
+Completed in 53ms (View: 39, DB: 7) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:17:08) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+Completed in 22ms (View: 7, DB: 6) | 200 OK [http://127.0.0.1/availabilities/4]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:17:11) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+Completed in 22ms (View: 9, DB: 5) | 200 OK [http://127.0.0.1/availabilities/4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#edit (for 127.0.0.1 at 2009-10-16 19:17:13) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/edit
+Completed in 46ms (View: 33, DB: 3) | 200 OK [http://127.0.0.1/availabilities/4/edit]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 19:22:53) [GET]
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 45ms (View: 33, DB: 5) | 200 OK [http://127.0.0.1/availabilities/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 19:28:53) [GET]
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 46ms (View: 34, DB: 4) | 200 OK [http://127.0.0.1/availabilities/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 19:30:28) [POST]
+  Parameters: {"commit"=>"Publish availability", "authenticity_token"=>"EZDTp9eCyvr66FW/bD4XkSRVCZ14Q1/YIaZSM8zHNdY=", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"10", "start_time(3i)"=>"16", "project"=>"Make a Ben 10 alien", "contact"=>"alexlongley@gmail.com", "end_time(1i)"=>"2009", "start_time(4i)"=>"19", "end_time(2i)"=>"10", "start_time(5i)"=>"28", "end_time(3i)"=>"16", "end_time(4i)"=>"21", "end_time(5i)"=>"00", "developer"=>"Alex"}}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 18:30:28', 'Make a Ben 10 alien', 'alexlongley@gmail.com', 'Alex', '2009-10-16 19:28:00', '2009-10-16 21:00:00', '2009-10-16 18:30:28')[0m
+  [4;36;1mSQL (56.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/availabilities/8
+Completed in 77ms (DB: 60) | 302 Found [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:30:28) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mAvailability Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 8) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Alex' and start_time < '2009-10-16 21:00:00' and end_time > '2009-10-16 19:28:00' and project = 'Make a Ben 10 alien') [0m
+Completed in 23ms (View: 7, DB: 6) | 200 OK [http://127.0.0.1/availabilities/8]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 19:32:37) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Aslak' and start_time < '2009-10-14 19:40:00' and end_time > '2009-10-14 00:00:00' and project = 'Cucumber') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00' and project = 'Cucumber') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Alex' and start_time < '2009-10-16 21:00:00' and end_time > '2009-10-16 19:28:00' and project = 'Make a Ben 10 alien') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Henry' and start_time < '2009-10-20 17:00:00' and end_time > '2009-10-20 14:00:00') [0m
+Completed in 60ms (View: 44, DB: 8) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 19:33:06) [GET]
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 46ms (View: 33, DB: 3) | 200 OK [http://127.0.0.1/availabilities/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 19:34:18) [POST]
+  Parameters: {"commit"=>"Publish availability", "authenticity_token"=>"EZDTp9eCyvr66FW/bD4XkSRVCZ14Q1/YIaZSM8zHNdY=", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"10", "start_time(3i)"=>"16", "project"=>"", "contact"=>"adrianlongley@gmail.com", "end_time(1i)"=>"2009", "start_time(4i)"=>"18", "end_time(2i)"=>"10", "start_time(5i)"=>"33", "end_time(3i)"=>"16", "end_time(4i)"=>"23", "end_time(5i)"=>"59", "developer"=>"Adrian"}}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Create (1.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `project`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 18:34:18', '', 'adrianlongley@gmail.com', 'Adrian', '2009-10-16 18:33:00', '2009-10-16 23:59:00', '2009-10-16 18:34:18')[0m
+  [4;36;1mSQL (67.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/availabilities/9
+Completed in 90ms (DB: 72) | 302 Found [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:34:18) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 9) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Adrian' and start_time < '2009-10-16 23:59:00' and end_time > '2009-10-16 18:33:00') [0m
+Completed in 20ms (View: 7, DB: 3) | 200 OK [http://127.0.0.1/availabilities/9]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 19:34:40) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Aslak' and start_time < '2009-10-14 19:40:00' and end_time > '2009-10-14 00:00:00' and project = 'Cucumber') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00' and project = 'Cucumber') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Adrian' and start_time < '2009-10-16 23:59:00' and end_time > '2009-10-16 18:33:00') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Alex' and start_time < '2009-10-16 21:00:00' and end_time > '2009-10-16 19:28:00' and project = 'Make a Ben 10 alien') [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Henry' and start_time < '2009-10-20 17:00:00' and end_time > '2009-10-20 14:00:00') [0m
+Completed in 147ms (View: 132, DB: 7) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:35:09) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 9) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Adrian' and start_time < '2009-10-16 23:59:00' and end_time > '2009-10-16 18:33:00') [0m
+Completed in 21ms (View: 7, DB: 4) | 200 OK [http://127.0.0.1/availabilities/9]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:35:19) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 8) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Alex' and start_time < '2009-10-16 21:00:00' and end_time > '2009-10-16 19:28:00' and project = 'Make a Ben 10 alien') [0m
+Completed in 21ms (View: 7, DB: 4) | 200 OK [http://127.0.0.1/availabilities/8]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:35:30) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 7) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Aslak' and start_time < '2009-10-14 19:40:00' and end_time > '2009-10-14 00:00:00' and project = 'Cucumber') [0m
+Completed in 22ms (View: 7, DB: 6) | 200 OK [http://127.0.0.1/availabilities/7]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:35:32) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00' and project = 'Cucumber') [0m
+Completed in 21ms (View: 8, DB: 6) | 200 OK [http://127.0.0.1/availabilities/3]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#edit (for 127.0.0.1 at 2009-10-16 19:35:42) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 9) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/edit
+Completed in 49ms (View: 35, DB: 5) | 200 OK [http://127.0.0.1/availabilities/9/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#update (for 127.0.0.1 at 2009-10-16 19:35:45) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"EZDTp9eCyvr66FW/bD4XkSRVCZ14Q1/YIaZSM8zHNdY=", "id"=>"9", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"10", "start_time(3i)"=>"16", "project"=>"Make a Ben 10 alien", "contact"=>"adrianlongley@gmail.com", "end_time(1i)"=>"2009", "start_time(4i)"=>"18", "end_time(2i)"=>"10", "start_time(5i)"=>"33", "end_time(3i)"=>"16", "end_time(4i)"=>"23", "end_time(5i)"=>"59", "developer"=>"Adrian"}}
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 9) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Update (1.0ms)[0m   [0;1mUPDATE `availabilities` SET `project` = 'Make a Ben 10 alien', `updated_at` = '2009-10-16 18:35:45' WHERE `id` = 9[0m
+  [4;35;1mSQL (84.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/availabilities/9
+Completed in 105ms (DB: 91) | 302 Found [http://127.0.0.1/availabilities/9]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:35:45) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mAvailability Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 9) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Adrian' and start_time < '2009-10-16 23:59:00' and end_time > '2009-10-16 18:33:00' and project = 'Make a Ben 10 alien') [0m
+Completed in 20ms (View: 6, DB: 5) | 200 OK [http://127.0.0.1/availabilities/9]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 19:35:47) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Aslak' and start_time < '2009-10-14 19:40:00' and end_time > '2009-10-14 00:00:00' and project = 'Cucumber') [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00' and project = 'Cucumber') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Adrian' and start_time < '2009-10-16 23:59:00' and end_time > '2009-10-16 18:33:00' and project = 'Make a Ben 10 alien') [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Alex' and start_time < '2009-10-16 21:00:00' and end_time > '2009-10-16 19:28:00' and project = 'Make a Ben 10 alien') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Henry' and start_time < '2009-10-20 17:00:00' and end_time > '2009-10-20 14:00:00') [0m
+Completed in 67ms (View: 53, DB: 6) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:35:53) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 8) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Alex' and start_time < '2009-10-16 21:00:00' and end_time > '2009-10-16 19:28:00' and project = 'Make a Ben 10 alien') [0m
+Completed in 21ms (View: 7, DB: 4) | 200 OK [http://127.0.0.1/availabilities/8]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 19:37:06) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Aslak' and start_time < '2009-10-14 19:40:00' and end_time > '2009-10-14 00:00:00' and project = 'Cucumber') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00' and project = 'Cucumber') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Adrian' and start_time < '2009-10-16 23:59:00' and end_time > '2009-10-16 18:33:00' and project = 'Make a Ben 10 alien') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Alex' and start_time < '2009-10-16 21:00:00' and end_time > '2009-10-16 19:28:00' and project = 'Make a Ben 10 alien') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Henry' and start_time < '2009-10-20 17:00:00' and end_time > '2009-10-20 14:00:00') [0m
+Completed in 68ms (View: 51, DB: 10) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#edit (for 127.0.0.1 at 2009-10-16 19:37:13) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 9) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/edit
+Completed in 129ms (View: 116, DB: 4) | 200 OK [http://127.0.0.1/availabilities/9/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#update (for 127.0.0.1 at 2009-10-16 19:37:17) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"EZDTp9eCyvr66FW/bD4XkSRVCZ14Q1/YIaZSM8zHNdY=", "id"=>"9", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"10", "start_time(3i)"=>"16", "project"=>"", "contact"=>"adrianlongley@gmail.com", "end_time(1i)"=>"2009", "start_time(4i)"=>"18", "end_time(2i)"=>"10", "start_time(5i)"=>"33", "end_time(3i)"=>"16", "end_time(4i)"=>"23", "end_time(5i)"=>"59", "developer"=>"Adrian"}}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 9) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Update (0.0ms)[0m   [0mUPDATE `availabilities` SET `project` = '', `updated_at` = '2009-10-16 18:37:17' WHERE `id` = 9[0m
+  [4;36;1mSQL (66.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/availabilities/9
+Completed in 87ms (DB: 70) | 302 Found [http://127.0.0.1/availabilities/9]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 19:37:17) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 9) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Adrian' and start_time < '2009-10-16 23:59:00' and end_time > '2009-10-16 18:33:00') [0m
+Completed in 19ms (View: 8, DB: 4) | 200 OK [http://127.0.0.1/availabilities/9]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 19:37:19) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Aslak' and start_time < '2009-10-14 19:40:00' and end_time > '2009-10-14 00:00:00' and project = 'Cucumber') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00' and project = 'Cucumber') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Adrian' and start_time < '2009-10-16 23:59:00' and end_time > '2009-10-16 18:33:00') [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Alex' and start_time < '2009-10-16 21:00:00' and end_time > '2009-10-16 19:28:00' and project = 'Make a Ben 10 alien') [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Henry' and start_time < '2009-10-20 17:00:00' and end_time > '2009-10-20 14:00:00') [0m
+Completed in 64ms (View: 47, DB: 9) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 19:39:18) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Aslak' and start_time < '2009-10-14 19:40:00' and end_time > '2009-10-14 00:00:00' and (project = 'Cucumber' or project = '')) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00' and (project = 'Cucumber' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Adrian' and start_time < '2009-10-16 23:59:00' and end_time > '2009-10-16 18:33:00') [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Alex' and start_time < '2009-10-16 21:00:00' and end_time > '2009-10-16 19:28:00' and (project = 'Make a Ben 10 alien' or project = '')) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Henry' and start_time < '2009-10-20 17:00:00' and end_time > '2009-10-20 14:00:00') [0m
+Completed in 67ms (View: 51, DB: 8) | 200 OK [http://127.0.0.1/availabilities]

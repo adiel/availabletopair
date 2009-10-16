@@ -48,3 +48,8 @@ h1 {
     background-color:#DADADA;
     font-family:Courier new,helvetica,arial,freesans,clean,sans-serif;;
 }
+
+input,select {
+    font-size:1.3em;
+    padding:0.2em;
+}
