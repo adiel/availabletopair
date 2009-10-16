@@ -67,3 +67,8 @@ input,select {
 .nav{
     margin:1em;
 }
+#tagline {
+    font-style:italic;
+    font-size:0.4em;
+    margin-left:1em;
+}
