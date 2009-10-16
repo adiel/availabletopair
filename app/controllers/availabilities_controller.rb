@@ -5,7 +5,7 @@ class AvailabilitiesController < ApplicationController
     @availabilities = Availability.find(:all, :order => "start_time")
 
     respond_to do |format|
-      format.html # pairs.html.erb
+      format.html # show.html.erb
       format.xml  { render :xml => @availabilities }
     end
   end
@@ -20,13 +20,7 @@ class AvailabilitiesController < ApplicationController
       format.xml  { render :xml => @availability }
     end
   end
-
-  # GET /availabilities/1/pairs
-  def pairs
-    @availability = Availability.find(params[:id])
-    @possible_pairs = PossiblePair.find(:all, :conditions => ["availability1 = :availablity_id",{:availablity_id => @availability.id}])
-  end
-
+  
   # GET /availabilities/new
   # GET /availabilities/new.xml
   def new

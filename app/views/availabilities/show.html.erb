@@ -1,23 +1,33 @@
+<h1>Available pairs</h1>
+
 <p>
-  <b>Developer:</b>
-  <%=h @availability.developer %>
+    <%=h @availability.developer %> is available to pair from <%=h @availability.start_time %> to <%=h @availability.end_time %>
 </p>
 
 <p>
-  <b>Start time:</b>
-  <%=h @availability.start_time %>
+  The following developers are available to pair with <%=h @availability.developer %> over this period:
 </p>
 
-<p>
-  <b>End time:</b>
-  <%=h @availability.end_time %>
-</p>
+<table class="pairs">
+  <tr>
+    <th>Developer</th>
+    <th>Start time</th>
+    <th>End time</th>
+    <th>Dev time</th>
+    <th>Contact</th>
+  </tr>
 
-<p>
-  <b>Contact:</b>
-  <%=h @availability.contact %>
-</p>
+<% @availability.pairs.each do |pair| %>
+  <tr>
+    <td><%=h pair.developer %></td>
+    <td><%=h pair.start_time %></td>
+    <td><%=h pair.end_time %></td>
+    <td><%=h ((pair.end_time - pair.start_time) / 3600).floor %>h<%=h (((pair.end_time - pair.start_time) % 3600) / 60).to_i %>m</td>
+    <td><%=h pair.contact %></td>
+  </tr>
+<% end %>
+</table>
 
+<br />
 
-<%= link_to 'Edit', edit_availability_path(@availability) %> |
 <%= link_to 'Back', availabilities_path %>

@@ -3,7 +3,7 @@ class CreateAvailabilities < ActiveRecord::Migration
     create_table :availabilities do |t|
       t.string :developer
       t.datetime :start_time
-      t.integer :duration_mins
+      t.datetime :end_time
       t.string :contact
 
       t.timestamps

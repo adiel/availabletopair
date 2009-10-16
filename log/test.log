@@ -28,3 +28,462 @@ Migrating to CreatePossiblePairs (20091014143300)
   [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `possible_pairs`[0m
   [4;35;1mSQL (3.0ms)[0m   [0mdescribe `possible_pairs`[0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `possible_pairs`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (38.0ms)[0m   [0mSELECT count(*) AS count_all FROM `availabilities` [0m
+
+
+Processing AvailabilitiesController#create (for 0.0.0.0 at 2009-10-16 11:55:18) [POST]
+  Parameters: {"availability"=>{}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 10:55:18', NULL, NULL, NULL, NULL, '2009-10-16 10:55:18')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/availabilities/2053932786
+Completed in 8ms (DB: 110) | 302 Found [http://test.host/availabilities?]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `availabilities` [0m
+  [4;36;1mSQL (38.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `availabilities` [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932785) [0m
+
+
+Processing AvailabilitiesController#destroy (for 0.0.0.0 at 2009-10-16 11:55:18) [DELETE]
+  Parameters: {"id"=>"2053932785"}
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932785) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAvailability Destroy (25.0ms)[0m   [0;1mDELETE FROM `availabilities` WHERE `id` = 2053932785[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/availabilities
+Completed in 29ms (DB: 70) | 302 Found [http://test.host/availabilities/2053932785]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `availabilities` [0m
+  [4;35;1mSQL (38.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932785) [0m
+
+
+Processing AvailabilitiesController#edit (for 0.0.0.0 at 2009-10-16 11:55:18) [GET]
+  Parameters: {"id"=>"2053932785"}
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932785) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/edit
+Completed in 155ms (View: 154, DB: 39) | 200 OK [http://test.host/availabilities/2053932785/edit]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing AvailabilitiesController#index (for 0.0.0.0 at 2009-10-16 11:55:18) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 13ms (View: 11, DB: 3) | 200 OK [http://test.host/availabilities]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+
+
+Processing AvailabilitiesController#new (for 0.0.0.0 at 2009-10-16 11:55:18) [GET]
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 29ms (View: 28, DB: 1) | 200 OK [http://test.host/availabilities/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932785) [0m
+
+
+Processing AvailabilitiesController#show (for 0.0.0.0 at 2009-10-16 11:55:18) [GET]
+  Parameters: {"id"=>"2053932785"}
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932785) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://test.host/availabilities/2053932785]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932785) [0m
+
+
+Processing AvailabilitiesController#update (for 0.0.0.0 at 2009-10-16 11:55:18) [PUT]
+  Parameters: {"availability"=>{}, "id"=>"2053932785"}
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2053932785) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/availabilities/2053932785
+Completed in 6ms (DB: 1) | 302 Found [http://test.host/availabilities/2053932785?]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing AvailabilitiesController#show (for 0.0.0.0 at 2009-10-16 12:02:20) [GET]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+Rendering availabilities2/show
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 12:06:40) [GET]
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 2968ms (View: 2964, DB: 94) | 200 OK [http://www.example.com/]
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 12:06:44) [GET]
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 20ms (View: 16, DB: 1) | 200 OK [http://www.example.com/]
+
+
+Processing AvailabilitiesController#create (for 0.0.0.0 at 2009-10-16 12:06:55) [POST]
+  Parameters: {"availability"=>{}}
+Redirected to http://test.host/availabilities/2053932787
+Completed in 4ms (DB: 128) | 302 Found [http://test.host/availabilities?]
+
+
+Processing AvailabilitiesController#destroy (for 0.0.0.0 at 2009-10-16 12:06:55) [DELETE]
+  Parameters: {"id"=>"2053932785"}
+Redirected to http://test.host/availabilities
+Completed in 5ms (DB: 104) | 302 Found [http://test.host/availabilities/2053932785]
+
+
+Processing AvailabilitiesController#edit (for 0.0.0.0 at 2009-10-16 12:06:55) [GET]
+  Parameters: {"id"=>"2053932785"}
+Rendering template within layouts/availabilities
+Rendering availabilities/edit
+Completed in 110ms (View: 108, DB: 82) | 200 OK [http://test.host/availabilities/2053932785/edit]
+
+
+Processing AvailabilitiesController#index (for 0.0.0.0 at 2009-10-16 12:06:55) [GET]
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 21ms (View: 18, DB: 1) | 200 OK [http://test.host/availabilities]
+
+
+Processing AvailabilitiesController#new (for 0.0.0.0 at 2009-10-16 12:06:55) [GET]
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 43ms (View: 43, DB: 1) | 200 OK [http://test.host/availabilities/new]
+
+
+Processing AvailabilitiesController#show (for 0.0.0.0 at 2009-10-16 12:06:55) [GET]
+  Parameters: {"id"=>"2053932785"}
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 7ms (View: 5, DB: 3) | 200 OK [http://test.host/availabilities/2053932785]
+
+
+Processing AvailabilitiesController#update (for 0.0.0.0 at 2009-10-16 12:06:55) [PUT]
+  Parameters: {"id"=>"2053932785", "availability"=>{}}
+Redirected to http://test.host/availabilities/2053932785
+Completed in 7ms (DB: 7) | 302 Found [http://test.host/availabilities/2053932785?]
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 12:08:07) [GET]
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 3194ms (View: 3191, DB: 70) | 200 OK [http://www.example.com/]
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 12:08:10) [GET]
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 18ms (View: 15, DB: 1) | 200 OK [http://www.example.com/]
+
+
+Processing AvailabilitiesController#create (for 0.0.0.0 at 2009-10-16 12:08:21) [POST]
+  Parameters: {"availability"=>{}}
+Redirected to http://test.host/availabilities/2053932788
+Completed in 4ms (DB: 132) | 302 Found [http://test.host/availabilities?]
+
+
+Processing AvailabilitiesController#destroy (for 0.0.0.0 at 2009-10-16 12:08:21) [DELETE]
+  Parameters: {"id"=>"2053932785"}
+Redirected to http://test.host/availabilities
+Completed in 3ms (DB: 223) | 302 Found [http://test.host/availabilities/2053932785]
+
+
+Processing AvailabilitiesController#edit (for 0.0.0.0 at 2009-10-16 12:08:22) [GET]
+  Parameters: {"id"=>"2053932785"}
+Rendering template within layouts/availabilities
+Rendering availabilities/edit
+Completed in 22ms (View: 20, DB: 385) | 200 OK [http://test.host/availabilities/2053932785/edit]
+
+
+Processing AvailabilitiesController#index (for 0.0.0.0 at 2009-10-16 12:08:22) [GET]
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+Completed in 12ms (View: 11, DB: 2) | 200 OK [http://test.host/availabilities]
+
+
+Processing AvailabilitiesController#new (for 0.0.0.0 at 2009-10-16 12:08:22) [GET]
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 28ms (View: 28, DB: 0) | 200 OK [http://test.host/availabilities/new]
+
+
+Processing AvailabilitiesController#show (for 0.0.0.0 at 2009-10-16 12:08:22) [GET]
+  Parameters: {"id"=>"2053932785"}
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+
+
+Processing AvailabilitiesController#update (for 0.0.0.0 at 2009-10-16 12:08:22) [PUT]
+  Parameters: {"id"=>"2053932785", "availability"=>{}}
+Redirected to http://test.host/availabilities/2053932785
+Completed in 4ms (DB: 3) | 302 Found [http://test.host/availabilities/2053932785?]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+
+
+Processing AvailabilitiesController#show (for 0.0.0.0 at 2009-10-16 12:24:08) [GET]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+
+
+Processing AvailabilitiesController#show (for 0.0.0.0 at 2009-10-16 12:25:03) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+
+
+Processing AvailabilitiesController#show (for 0.0.0.0 at 2009-10-16 12:25:31) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+Rendering availabilities2/show
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+Rendering availabilities2/show
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+Rendering availabilities2/show
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+Rendering availabilities2/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m

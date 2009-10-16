@@ -2103,3 +2103,1175 @@ Rendering template within layouts/availabilities
 Rendering availabilities/pairs
   [4;36;1mPossiblePair Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `possible_pairs`[0m
 Completed in 83ms (View: 40, DB: 9) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:36:14) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > start_time) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #20 of app/views/availabilities/pairs.html.erb:
+17:     <th>Contact</th>
+18:   </tr>
+19: 
+20: <% @possible_pairs.each do |pair| %>
+21:   <tr>
+22:     <td><%=h pair.developer %></td>
+23:     <td><%=h pair.start_time %></td>
+
+    app/views/availabilities/pairs.html.erb:20
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (64.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:36:26) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > start_time) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+Completed in 27ms (View: 12, DB: 4) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:36:33) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > start_time) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+Completed in 17ms (View: 3, DB: 3) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:36:33) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > start_time) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+Completed in 18ms (View: 3, DB: 4) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 10:36:44) [GET]
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 47ms (View: 36, DB: 3) | 200 OK [http://127.0.0.1/availabilities/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#create (for 127.0.0.1 at 2009-10-16 10:37:42) [POST]
+  Parameters: {"commit"=>"Publish availability", "authenticity_token"=>"EZDTp9eCyvr66FW/bD4XkSRVCZ14Q1/YIaZSM8zHNdY=", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"10", "start_time(3i)"=>"14", "contact"=>"dave@dave.com", "end_time(1i)"=>"2009", "start_time(4i)"=>"16", "end_time(2i)"=>"10", "start_time(5i)"=>"00", "end_time(3i)"=>"15", "end_time(4i)"=>"00", "end_time(5i)"=>"00", "developer"=>"Dave"}}
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAvailability Create (0.0ms)[0m   [0mINSERT INTO `availabilities` (`updated_at`, `contact`, `developer`, `start_time`, `end_time`, `created_at`) VALUES('2009-10-16 09:37:42', 'dave@dave.com', 'Dave', '2009-10-14 16:00:00', '2009-10-15 00:00:00', '2009-10-16 09:37:42')[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/availabilities/5
+Completed in 68ms (DB: 52) | 302 Found [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 10:37:42) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 24ms (View: 11, DB: 5) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 10:37:44) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Completed in 36ms (View: 26, DB: 3) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 10:37:46) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Completed in 28ms (View: 16, DB: 4) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 10:37:46) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Completed in 32ms (View: 19, DB: 4) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:37:52) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > start_time) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+Completed in 19ms (View: 4, DB: 4) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:38:06) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > start_time) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+Completed in 18ms (View: 3, DB: 6) | 200 OK [http://127.0.0.1/availabilities/pairs/5]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:38:48) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+Completed in 18ms (View: 4, DB: 5) | 200 OK [http://127.0.0.1/availabilities/pairs/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:38:59) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00') [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+Completed in 17ms (View: 3, DB: 5) | 200 OK [http://127.0.0.1/availabilities/pairs/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:39:04) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+Completed in 16ms (View: 3, DB: 3) | 200 OK [http://127.0.0.1/availabilities/pairs/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:39:09) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+Completed in 18ms (View: 4, DB: 3) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:42:22) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (2.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.developer) on line #20 of app/views/availabilities/pairs.html.erb:
+17:     <th>Contact</th>
+18:   </tr>
+19: 
+20: <% @availability.pairs.each do |pair| %>
+21:   <tr>
+22:     <td><%=h pair.developer %></td>
+23:     <td><%=h pair.start_time %></td>
+
+    app/models/availability.rb:11:in `find_pairs'
+    app/models/availability.rb:4:in `pairs'
+    app/views/availabilities/pairs.html.erb:20
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (134.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:42:55) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.developer) on line #20 of app/views/availabilities/pairs.html.erb:
+17:     <th>Contact</th>
+18:   </tr>
+19: 
+20: <% @availability.pairs.each do |pair| %>
+21:   <tr>
+22:     <td><%=h pair.developer %></td>
+23:     <td><%=h pair.start_time %></td>
+
+    app/models/availability.rb:15:in `find_pairs'
+    app/models/availability.rb:8:in `pairs'
+    app/views/availabilities/pairs.html.erb:20
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:43:03) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.developer) on line #20 of app/views/availabilities/pairs.html.erb:
+17:     <th>Contact</th>
+18:   </tr>
+19: 
+20: <% @availability.pairs.each do |pair| %>
+21:   <tr>
+22:     <td><%=h pair.developer %></td>
+23:     <td><%=h pair.start_time %></td>
+
+    app/models/availability.rb:15:in `find_pairs'
+    app/models/availability.rb:8:in `pairs'
+    app/views/availabilities/pairs.html.erb:20
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:43:14) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+Completed in 18ms (View: 5, DB: 5) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:43:36) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.developer) on line #20 of app/views/availabilities/pairs.html.erb:
+17:     <th>Contact</th>
+18:   </tr>
+19: 
+20: <% @availability.pairs.each do |pair| %>
+21:   <tr>
+22:     <td><%=h pair.developer %></td>
+23:     <td><%=h pair.start_time %></td>
+
+    app/models/availability.rb:16:in `find_pairs'
+    app/models/availability.rb:8:in `pairs'
+    app/views/availabilities/pairs.html.erb:20
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:44:59) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != NULL and start_time < NULL and end_time > NULL) [0m
+Completed in 18ms (View: 5, DB: 6) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:47:18) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != NULL and start_time < NULL and end_time > NULL) [0m
+Completed in 19ms (View: 6, DB: 6) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:47:22) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != NULL and start_time < NULL and end_time > NULL) [0m
+Completed in 22ms (View: 7, DB: 6) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:47:23) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != NULL and start_time < NULL and end_time > NULL) [0m
+Completed in 17ms (View: 5, DB: 4) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:47:24) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != NULL and start_time < NULL and end_time > NULL) [0m
+Completed in 18ms (View: 7, DB: 3) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:47:38) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+Completed in 18ms (View: 6, DB: 3) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 10:47:42) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 18ms (View: 6, DB: 3) | 200 OK [http://127.0.0.1/availabilities/pairs/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 10:48:55) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 30ms (View: 18, DB: 5) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:36:48) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 628ms (View: 614, DB: 5) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:36:50) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+Completed in 25ms (View: 13, DB: 4) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:36:53) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 20ms (View: 6, DB: 5) | 200 OK [http://127.0.0.1/availabilities/pairs/5]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:36:55) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00') [0m
+Completed in 18ms (View: 6, DB: 5) | 200 OK [http://127.0.0.1/availabilities/pairs/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:37:40) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Completed in 29ms (View: 18, DB: 3) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:37:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00') [0m
+Completed in 25ms (View: 13, DB: 4) | 200 OK [http://127.0.0.1/availabilities/pairs/3]
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:37:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00') [0m
+Completed in 35ms (View: 16, DB: 10) | 200 OK [http://127.0.0.1/availabilities/pairs/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:37:53) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00') [0m
+Completed in 19ms (View: 6, DB: 4) | 200 OK [http://127.0.0.1/availabilities/pairs/3]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:38:01) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00') [0m
+Completed in 26ms (View: 13, DB: 5) | 200 OK [http://127.0.0.1/availabilities/pairs/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:38:08) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00') [0m
+Completed in 25ms (View: 13, DB: 4) | 200 OK [http://127.0.0.1/availabilities/pairs/3]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:38:35) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00') [0m
+Completed in 25ms (View: 13, DB: 4) | 200 OK [http://127.0.0.1/availabilities/pairs/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:38:37) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Completed in 28ms (View: 18, DB: 3) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:38:38) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 18ms (View: 6, DB: 5) | 200 OK [http://127.0.0.1/availabilities/pairs/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:38:38) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 28ms (View: 18, DB: 4) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:38:40) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+Completed in 17ms (View: 6, DB: 5) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:38:41) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Completed in 28ms (View: 18, DB: 3) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:38:43) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00') [0m
+Completed in 80ms (View: 6, DB: 4) | 200 OK [http://127.0.0.1/availabilities/pairs/3]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:38:46) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 27ms (View: 17, DB: 4) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#new (for 127.0.0.1 at 2009-10-16 11:38:48) [GET]
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/new
+Completed in 46ms (View: 36, DB: 3) | 200 OK [http://127.0.0.1/availabilities/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:38:49) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Completed in 27ms (View: 17, DB: 3) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:38:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mAvailability Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00') [0m
+Completed in 18ms (View: 6, DB: 4) | 200 OK [http://127.0.0.1/availabilities/pairs/3]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:38:59) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;36;1mAvailability Load (2.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Bob' and start_time < '2009-10-14 15:00:00' and end_time > '2009-10-14 13:00:00') [0m
+Completed in 35ms (View: 22, DB: 6) | 200 OK [http://127.0.0.1/availabilities/pairs/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:38:59) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Completed in 29ms (View: 17, DB: 4) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#pairs (for 127.0.0.1 at 2009-10-16 11:39:00) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/pairs
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+Completed in 21ms (View: 7, DB: 5) | 200 OK [http://127.0.0.1/availabilities/pairs/4]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:39:02) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 27ms (View: 17, DB: 5) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (208.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `AvailableToPair_test`[0m
+  [4;35;1mSQL (13.0ms)[0m   [0mCREATE DATABASE `AvailableToPair_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (135.0ms)[0m   [0mCREATE TABLE `availabilities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `developer` varchar(255), `start_time` datetime, `end_time` datetime, `contact` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (84.0ms)[0m   [0mCREATE TABLE `possible_pairs` (`availability1` int(11) DEFAULT 0 NOT NULL, `availability2` int(11) DEFAULT 0 NOT NULL, `dev1` varchar(255), `dev2` varchar(255), `start_time` datetime, `end_time` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (88.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (332.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (42.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091014143300')[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091014095413')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 11:45:37) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Availability with ID=show):
+  app/controllers/availabilities_controller.rb:16:in `show'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#3 (for 127.0.0.1 at 2009-10-16 11:45:41) [GET]
+  Parameters: {"id"=>"show"}
+
+ActionController::UnknownAction (No action responded to 3. Actions: create, destroy, edit, index, new, pairs, show, and update):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 11:45:44) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+Completed in 24ms (View: 12, DB: 3) | 200 OK [http://127.0.0.1/availabilities/3]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show to xml (for 127.0.0.1 at 2009-10-16 11:45:48) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Completed in 15ms (View: 4, DB: 4) | 200 OK [http://127.0.0.1/availabilities/3.xml]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show to xml (for 127.0.0.1 at 2009-10-16 11:46:38) [GET]
+  Parameters: {"id"=>"3"}
+
+NameError (invalid attribute name `@pairs'):
+  app/models/availability.rb:3:in `attr_reader'
+  app/models/availability.rb:3
+  app/controllers/availabilities_controller.rb:16:in `show'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (149.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show to xml (for 127.0.0.1 at 2009-10-16 11:46:43) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Completed in 16ms (View: 4, DB: 5) | 200 OK [http://127.0.0.1/availabilities/3.xml]
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show to xml (for 127.0.0.1 at 2009-10-16 11:47:30) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Completed in 18ms (View: 5, DB: 5) | 200 OK [http://127.0.0.1/availabilities/3.xml]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show to xml (for 127.0.0.1 at 2009-10-16 11:47:30) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Completed in 15ms (View: 4, DB: 4) | 200 OK [http://127.0.0.1/availabilities/3.xml]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show to xml (for 127.0.0.1 at 2009-10-16 11:47:30) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Completed in 20ms (View: 5, DB: 3) | 200 OK [http://127.0.0.1/availabilities/3.xml]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show to xml (for 127.0.0.1 at 2009-10-16 11:47:30) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mAvailability Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 3) [0m
+Completed in 16ms (View: 5, DB: 3) | 200 OK [http://127.0.0.1/availabilities/3.xml]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 11:47:35) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mAvailability Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Availability with ID=show):
+  app/controllers/availabilities_controller.rb:16:in `show'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:47:36) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 100ms (View: 89, DB: 4) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:47:36) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 29ms (View: 17, DB: 5) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:47:37) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 28ms (View: 17, DB: 5) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:47:37) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 28ms (View: 17, DB: 4) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:57:07) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+
+ActionView::TemplateError (undefined method `show_availability_path' for #<ActionView::Base:0x8a46b74>) on line #14 of app/views/availabilities/index.html.erb:
+11: <% @availabilities.each do |availability| %>
+12:   <tr>
+13:     <td><%=h availability.developer %></td>
+14:     <td><%= link_to availability.start_time, show_availability_path(availability) %></td>
+15:     <td><%=h availability.end_time %></td>
+16:     <td><%=h availability.contact %></td>
+17:     <td><%= link_to 'Edit', edit_availability_path(availability) %></td>
+
+    app/views/availabilities/index.html.erb:14
+    app/views/availabilities/index.html.erb:11:in `each'
+    app/views/availabilities/index.html.erb:11
+    app/controllers/availabilities_controller.rb:7:in `index'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (133.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 11:57:29) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 39ms (View: 28, DB: 3) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 11:57:41) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 26ms (View: 14, DB: 3) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 11:57:43) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 18ms (View: 5, DB: 5) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#5 (for 127.0.0.1 at 2009-10-16 11:57:46) [GET]
+  Parameters: {"id"=>"show"}
+
+ActionController::UnknownAction (No action responded to 5. Actions: create, destroy, edit, index, new, show, and update):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show to xml (for 127.0.0.1 at 2009-10-16 11:57:49) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Completed in 15ms (View: 4, DB: 5) | 200 OK [http://127.0.0.1/availabilities/5.xml]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 11:57:53) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 19ms (View: 6, DB: 6) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 11:59:28) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 21ms (View: 7, DB: 5) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 13:26:57) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 82ms (View: 70, DB: 4) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 13:26:58) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 18ms (View: 7, DB: 3) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 13:26:58) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 18ms (View: 7, DB: 3) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 13:26:59) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 18ms (View: 6, DB: 3) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 13:26:59) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 18ms (View: 5, DB: 6) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 13:26:59) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 17ms (View: 6, DB: 4) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 13:27:00) [GET]
+  [4;36;1mAvailability Load (0.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 29ms (View: 18, DB: 4) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 13:27:01) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+Completed in 18ms (View: 6, DB: 4) | 200 OK [http://127.0.0.1/availabilities/4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 13:27:02) [GET]
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Completed in 29ms (View: 18, DB: 4) | 200 OK [http://127.0.0.1/availabilities]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 13:27:03) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 5) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (developer != 'Dave' and start_time < '2009-10-15 00:00:00' and end_time > '2009-10-14 16:00:00') [0m
+Completed in 18ms (View: 7, DB: 4) | 200 OK [http://127.0.0.1/availabilities/5]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 13:27:05) [GET]
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;35;1mAvailability Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 28ms (View: 18, DB: 6) | 200 OK [http://127.0.0.1/availabilities]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#edit (for 127.0.0.1 at 2009-10-16 13:27:06) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/edit
+Completed in 106ms (View: 95, DB: 4) | 200 OK [http://127.0.0.1/availabilities/4/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#update (for 127.0.0.1 at 2009-10-16 13:27:08) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"EZDTp9eCyvr66FW/bD4XkSRVCZ14Q1/YIaZSM8zHNdY=", "id"=>"4", "availability"=>{"start_time(1i)"=>"2009", "start_time(2i)"=>"10", "start_time(3i)"=>"14", "contact"=>"http://github.com/Jeff", "start_time(4i)"=>"14", "start_time(5i)"=>"15", "end_time"=>"2009-10-14 19:00:00", "developer"=>"Jeff"}}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/availabilities/4
+Completed in 19ms (DB: 4) | 302 Found [http://127.0.0.1/availabilities/4]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#show (for 127.0.0.1 at 2009-10-16 13:27:08) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 4) [0m
+Rendering template within layouts/availabilities
+Rendering availabilities/show
+  [4;36;1mAvailability Load (1.0ms)[0m   [0;1mSELECT * FROM `availabilities` WHERE (developer != 'Jeff' and start_time < '2009-10-14 19:00:00' and end_time > '2009-10-14 14:15:00') [0m
+Completed in 18ms (View: 5, DB: 5) | 200 OK [http://127.0.0.1/availabilities/4]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AvailabilitiesController#index (for 127.0.0.1 at 2009-10-16 13:27:23) [GET]
+  [4;35;1mAvailability Load (1.0ms)[0m   [0mSELECT * FROM `availabilities` ORDER BY start_time[0m
+Rendering template within layouts/availabilities
+Rendering availabilities/index
+  [4;36;1mAvailability Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+Completed in 28ms (View: 18, DB: 6) | 200 OK [http://127.0.0.1/availabilities]

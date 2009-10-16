@@ -12,8 +12,7 @@ Feature: View matching availabilities
       | LarryDavid    | December 13, 2009 21:30     | December 14, 2009 02:30      | http://github.com/larry_david    |
     When I am on the list availabilities page
     And I follow "2009-12-13 22:00:00 UTC"
-    Then I should see "You are available to pair from 2009-12-13 22:00:00 UTC to 2009-12-14 04:30:00 UTC"
-    Then I should see "The following devs are available to pair with you at this time:"
+    Then I should see "MalcolmTucker is available to pair from 2009-12-13 22:00:00 UTC to 2009-12-14 04:30:00 UTC"
     And I should see the following matching pairs
       | developer  | from                    | to                      | dev time    | contact                          |
       | LarryDavid | 2009-12-13 22:00:00 UTC | 2009-12-14 02:30:00 UTC | 4h30m       | http://github.com/larry_david |

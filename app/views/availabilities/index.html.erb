@@ -11,7 +11,7 @@
 <% @availabilities.each do |availability| %>
   <tr>
     <td><%=h availability.developer %></td>
-    <td><%= link_to availability.start_time, "/availabilities/pairs/#{availability.id}" %></td>
+    <td><%= link_to availability.start_time, availability %></td>
     <td><%=h availability.end_time %></td>
     <td><%=h availability.contact %></td>
     <td><%= link_to 'Edit', edit_availability_path(availability) %></td>
