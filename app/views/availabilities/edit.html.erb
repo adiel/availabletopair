@@ -8,13 +8,17 @@
     <%= f.text_field :developer %>
   </p>
   <p>
+    <%= f.label :project %><br />
+    <%= f.text_field :project %>
+  </p>
+  <p>
     <%= f.label :start_time %><br />
     <%= f.datetime_select :start_time %>
   </p>
   <p>
     <%= f.label :end_time %><br />
-    <%= f.text_field :end_time %>
-  </p>
+    <%= f.datetime_select :end_time %>
+    </p>
   <p>
     <%= f.label :contact %><br />
     <%= f.text_field :contact %>

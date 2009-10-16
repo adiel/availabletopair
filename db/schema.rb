@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091014143300) do
+ActiveRecord::Schema.define(:version => 20091016171300) do
 
   create_table "availabilities", :force => true do |t|
     t.string   "developer"
@@ -18,7 +18,11 @@ ActiveRecord::Schema.define(:version => 20091014143300) do
     t.string   "contact"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "project"
   end
+
+  add_index "availabilities", ["developer", "start_time", "end_time"], :name => "availabilities_pair_search_index"
+  add_index "availabilities", ["developer"], :name => "availabilities_name_index"
 
   create_table "possible_pairs", :id => false, :force => true do |t|
     t.integer  "availability1", :default => 0, :null => false

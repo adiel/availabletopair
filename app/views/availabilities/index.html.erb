@@ -1,25 +1,28 @@
-<h1>Listing availabilities</h1>
+<h1>Who's available?</h1>
 
 <table class="availabilities">
   <tr>
-    <th>Developer</th>
-    <th>Start time</th>
-    <th>End time</th>
-    <th>Contact</th>
+    <th>Who</th>
+    <th>What</th>
+    <th>When</th>
+    <th>How long</th>
+    <th>Pairs available</th>
+    <th colspan="2">&nbsp;</th>
   </tr>
 
 <% @availabilities.each do |availability| %>
   <tr>
     <td><%=h availability.developer %></td>
-    <td><%= link_to availability.start_time, availability %></td>
-    <td><%=h availability.end_time %></td>
-    <td><%=h availability.contact %></td>
+    <td><%=h display_project(availability) %></td>
+    <td><%= link_to(display_when(availability),availability) %></td>
+    <td><%=h display_duration(availability) %></td>
+    <td><%= pairs_link(availability) %></td>
     <td><%= link_to 'Edit', edit_availability_path(availability) %></td>
-    <td><%= link_to 'Destroy', availability, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', availability, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Make yourself available to pair', new_availability_path %>
+<%= link_to 'Make yourself available', new_availability_path %>

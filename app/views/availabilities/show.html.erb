@@ -1,33 +1,33 @@
-<h1>Available pairs</h1>
+<h1><%=h @availability.developer %> is available to pair on <%= display_project(@availability) %> for <span class="duration"><%= display_duration(@availability) %></span> from <span class="time"><%=h display_when(@availability) %></span></h1>
+<% if @availability.pairs.length == 0 %>
+    <p>
+      No developers are available to pair on <%= display_project(@availability) %> with <%=h @availability.developer %> over this period.
+    </p>
+<% else %>
+    <p>
+      The following developers are available to pair on <%= display_project(@availability) %> with <%=h @availability.developer %> over this period:
+    </p>
 
-<p>
-    <%=h @availability.developer %> is available to pair from <%=h @availability.start_time %> to <%=h @availability.end_time %>
-</p>
+    <table class="pairs">
+      <tr>
+        <th>Who</th>
+        <th>What</th>
+        <th>When</th>
+        <th>Dev time</th>
+        <th>Contact</th>
+      </tr>
 
-<p>
-  The following developers are available to pair with <%=h @availability.developer %> over this period:
-</p>
-
-<table class="pairs">
-  <tr>
-    <th>Developer</th>
-    <th>Start time</th>
-    <th>End time</th>
-    <th>Dev time</th>
-    <th>Contact</th>
-  </tr>
-
-<% @availability.pairs.each do |pair| %>
-  <tr>
-    <td><%=h pair.developer %></td>
-    <td><%=h pair.start_time %></td>
-    <td><%=h pair.end_time %></td>
-    <td><%=h ((pair.end_time - pair.start_time) / 3600).floor %>h<%=h (((pair.end_time - pair.start_time) % 3600) / 60).to_i %>m</td>
-    <td><%=h pair.contact %></td>
-  </tr>
+    <% @availability.pairs.each do |pair| %>
+      <tr>
+        <td><%=h pair.developer %></td>
+        <td><%=h display_project(pair) %></td>
+        <td><%=h display_when(pair) %></td>
+        <td><%=h display_duration(pair) %></td>
+        <td><%= contact_link(pair) %></td>
+      </tr>
+    <% end %>
+    </table>
 <% end %>
-</table>
-
 <br />
 
 <%= link_to 'Back', availabilities_path %>

@@ -6,10 +6,16 @@ class Availability < ActiveRecord::Base
   end
   
   def find_pairs
-    pair_conditions = ["developer != :developer and start_time < :end_time and end_time > :start_time",
-                       {:developer => developer,
+    conditions  = "developer != :developer and start_time < :end_time and end_time > :start_time"
+    condition_values = {:developer => developer,
                         :start_time => start_time,
-                        :end_time => end_time}]
+                        :end_time => end_time}
+    if project.to_s != ""
+      conditions += " and project = :project"
+      condition_values[:project] = project
+    end
+    
+    pair_conditions = [conditions, condition_values]
     pairs = Availability.find(:all, :conditions => pair_conditions)
     set_intersecting_start_and_end_times!(pairs)
   end
@@ -21,4 +27,9 @@ class Availability < ActiveRecord::Base
     end
     pairs
   end
+
+  def duration_sec
+    end_time - start_time
+  end
+
 end

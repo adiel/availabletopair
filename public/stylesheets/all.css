@@ -1,0 +1,50 @@
+html, body {
+color:black;
+height:100%;
+}
+body {
+    font-family:helvetica,arial,freesans,clean,sans-serif;
+}
+
+table
+{
+    font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+    font-size:80%;
+    border-collapse: collapse;
+    width:95%
+}
+
+table th {
+    background-color:#EAEAEA;
+    border-bottom:1px solid #D8D8D8;
+    color:#999999;
+    font-weight:normal;
+    padding:0.5em 0.5em;
+    text-align:left;
+}
+table td {
+    background:#F8F8F8;
+    border-bottom:1px solid #E1E1E1;
+    color:#484848;
+    padding:0.5em 0.5em;
+}
+
+p {
+    margin:1em;
+}
+
+.availabilities, .pairs {
+    margin:0.5em 1em;
+}
+
+h1 {
+    font-size:1.2em;
+    margin:0.8em;
+}
+
+#header {
+    font-size:2em;
+    padding:20px;
+    background-color:#DADADA;
+    font-family:Courier new,helvetica,arial,freesans,clean,sans-serif;;
+}
