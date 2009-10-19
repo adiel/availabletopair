@@ -4,12 +4,13 @@ height:100%;
 }
 body {
     font-family:helvetica,arial,freesans,clean,sans-serif;
+    font-size:0.8em;
 }
 
 table
 {
     font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-    font-size:80%;
+    font-size:0.9em;
     border-collapse: collapse;
     width:95%
 }
@@ -38,19 +39,19 @@ p {
 }
 
 h1 {
-    font-size:1.2em;
+    font-size:1.3em;
     margin:0.8em;
 }
 
 #header {
-    font-size:2em;
+    font-size:2.5em;
     padding:20px;
     background-color:#DADADA;
     font-family:Courier new,helvetica,arial,freesans,clean,sans-serif;;
 }
 
 input,select {
-    font-size:1.3em;
+    font-size:1.2em;
     padding:0.2em;
 }
 
