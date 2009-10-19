@@ -12,7 +12,7 @@
 
 <% @availabilities.each do |availability| %>
   <tr>
-    <td><%= link_to(h(availability.developer), "/" + h(availability.developer.downcase)) %></td>
+    <td><%=h availability.developer %></td>
     <td><%= project_link(availability) %></td>
     <td><%= link_to(display_when(availability),availability) %></td>
     <td><%=h display_duration(availability) %></td>
