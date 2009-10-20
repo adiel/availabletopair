@@ -68,4 +68,4 @@ Scenario: One pair is found where both will work on only a specific project
     And I follow "Sun Dec 13, 2009 22:00 - 04:30"
     Then I should see "Subscribe to updates of Bender's available pairs (atom)"
     When I follow "atom"
-    Then My path should be "/bender.atom"
+    Then My path should be "/Bender.atom"

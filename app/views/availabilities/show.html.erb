@@ -19,7 +19,7 @@
 
     <% @availability.pairs.each do |pair| %>
       <tr>
-        <td><%= link_to(h(pair.developer),"/" + h(pair.developer.downcase)) %></td>
+        <td><%= link_to(h(pair.developer),"/" + h(pair.developer)) %></td>
         <td><%= project_link(pair) %></td>
         <td><%=h display_when(pair) %></td>
         <td><%=h display_duration(pair) %></td>
@@ -28,7 +28,7 @@
     <% end %>
     </table>
 <% end %>
-<p>Subscribe to updates of <%=h @availability.developer %>'s available pairs (<a href="/<%=h @availability.developer.downcase%>.atom">atom</a>)</p>
+<p>Subscribe to updates of <%=h @availability.developer %>'s available pairs (<a href="/<%=h @availability.developer%>.atom">atom</a>)</p>
 <div class="nav">
   <%= link_to 'Home', availabilities_path %> | <%= link_to 'Make yourself available', new_availability_path %>
 </div>
