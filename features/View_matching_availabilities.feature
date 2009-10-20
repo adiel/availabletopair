@@ -59,3 +59,13 @@ Scenario: One pair is found where both will work on only a specific project
         | developer       | project  | when                           | dev time     | contact                           |
         | Philip.J.Fry    | Futurama | Sun Dec 13, 2009 22:00 - 02:30 | 4h 30m       | http://github.com/philip_j_fry    |
         | Prof Farnsworth | anything | Sun Dec 13, 2009 22:00 - 01:30 | 3h 30m       | http://github.com/prof_farnsworth |
+
+  Scenario: Show availability shows link to atom feed
+    Given the following availabilities in the system
+      | developer     | project            | start time                  | end time                    | contact                          |
+      | Bender        | Futurama           | December 13, 2009 22:00     | December 14, 2009 04:30      | http://github.com/malcolm_tucker |
+    When I am on the list availabilities page
+    And I follow "Sun Dec 13, 2009 22:00 - 04:30"
+    Then I should see "Subscribe to updates of Bender's available pairs (atom)"
+    When I follow "atom"
+    Then My path should be "/bender.atom"

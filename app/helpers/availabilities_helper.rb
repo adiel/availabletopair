@@ -16,7 +16,7 @@ module AvailabilitiesHelper
   end
 
   def display_duration(availability)
-    "#{(availability.duration_sec / 3600).floor}h #{((availability.duration_sec % 3600) / 60).to_i}m"
+    "%dh %02dm" % [(availability.duration_sec / 3600).floor, ((availability.duration_sec % 3600) / 60).to_i]
   end
 
   def display_date_time(time)
@@ -29,6 +29,10 @@ module AvailabilitiesHelper
 
   def display_when(availability)
     "#{display_date_time(availability.start_time)} - #{display_time(availability.end_time)}"
+  end
+
+  def display_when_time(availability)
+    "#{display_time(availability.start_time)} to #{display_time(availability.end_time)}"
   end
 
   def display_project(availability)

@@ -1,11 +1,11 @@
-<h1><%=h @availability.developer %> is available to pair on <%= project_link(@availability) %> for <span class="duration"><%= display_duration(@availability) %></span> from <span class="time"><%=h display_when(@availability) %></span></h1>
+<h1><%= link_to(h(@availability.developer),"/" + h(@availability.developer)) %> is available to pair on <%= project_link(@availability) %> for <span class="duration"><%= display_duration(@availability) %></span> from <span class="time"><%=h display_when(@availability) %></span> | <%= link_to 'Edit', edit_availability_path(@availability) %></h1>
 <% if @availability.pairs.length == 0 %>
     <p>
-      No developers are available to pair on <%= project_link(@availability) %> with <%=h @availability.developer %> over this period.
+      No developers are available to pair on <%= project_link(@availability) %> with <%= link_to(h(@availability.developer),"/" + h(@availability.developer)) %> over this period.
     </p>
 <% else %>
     <p>
-      The following developers are available to pair on <%= project_link(@availability) %> with <%=h @availability.developer %> over this period:
+      Available to pair with <%= link_to(h(@availability.developer),"/" + h(@availability.developer)) %>:
     </p>
 
     <table class="pairs">
@@ -19,7 +19,7 @@
 
     <% @availability.pairs.each do |pair| %>
       <tr>
-        <td><%= link_to(h(pair.developer), "/" + h(pair.developer.downcase)) %></td>
+        <td><%= link_to(h(pair.developer),"/" + h(pair.developer.downcase)) %></td>
         <td><%= project_link(pair) %></td>
         <td><%=h display_when(pair) %></td>
         <td><%=h display_duration(pair) %></td>
@@ -28,7 +28,7 @@
     <% end %>
     </table>
 <% end %>
-
+<p>Subscribe to updates of <%=h @availability.developer %>'s available pairs (<a href="/<%=h @availability.developer.downcase%>.atom">atom</a>)</p>
 <div class="nav">
-  <%= link_to 'Home', availabilities_path %>
+  <%= link_to 'Home', availabilities_path %> | <%= link_to 'Make yourself available', new_availability_path %>
 </div>

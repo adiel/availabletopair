@@ -1,4 +1,4 @@
-<h1>Who's available?</h1>
+<h1>All <%= user %>'s availability</h1>
 
 <table class="availabilities">
   <tr>
@@ -22,7 +22,7 @@
   </tr>
 <% end %>
 </table>
-
+<p>Subscribe to updates of <%=user %>'s available pairs (<a href="/<%=user.downcase%>.atom">atom</a>)</p>
 <div class="nav">
     <%= link_to 'Make yourself available', new_availability_path %>
 </div>
