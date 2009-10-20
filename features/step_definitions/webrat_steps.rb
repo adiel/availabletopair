@@ -40,7 +40,7 @@ end
 #
 #   When I fill in the following:
 #     | Account Number | 5002       |
-#     | Expiry date    | 2009-11-01 |
+#     | Expiry date    | 2019-11-01 |
 #     | Note           | Nice guy   |
 #     | Wants Email?   |            |
 #

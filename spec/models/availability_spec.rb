@@ -19,7 +19,7 @@ describe Availability do
 
   describe "when a project has been specified" do
 
-    it "should set the end time of each pair to the earlier of the two end times" do
+    it "should find pairs as matching availabilities for different developers on the same project or anything where times overlap" do
       availability = Availability.new(:start_time => Time.now,:end_time => Time.now)
       availability.developer = "currentDev"
       availability.project = "some proj"

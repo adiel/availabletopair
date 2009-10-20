@@ -9,9 +9,9 @@ Feature: Register new availability
     And I follow "Make yourself available"
     And I fill in "developer" with "aslakhellesoy"
     And I fill in "project" with "Cucumber"
-    And I select "December 25, 2009 10:00" as the "Start time" date and time
-    And I select "December 25, 2009 12:30" as the "End time" date and time
+    And I select "December 25, 2014 10:00" as the "Start time" date and time
+    And I select "December 25, 2014 12:30" as the "End time" date and time
     And I fill in "contact" with "http://github.com/aslakhellesoy"
     And I press "Publish availability"
-    Then I should see /aslakhellesoy is available to pair on Cucumber for 2h 30m from Fri Dec 25, 2009 10:00 \- 12:30/
+    Then I should see /aslakhellesoy is available to pair on Cucumber for 2h 30m from Thu Dec 25, 2014 10:00 \- 12:30/
 

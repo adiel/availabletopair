@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   def index
     @availabilities = Availability.find(:all,
                                         :order => "start_time",
-                                        :conditions => ["developer = :developer",
-                                                        {:developer => params[:id]}])
+                                        :conditions => ["developer = :developer and end_time > :end_time" ,
+                                                        {:developer => params[:id],:end_time => Time.now.getgm}])
     respond_to do |format|
       format.html # index.html.erb
       format.atom  do

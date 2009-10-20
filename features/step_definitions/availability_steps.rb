@@ -2,12 +2,26 @@ Given /^no availabilities in the system$/ do
   Availability.delete_all
 end
 
-Given /^the following availabilities in the system$/ do |table|
+Given /^only the following availabilities in the system$/ do |table|
   Given "no availabilities in the system"
   table.rows.each do |row|
     Availability.create(:developer => row[0], :project => row[1], :start_time => row[2], :end_time => row[3], :contact => row[4])
   end
 end
+
+Given /^the following availabilities in the system with an end time one minute in the past:$/ do |table|
+  table.rows.each do |row|
+    Availability.create(:developer => row[0], :project => row[1], :start_time => Time.now - 120, :end_time => Time.now - 60)
+  end
+end
+
+Given /^the following availabilities in the system with an end time one minute in the future:$/ do |table|
+  puts "#{Time.now + 60}"
+  table.rows.each do |row|
+    Availability.create(:developer => row[0], :project => row[1], :start_time => Time.now - 60, :end_time => (Time.now + 60))
+  end
+end
+
 
 Then /^I should see the following availabilites listed in order$/ do |table|
 
