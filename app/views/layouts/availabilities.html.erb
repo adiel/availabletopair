@@ -10,15 +10,25 @@
 <body>
 
 
-<div id="header">
-  <div id="logo"><a href="/">Available To Pair</a></div>
-  <div id="how"><a href="http://c2.com/cgi/wiki?VirtualPairProgramming">How?</a></div>
-  <div class="clear">&nbsp;</div>
-  <div id="tagline"> - matchmaking for Extreme Programmers</div>
-</div>
-<p style="color: green"><%= flash[:notice] %></p>
- 
-<%= yield %>
+    <div id="header">
+      <div id="logo"><a href="/">Available To Pair</a></div>
+      <div id="how"><a href="http://c2.com/cgi/wiki?VirtualPairProgramming">How?</a></div>
+      <div class="clear">&nbsp;</div>
+      <div id="tagline"> - matchmaking for Extreme Programmers</div>
+    </div>
+    <p style="color: green"><%= flash[:notice] %></p>
 
+<%= yield %>
+<% if ENV['RAILS_ENV'] == "production" %>
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-11197967-1");
+    pageTracker._trackPageview();
+    } catch(err) {}</script>
+<% end %>
 </body>
 </html>
