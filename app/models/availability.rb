@@ -1,5 +1,9 @@
 class Availability < ActiveRecord::Base
 
+  def initialize(availability = nil)
+    super
+  end
+
   def pairs
     @pairs ||= find_pairs
     @pairs

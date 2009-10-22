@@ -2,9 +2,7 @@ class AvailabilitiesController < ApplicationController
   # GET /availabilities
   # GET /availabilities.xml
   def index
-    @availabilities = Availability.find(:all,
-                                        :order => "start_time",
-                                        :conditions => ["end_time > :end_time",{:end_time => Time.now.getgm}])
+    @availabilities = Availability.find(:all, :order => "start_time", :conditions => ["end_time > :end_time",{:end_time => Time.now.getgm}])
 
     respond_to do |format|
       format.html # show.html.erb

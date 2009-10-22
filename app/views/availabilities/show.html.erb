@@ -14,6 +14,7 @@
         <th>What</th>
         <th>When</th>
         <th>Dev time</th>
+        <th>Updated</th>
         <th>Contact</th>
       </tr>
 
@@ -23,6 +24,7 @@
         <td><%= project_link(pair) %></td>
         <td><%=h display_when(pair) %></td>
         <td><%=h display_duration(pair) %></td>
+        <td><%= display_date_time(pair.updated_at) %></td>
         <td><%= contact_link(pair) %></td>
       </tr>
     <% end %>

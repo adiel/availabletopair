@@ -7,6 +7,7 @@
     <th>When</th>
     <th>How long</th>
     <th>Pairs available</th>
+    <th>Updated</th>
     <th colspan="2">&nbsp;</th>
   </tr>
 
@@ -17,6 +18,7 @@
     <td><%= link_to(display_when(availability),availability) %></td>
     <td><%=h display_duration(availability) %></td>
     <td><%= pairs_link(availability) %></td>
+    <td><%= display_date_time(availability.updated_at) %></td>
     <td><%= link_to 'Edit', edit_availability_path(availability) %></td>
     <td><%= link_to 'Delete', availability, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
