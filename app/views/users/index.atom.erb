@@ -7,16 +7,16 @@
     <name>Available To Pair</name>
     <email>noreply@availabletopair.com</email>
   </author>
-  <% unless @availabilities.length == 0 %>
-  <updated><%=h @availabilities[0].updated_at.xmlschema %></updated>
-  <%end%>
+<% unless @availabilities.length == 0 %>
+  <updated><%= pairs_updated(@availabilities[0]).xmlschema %></updated>
+<%end%>
   <% @availabilities.each do |availability| %>
   <entry>
-    <title type="text" >Pairs available for <%=h display_when(availability) %> (updated: <%= display_date_time(availability.updated_at)%>)</title>
+    <title type="text" >Pairs available for <%=h display_when(availability) %> (updated: <%= display_date_time(pairs_updated(availability))%>)</title>
     <link href="<%= http_root %>/availabilities/<%=h availability.id %>" />
-    <published><%=h availability.updated_at.xmlschema %></published>
-    <updated><%=h availability.updated_at.xmlschema %></updated>
-    <id>http://availabletopair.com/<%=h availability.id %>/<%=h availability.updated_at.xmlschema %></id>
+    <published><%= pairs_updated(availability).xmlschema %></published>
+    <updated><%= pairs_updated(availability).xmlschema %></updated>
+    <id>http://availabletopair.com/<%=h availability.id %>/<%=h pairs_updated(availability).xmlschema %></id>
     <content type="html">
         <![CDATA[
         <% if availability.pairs.length == 0 %>
@@ -25,7 +25,7 @@
             The following developers are available to pair on <%= project_link(availability) %> with <%=h availability.developer %> on <a href="<%= http_root %>/availabilities/<%=h availability.id %>"><%=h display_when(availability) %></a>:
             <ul>
               <% availability.pairs.each do |pair| %>
-              <li><%=h display_duration(pair) %> from <%=h display_when_time(pair) %> - <%= h pair.developer %> on <%=h display_project(pair) %></li>
+              <li><%=h display_duration(pair) %> from <%=h display_when_time(pair) %> - <%= h pair.developer %> on <%=h display_project(pair) %> (updated: <%= display_date_time(pair.updated_at)%>)</li>
               <% end %>
             </ul>
         <% end %>

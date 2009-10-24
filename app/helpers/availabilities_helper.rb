@@ -42,5 +42,9 @@ module AvailabilitiesHelper
   def pairs_link(availability)
     availability.pairs.length == 0 ? "No" : link_to("Yes", availability) + "(#{availability.pairs.length})"
   end
+
+  def pairs_updated(availability)
+    availability.pairs.length > 0 ? availability.pairs[0].updated_at : availability.updated_at
+  end
 end
 

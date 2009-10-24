@@ -1,4 +1,5 @@
 Given /^no availabilities in the system$/ do
+  Pair.delete_all
   Availability.delete_all
 end
 
@@ -9,16 +10,15 @@ Given /^only the following availabilities in the system$/ do |table|
   end
 end
 
-Given /^the following availabilities in the system with an end time one minute in the past:$/ do |table|
+Given /^the following availabilities in the system with an end time (\d*) minutes? in the past:$/ do |mins,table|
   table.rows.each do |row|
-    Availability.create(:developer => row[0], :project => row[1], :start_time => Time.now - 120, :end_time => Time.now - 60)
+    a = Availability.create(:developer => row[0], :project => row[1], :contact => 'asdf', :start_time => Time.now.utc - 120, :end_time => Time.now.utc - (60 * mins.to_i))
   end
 end
 
-Given /^the following availabilities in the system with an end time one minute in the future:$/ do |table|
-  puts "#{Time.now + 60}"
+Given /^the following availabilities in the system with an end time (\d*) minutes? in the future:$/ do |mins,table|
   table.rows.each do |row|
-    Availability.create(:developer => row[0], :project => row[1], :start_time => Time.now - 60, :end_time => (Time.now + 60))
+    a = Availability.create(:developer => row[0], :project => row[1], :contact => 'asdf',:start_time => Time.now.utc - 60, :end_time => Time.now.utc + (60 * mins.to_i))
   end
 end
 

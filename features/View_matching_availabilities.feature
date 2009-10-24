@@ -57,8 +57,9 @@ Scenario: One pair is found where both will work on only a specific project
       Then I should see /Bender is available to pair on Futurama for 6h 30m from Fri Dec 13, 2019 22:00 \- 04:30/
       And I should see the following matching pairs
         | developer       | project  | when                           | dev time     | contact                           |
+        | Prof Farnsworth | Futurama | Fri Dec 13, 2019 22:00 - 01:30 | 3h 30m       | http://github.com/prof_farnsworth |
         | Philip.J.Fry    | Futurama | Fri Dec 13, 2019 22:00 - 02:30 | 4h 30m       | http://github.com/philip_j_fry    |
-        | Prof Farnsworth | anything | Fri Dec 13, 2019 22:00 - 01:30 | 3h 30m       | http://github.com/prof_farnsworth |
+
 
   Scenario: Show availability shows link to atom feed
     Given only the following availabilities in the system

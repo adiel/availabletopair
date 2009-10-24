@@ -42,10 +42,10 @@ Feature: List  availabilities
 
   Scenario: Availabilities with end time in the past should not show
     Given no availabilities in the system
-    And the following availabilities in the system with an end time one minute in the past:
+    And the following availabilities in the system with an end time 2 minutes in the past:
       | developer     | project  |
-      | PhilipJFry  | futurama |
-    And the following availabilities in the system with an end time one minute in the future:
+      | PhilipJFry    | futurama |
+    And the following availabilities in the system with an end time 2 minutes in the future:
       | developer     | project         |
       | MalcolmTucker | the thick of it |
     When I am on the list availabilities page

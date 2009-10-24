@@ -1,37 +1,26 @@
 class Availability < ActiveRecord::Base
+  validates_presence_of :developer, :contact, :start_time, :end_time
+  has_many :pairs
+  strip_attributes!
 
-  def initialize(availability = nil)
-    super
+  def pair_synchronizer
+    @pair_synchronizer ||= PairSynchronizer.new
   end
 
-  def pairs
-    @pairs ||= find_pairs
-    @pairs
+  def pair_synchronizer=(pair_synchronizer)
+    @pair_synchronizer = pair_synchronizer
+  end
+
+  def save
+    super()
+    pair_synchronizer.synchronize_pairs(self)
+  end
+
+  def destroy
+    super()
+    pair_synchronizer.synchronize_pairs(self)
   end
   
-  def find_pairs
-    conditions  = "developer != :developer and start_time < :end_time and end_time > :start_time"
-    condition_values = {:developer => developer,
-                        :start_time => start_time,
-                        :end_time => end_time}
-    if project.to_s != ""
-      conditions += " and (project = :project or project = '')"
-      condition_values[:project] = project
-    end
-    
-    pair_conditions = [conditions, condition_values]
-    pairs = Availability.find(:all, :conditions => pair_conditions)
-    set_intersecting_start_and_end_times!(pairs)
-  end
-
-  def set_intersecting_start_and_end_times!(pairs)
-    pairs.each do |pair|
-      pair.start_time = pair.start_time > start_time ? pair.start_time : start_time
-      pair.end_time = pair.end_time < end_time ? pair.end_time : end_time
-    end
-    pairs
-  end
-
   def duration_sec
     end_time - start_time
   end

@@ -44,10 +44,10 @@ Feature: List user availabilities
 
   Scenario: Availabilities with end time in the past should not show
     Given no availabilities in the system
-    And the following availabilities in the system with an end time one minute in the past:
+    And the following availabilities in the system with an end time 2 minutes in the past:
       | developer     | project  |
       | PhilipJFry  | futurama |
-    And the following availabilities in the system with an end time one minute in the future:
+    And the following availabilities in the system with an end time 2 minutes in the future:
       | developer     | project         |
       | PhilipJFry | the thick of it |
     When I visit "/PhilipJFry"                                  

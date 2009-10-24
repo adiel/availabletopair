@@ -2,8 +2,9 @@ class AvailabilitiesController < ApplicationController
   # GET /availabilities
   # GET /availabilities.xml
   def index
-    @availabilities = Availability.find(:all, :order => "start_time", :conditions => ["end_time > :end_time",{:end_time => Time.now.getgm}])
-
+    @availabilities = Availability.find(:all, :order => "start_time",
+                                              :conditions => ["end_time > :end_time",
+                                                             {:end_time => Time.now.utc}])
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @availabilities }
@@ -14,6 +15,7 @@ class AvailabilitiesController < ApplicationController
   # GET /availabilities/1.xml
   def show
     @availability = Availability.find(params[:id])
+    @availability.pairs.sort! {|p1,p2| p1.updated_at <=> p2.updated_at}.reverse!
 
     respond_to do |format|
       format.html # show.html.erb

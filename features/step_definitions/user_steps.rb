@@ -114,6 +114,7 @@ Then /^I reduce the end time of the availability at position (\d*) of the feed b
   id = AtomHelper.entry_id(response.body,entry_position)
   availabilty = Availability.find(id)
   availabilty.end_time -= (extend_by.to_i * 60)
+  sleep 2 #make sure the updated_at is changed
   availabilty.save
 end
 
@@ -121,6 +122,7 @@ Then /^I extend the end time of the availability at position (\d*) of the feed b
   id = AtomHelper.entry_id(response.body,entry_position)
   availabilty = Availability.find(id)
   availabilty.end_time += (extend_by.to_i * 60)
+  sleep 2 #make sure the updated_at is changed
   availabilty.save
 end
 
@@ -128,6 +130,7 @@ Then /^I reduce the start time of the availability at position (\d*) of the feed
   id = AtomHelper.entry_id(response.body,entry_position)
   availabilty = Availability.find(id)
   availabilty.start_time -= (extend_by.to_i * 60)
+  sleep 2 #make sure the updated_at is changed
   availabilty.save
 end
 
@@ -135,5 +138,6 @@ Then /^I extend the start time of the availability at position (\d*) of the feed
   id = AtomHelper.entry_id(response.body,entry_position)
   availabilty = Availability.find(id)
   availabilty.start_time += (extend_by.to_i * 60)
+  sleep 2 #make sure the updated_at is changed
   availabilty.save
 end
