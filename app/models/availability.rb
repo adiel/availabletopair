@@ -1,5 +1,5 @@
 class Availability < ActiveRecord::Base
-  validates_presence_of :developer, :contact, :start_time, :end_time
+  validates_presence_of :developer, :start_time, :end_time
   has_many :pairs
   strip_attributes!
 
