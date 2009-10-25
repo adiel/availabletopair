@@ -40,7 +40,7 @@ end
 Then /^I should see the following matching pairs$/ do |table|
 
   table.rows.each_with_index do |row,index|
-    row_selector = ".pair tr:nth-child(#{index + 2})"
+    row_selector = ".pairs tr:nth-child(#{index + 2})"
     Then "I should see \"#{row[0]}\" within \"#{row_selector} td:nth-child(1)\""
     Then "I should see \"#{row[1]}\" within \"#{row_selector} td:nth-child(2)\""
     Then "I should see \"#{row[2]}\" within \"#{row_selector} td:nth-child(3)\""
