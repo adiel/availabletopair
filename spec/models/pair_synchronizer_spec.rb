@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe PairSynchronizer do
 
-  describe "when syncing pairs" do
+  describe "when syncing pairing" do
 
     describe "when there is a single new availability" do
 
@@ -20,7 +20,7 @@ describe PairSynchronizer do
 
       end
 
-      it "should create two pairs for the new match, one in each direction" do
+      it "should create two pairing for the new match, one in each direction" do
 
         pair_matcher = mock(:pair_matcher)
         pair_repository = mock(:pair_matcher)
@@ -111,7 +111,7 @@ describe PairSynchronizer do
 
       end
 
-      it "should destroy the missing pairs" do
+      it "should destroy the missing pairing" do
 
         pair_matcher = mock(:pair_matcher)
         pair_repository = mock(:pair_matcher)

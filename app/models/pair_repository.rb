@@ -1,5 +1,7 @@
 class PairRepository
 
+  private
+
   def latest_start_time (master_availability, pair_availability)
     pair_availability.start_time > master_availability.start_time ? pair_availability.start_time : master_availability.start_time
   end
@@ -7,6 +9,8 @@ class PairRepository
   def earliest_end_time (master_availability, pair_availability)
     pair_availability.end_time < master_availability.end_time ? pair_availability.end_time : master_availability.end_time
   end
+
+  public
 
   def create(master_availability,pair_availability)
     pair = Pair.new
