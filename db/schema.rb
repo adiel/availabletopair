@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20091023233000) do
     t.string  "salt",       :null => false
   end
 
-  create_table "pairing", :force => true do |t|
+  create_table "pair", :force => true do |t|
     t.integer  "availability_id"
     t.integer  "available_pair_id"
     t.datetime "created_at"
@@ -51,6 +51,6 @@ ActiveRecord::Schema.define(:version => 20091023233000) do
     t.string   "contact"
   end
 
-  add_index "pairing", ["availability_id"], :name => "pairs_availability_id_index"
+  add_index "pair", ["availability_id"], :name => "pairs_availability_id_index"
 
 end

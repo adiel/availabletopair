@@ -28,7 +28,7 @@ describe Availability do
 
   describe "when saving"  do
 
-    it "should sync pairing" do
+    it "should sync pair" do
       availability = Availability.new
 
       pair_synchronizer = mock(:pair_synchronizer)
@@ -43,7 +43,7 @@ describe Availability do
 
   describe "when destroying"  do
 
-    it "should sync pairing" do
+    it "should sync pair" do
 
       availability = Availability.new
 
