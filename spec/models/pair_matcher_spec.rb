@@ -25,7 +25,7 @@ describe PairMatcher do
       availability.project = "some proj"
       expected_pairs = [Availability.new(:start_time => Time.now,:end_time => Time.now)]
       Availability.stub!(:find).with(:all,
-                                     :conditions => ["developer != :developer and start_time < :end_time and end_time > :start_time and (project = :project or project = '')",
+                                     :conditions => ["developer != :developer and start_time < :end_time and end_time > :start_time and (project = :project or project is null)",
                                                     {:developer => availability.developer,
                                                      :start_time => availability.start_time,
                                                      :end_time => availability.end_time,
