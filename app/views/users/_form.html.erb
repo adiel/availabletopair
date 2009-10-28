@@ -1,9 +1,15 @@
 <% form_for @user do |f| %>
   <%= f.error_messages %>
+  <p>
+    <%= f.label :openid_identifier, '<a href="http://openid.net/what/">OpenID</a> URL' %><br />
+    <%= f.text_field :openid_identifier %>
+  </p>
+  <% if @user.id.nil? %>
   <p class="username">
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </p>
+  <% end %>
   <p class="email">
     <%= f.label :email %> (private)<br />
     <%= f.text_field :email %>
@@ -12,11 +18,7 @@
     <%= f.label :contact %> (public) - Could be your page on SourceForge, GitHub, bitbucket etc, or an email address if you prefer.<br />
     <%= f.text_field :contact%>
   </p>
-  <p>
-    <%= f.label :openid_identifier, '<a href="http://openid.net/what/">OpenID</a> URL' %><br />
-    <%= f.text_field :openid_identifier %>
-  </p>
-  <p class="submit"><%= f.submit "Save" %></p>
+  <p class="submit"><%= f.submit(@user.id.nil? ? "Register" : "Update") %></p>
 <% end %>
 <div class="nav">
   <%= link_to 'Cancel', availabilities_path %>

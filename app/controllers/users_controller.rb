@@ -35,6 +35,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.openid_identifier = params[:openid_identifier]    
   end
 
   def create
@@ -55,7 +56,9 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
+    username = current_user.username
     @user.attributes = params[:user]
+    @user.username = username     
     @user.save do |result|
       if result
         flash[:notice] = "Successfully updated profile."

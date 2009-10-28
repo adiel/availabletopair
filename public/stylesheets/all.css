@@ -121,3 +121,6 @@ form label {
     font-size:1.4em;
 }
 
+.errorExplanation {
+    color:#cc0000;
+}

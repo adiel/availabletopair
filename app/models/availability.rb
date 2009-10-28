@@ -3,7 +3,7 @@ class Availability < ActiveRecord::Base
   belongs_to :user
   has_many :pairs
   strip_attributes!
-  
+
   def save(pair_synchronizer = PairSynchronizer.new)
     super()
     pair_synchronizer.synchronize_pairs(self)
