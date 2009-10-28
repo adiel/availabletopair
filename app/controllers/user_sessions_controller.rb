@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
           puts "Error: #{attr.inspect}: #{message}"
           if (attr == 'openid_identifier' and message == 'did not match any users in our database, have you set up your account to use OpenID?')
             #@user_session.errors.clear
-            redirect_to new_user_url + "?openid_identifier=" + params["openid1_claimed_id"]
+            redirect_to new_user_url + "?openid_identifier=" + params["openid.identity"]
             return
           end
         end
