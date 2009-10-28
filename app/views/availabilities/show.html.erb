@@ -1,40 +1,40 @@
-<h1>
-    <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> is available to pair on <%= project_link(@availability) %> for <span class="duration"><%= display_duration(@availability) %></span> from <span class="time"><%=h display_when(@availability) %></span>
+<p>
+    <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> is available to pair on <span class="project"><%= project_link(@availability) %></span> on <span class="time"><%=h display_when(@availability) %></span> (<span class="duration"><%= display_duration(@availability) %></span>)
     <% if mine?(@availability) %>
        | <%= link_to 'Edit', edit_availability_path(@availability) %>
     <% end %>
-</h1>
+</p>
 
-    <h2>Pairs available:</h2>
+<h2>Pairs available:</h2>
 
-    <table class="pairs">
-      <tr>
-        <th>Who</th>
-        <th>What</th>
-        <th>When</th>
-        <th>Dev time</th>
-        <th>Updated</th>
-        <th>Contact</th>
-      </tr>
+<table class="pairs">
+  <tr>
+    <th>Who</th>
+    <th>What</th>
+    <th>When</th>
+    <th>Dev time</th>
+    <th>Updated</th>
+    <th>Contact</th>
+  </tr>
 
-    <% @availability.pairs.each do |pair| %>
-      <tr>
-        <td><%= link_to(h(pair.user.username),"/" + h(pair.user.username)) %></td>
-        <td><%= project_link(pair) %></td>
-        <td><%=h display_when(pair) %></td>
-        <td><%=h display_duration(pair) %></td>
-        <td><%= display_date_time(pair.updated_at) %></td>
-        <td><%= contact_link(pair.user) %></td>
-      </tr>
-    <% end %>
-    <% if @availability.pairs.length == 0 %>
-      <tr>
-        <td colspan="6">
-          No developers are available to pair on <%= project_link(@availability) %> with <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> over this period.
-        </td>
-      </tr>
-    <% end %>
-    </table>
+<% @availability.pairs.each do |pair| %>
+  <tr>
+    <td><%= link_to(h(pair.user.username),"/" + h(pair.user.username)) %></td>
+    <td><%= project_link(pair) %></td>
+    <td><%=h display_when(pair) %></td>
+    <td><%=h display_duration(pair) %></td>
+    <td><%= display_date_time(pair.updated_at) %></td>
+    <td><%= contact_link(pair.user) %></td>
+  </tr>
+<% end %>
+<% if @availability.pairs.length == 0 %>
+  <tr>
+    <td colspan="6">
+      No developers are available to pair on <%= project_link(@availability) %> with <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> over this period.
+    </td>
+  </tr>
+<% end %>
+</table>
 <p>Subscribe to updates of <%=h @availability.user.username %>'s available pairs (<a href="/<%=h @availability.user.username%>.atom">atom</a>)</p>
 <div class="nav">
   <%= link_to 'Home', availabilities_path %> | <%= link_to 'Make yourself available', new_availability_path %>

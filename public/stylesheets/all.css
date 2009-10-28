@@ -56,11 +56,15 @@ h2 {
 }
 
 input,select {
-    font-size:1.5em;
+    font-size:1.3em;
     padding:0.2em;
     border:1px solid #999;
     margin:0.2em;
 }
+select {
+    font-size:1.2em;
+}
+
 input {
    width:35em;
 }
@@ -123,4 +127,8 @@ form label {
 
 .errorExplanation {
     color:#cc0000;
+}
+
+.duration, .time, .project {
+    font-weight:bold;
 }
