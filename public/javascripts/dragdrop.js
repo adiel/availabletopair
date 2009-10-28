@@ -790,14 +790,14 @@ var Sortable = {
       if(children) {
         var offset = Element.offsetSize(dropon, droponOptions.overlap) * (1.0 - overlap);
 
-        for (index = 0; index < children.length; index += 1) {
-          if (offset - Element.offsetSize (children[index], droponOptions.overlap) >= 0) {
-            offset -= Element.offsetSize (children[index], droponOptions.overlap);
-          } else if (offset - (Element.offsetSize (children[index], droponOptions.overlap) / 2) >= 0) {
-            child = index + 1 < children.length ? children[index + 1] : null;
+        for (show = 0; show < children.length; show += 1) {
+          if (offset - Element.offsetSize (children[show], droponOptions.overlap) >= 0) {
+            offset -= Element.offsetSize (children[show], droponOptions.overlap);
+          } else if (offset - (Element.offsetSize (children[show], droponOptions.overlap) / 2) >= 0) {
+            child = show + 1 < children.length ? children[show + 1] : null;
             break;
           } else {
-            child = children[index];
+            child = children[show];
             break;
           }
         }
@@ -890,9 +890,9 @@ var Sortable = {
   _constructIndex: function(node) {
     var index = '';
     do {
-      if (node.id) index = '[' + node.position + ']' + index;
+      if (node.id) show = '[' + node.position + ']' + show;
     } while ((node = node.parent) != null);
-    return index;
+    return show;
   },
 
   sequence: function(element) {

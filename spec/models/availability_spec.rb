@@ -28,31 +28,26 @@ describe Availability do
 
   describe "when saving"  do
 
-    it "should sync pair" do
+    it "should sync pairs" do
+      
       availability = Availability.new
-
       pair_synchronizer = mock(:pair_synchronizer)
       pair_synchronizer.should_receive(:synchronize_pairs).with(availability)
 
-      availability.pair_synchronizer = pair_synchronizer
-
-      availability.save
+      availability.save(pair_synchronizer)
     end
 
   end
 
   describe "when destroying"  do
 
-    it "should sync pair" do
+    it "should destroy pairs" do
 
       availability = Availability.new
-
       pair_synchronizer = mock(:pair_synchronizer)
-      pair_synchronizer.should_receive(:synchronize_pairs).with(availability)
+      pair_synchronizer.should_receive(:destroy_pairs).with(availability)
 
-      availability.pair_synchronizer = pair_synchronizer
-      
-      availability.destroy
+      availability.destroy(pair_synchronizer)
     end
 
   end

@@ -12,7 +12,7 @@ table
     font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
     font-size:0.9em;
     border-collapse: collapse;
-    width:95%
+    width:95%;
 }
 
 table th {
@@ -35,13 +35,18 @@ p {
 }
 
 .availabilities, .pairs {
-    margin:0.5em 1em;
+    margin:0.2em 1.0em 1em;
 }
 
 h1 {
-    font-size:1.3em;
+    font-size:1.4em;
     margin:0.8em;
 }
+h2 {
+  font-size:1.2em;
+  margin:1.2em 0.8em 0.3em;
+}
+
 
 #header {
     font-size:2.5em;
@@ -51,9 +56,26 @@ h1 {
 }
 
 input,select {
-    font-size:1.2em;
+    font-size:1.5em;
     padding:0.2em;
+    border:1px solid #999;
+    margin:0.2em;
 }
+input {
+   width:35em;
+}
+.submit input {
+   width:auto;
+}
+
+.username input, .email input{
+    width:15em;
+}
+
+#availability_project {
+width:22.4em;
+}
+
 
 #logo {float:left;}
 #how {float:right;}
@@ -66,10 +88,36 @@ input,select {
     text-decoration:none;
 }
 .nav{
-    margin:1em;
+    margin:1.5em;
 }
 #tagline {
     font-style:italic;
     font-size:0.4em;
     margin-left:1em;
+    float:left;
 }
+input#user_openid_identifier,
+input#user_session_openid_identifier {
+  background: url(http://openid.net/images/login-bg.gif) no-repeat;
+  background-color: #fff;
+  background-position: 2px 50%;
+  color: #000;
+  padding-left: 20px;
+  width:34.2em;
+}
+.fieldWithErrors {
+    display:inline;
+    margin:1em; 
+}
+
+#user_nav {
+    float:right;
+    text-align:right;
+    margin:.5em 0 0;
+    font-size:0.4em;
+}
+form label {
+    margin:0.2em;
+    font-size:1.4em;
+}
+

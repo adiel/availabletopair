@@ -117,16 +117,34 @@ describe PairSynchronizer do
         pair_repository = mock(:pair_matcher)
         pair_matcher.stub!(:find_pairs).with(availability).and_return(matching_availabilities)
 
-        existing_pairs[2].should_receive(:destroy)
-        existing_pairs[3].should_receive(:destroy)
-        existing_pairs[4].should_receive(:destroy)
-        existing_pairs[5].should_receive(:destroy)
+        existing_pairs.each do |pair|
+          pair.should_receive(:destroy)
+        end
 
         pair_repository.stub!(:create)
         pair_repository.stub!(:update)
 
-        PairSynchronizer.new(pair_matcher,pair_repository).synchronize_pairs(availability)
+        PairSynchronizer.new(pair_matcher,pair_repository).destroy_pairs(availability)
 
+      end
+
+      describe "and destroying pairs" do
+        it "should destroy all pairs" do
+          pair_matcher = mock(:pair_matcher)
+          pair_repository = mock(:pair_matcher)
+          pair_matcher.stub!(:find_pairs).with(availability).and_return(matching_availabilities)
+
+          existing_pairs[2].should_receive(:destroy)
+          existing_pairs[3].should_receive(:destroy)
+          existing_pairs[4].should_receive(:destroy)
+          existing_pairs[5].should_receive(:destroy)
+
+          pair_repository.stub!(:create)
+          pair_repository.stub!(:update)
+
+          PairSynchronizer.new(pair_matcher,pair_repository).synchronize_pairs(availability)
+
+        end
       end
     end
   end

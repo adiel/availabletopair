@@ -1,6 +1,15 @@
 module AvailabilitiesHelper
+  
+  def link_to_http(text)
+    http?(text) ? link_to(h(text)) : h(text)
+  end
+
+  def link_to_email_or_http(text)
+    email?(text) ? mail_to(h(text)) : link_to_http(text)
+  end
+
   def contact_link(availability)
-    email?(availability.contact) ? mail_to(h(availability.contact)) : link_to(h(availability.contact),h(availability.contact))
+      link_to_email_or_http( availability.contact)
   end
 
   def project_link(availability)

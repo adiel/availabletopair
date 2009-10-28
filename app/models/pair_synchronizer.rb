@@ -53,6 +53,11 @@ class PairSynchronizer
 
   public
 
+  def destroy_pairs(availability)
+    existing_pairs = find_existing_pairs(availability)
+    destroy_obsolete_pairs(existing_pairs, [])
+  end
+
   def synchronize_pairs(availability)
     existing_pairs = find_existing_pairs(availability)
     new_matching_availabilities = @pair_matcher.find_pairs(availability)
@@ -60,6 +65,8 @@ class PairSynchronizer
     save_or_update_existing_pairs(availability, existing_pairs, new_matching_availabilities)
     destroy_obsolete_pairs(existing_pairs, new_matching_availabilities)
   end
+
+
 
 end
 

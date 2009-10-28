@@ -1,8 +1,8 @@
 class PairMatcher
     
   def find_pairs(availability)
-    conditions  = "developer != :developer and start_time < :end_time and end_time > :start_time"
-    condition_values = {:developer => availability.developer,
+    conditions  = "user_id != :user_id and start_time < :end_time and end_time > :start_time"
+    condition_values = {:user_id => availability.user_id,
                         :start_time => availability.start_time,
                         :end_time => availability.end_time}
 

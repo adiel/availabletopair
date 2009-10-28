@@ -1,8 +1,8 @@
 <feed  xmlns="http://www.w3.org/2005/Atom" >
-  <title><%= user %> is Available To Pair</title>
-  <id><%= http_root %>/<%= user%></id>
-  <link href="<%= http_root %>/<%= user%>.atom" rel="self" />
-  <link href="<%= http_root %>/<%= user%>" />
+  <title><%=h @user.username %> is Available To Pair</title>
+  <id><%= http_root %>/<%= h @user.username%></id>
+  <link href="<%= http_root %>/<%= h @user.username%>.atom" rel="self" />
+  <link href="<%= http_root %>/<%= h @user.username%>" />
   <author>
     <name>Available To Pair</name>
     <email>noreply@availabletopair.com</email>
@@ -20,12 +20,12 @@
     <content type="html">
         <![CDATA[
         <% if availability.pairs.length == 0 %>
-            No developers are available to pair on <%= project_link(availability) %> with <%=h availability.developer %> on <a href="<%= http_root %>/availabilities/<%=h availability.id %>"><%=h display_when(availability) %></a>.
+            No developers are available to pair on <%= project_link(availability) %> with <%=h availability.user.username%> on <a href="<%= http_root %>/availabilities/<%=h availability.id %>"><%=h display_when(availability) %></a>.
         <% else %>
-            The following developers are available to pair on <%= project_link(availability) %> with <%=h availability.developer %> on <a href="<%= http_root %>/availabilities/<%=h availability.id %>"><%=h display_when(availability) %></a>:
+            The following developers are available to pair on <%= project_link(availability) %> with <%=h availability.user.username %> on <a href="<%= http_root %>/availabilities/<%=h availability.id %>"><%=h display_when(availability) %></a>:
             <ul>
               <% availability.pairs.each do |pair| %>
-              <li><%=h display_duration(pair) %> from <%=h display_when_time(pair) %> - <%= h pair.developer %> on <%=h display_project(pair) %> (updated: <%= display_date_time(pair.updated_at)%>)</li>
+              <li><%=h display_duration(pair) %> from <%=h display_when_time(pair) %> - <%= h pair.user.username %> on <%=h display_project(pair) %> (updated: <%= display_date_time(pair.updated_at)%>)</li>
               <% end %>
             </ul>
         <% end %>

@@ -26,6 +26,7 @@ Feature: List user availabilities
     Then My path should be "/LarryDavid"
 
   Scenario: User page shows link to atom feed
+    Given a user "MarkKerrigan"
     When I visit "/MarkKerrigan"
     Then I should see "Subscribe to updates of MarkKerrigan's available pairs (atom)"
     When I follow "atom"
@@ -33,9 +34,9 @@ Feature: List user availabilities
 
   Scenario: Developer name on show page links to user page
     Given only the following availabilities in the system
-    | developer     | project         | start time                  | end time                | contact                        |
-    | Bender        |                 | December 13, 2019 22:00     | December 14, 2019 04:30 | http://github.com/bender       |
-    | Philip.J.Fry  |                 | December 13, 2019 21:30     | December 14, 2019 02:30 | http://github.com/philip_j_fry |
+      | developer     | project         | start time                  | end time                | contact                        |
+      | Bender        |                 | December 13, 2019 22:00     | December 14, 2019 04:30 | http://github.com/bender       |
+      | Philip.J.Fry  |                 | December 13, 2019 21:30     | December 14, 2019 02:30 | http://github.com/philip_j_fry |
     When I am on the list availabilities page
     And I follow "Fri Dec 13, 2019 21:30 - 02:30"
     And I follow "Bender"

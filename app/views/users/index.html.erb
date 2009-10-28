@@ -1,4 +1,4 @@
-<h1>All <%= user %>'s availability</h1>
+<h1>All <%= @user.username %>'s availability</h1>
 
 <table class="availabilities">
   <tr>
@@ -13,18 +13,18 @@
 
 <% @availabilities.each do |availability| %>
   <tr>
-    <td><%=h availability.developer %></td>
+    <td><%=h availability.user.username %></td>
     <td><%= project_link(availability) %></td>
     <td><%= link_to(display_when(availability),availability) %></td>
     <td><%=h display_duration(availability) %></td>
     <td><%= pairs_link(availability) %></td>
     <td><%= display_date_time(availability.updated_at) %></td>
-    <td><%= link_to 'Edit', edit_availability_path(availability) %></td>
-    <td><%= link_to 'Delete', availability, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= mine?(availability) ? link_to('Edit', edit_availability_path(availability)) : "" %></td>
+    <td><%= mine?(availability) ? link_to('Delete', availability, :confirm => 'Are you sure?', :method => :delete) : "" %></td>
   </tr>
 <% end %>
 </table>
-<p>Subscribe to updates of <%=user %>'s available pairs (<a href="/<%=user%>.atom">atom</a>)</p>
+<p>Subscribe to updates of <%=@user.username %>'s available pairs (<a href="/<%=@user.username%>.atom">atom</a>)</p>
 <div class="nav">
     <%= link_to 'Make yourself available', new_availability_path %>
 </div>

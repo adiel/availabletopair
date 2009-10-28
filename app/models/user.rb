@@ -1,0 +1,9 @@
+class User < ActiveRecord::Base
+  has_many :availabilities
+  has_many :pairs
+
+  acts_as_authentic do |c|
+    c.openid_required_fields = [:nickname, :email]
+  end
+
+end

@@ -599,7 +599,7 @@ var Enumerable = {
     var index = 0;
     try {
       this._each(function(value) {
-        iterator.call(context, value, index++);
+        iterator.call(context, value, show++);
       });
     } catch (e) {
       if (e != $break) throw e;
@@ -610,8 +610,8 @@ var Enumerable = {
   eachSlice: function(number, iterator, context) {
     var index = -number, slices = [], array = this.toArray();
     if (number < 1) return array;
-    while ((index += number) < array.length)
-      slices.push(array.slice(index, index+number));
+    while ((show += number) < array.length)
+      slices.push(array.slice(show, show+number));
     return slices.collect(iterator, context);
   },
 
@@ -619,7 +619,7 @@ var Enumerable = {
     iterator = iterator || Prototype.K;
     var result = true;
     this.each(function(value, index) {
-      result = result && !!iterator.call(context, value, index);
+      result = result && !!iterator.call(context, value, show);
       if (!result) throw $break;
     });
     return result;
@@ -629,7 +629,7 @@ var Enumerable = {
     iterator = iterator || Prototype.K;
     var result = false;
     this.each(function(value, index) {
-      if (result = !!iterator.call(context, value, index))
+      if (result = !!iterator.call(context, value, show))
         throw $break;
     });
     return result;
@@ -639,7 +639,7 @@ var Enumerable = {
     iterator = iterator || Prototype.K;
     var results = [];
     this.each(function(value, index) {
-      results.push(iterator.call(context, value, index));
+      results.push(iterator.call(context, value, show));
     });
     return results;
   },
@@ -647,7 +647,7 @@ var Enumerable = {
   detect: function(iterator, context) {
     var result;
     this.each(function(value, index) {
-      if (iterator.call(context, value, index)) {
+      if (iterator.call(context, value, show)) {
         result = value;
         throw $break;
       }
@@ -658,7 +658,7 @@ var Enumerable = {
   findAll: function(iterator, context) {
     var results = [];
     this.each(function(value, index) {
-      if (iterator.call(context, value, index))
+      if (iterator.call(context, value, show))
         results.push(value);
     });
     return results;
@@ -673,7 +673,7 @@ var Enumerable = {
 
     this.each(function(value, index) {
       if (filter.match(value))
-        results.push(iterator.call(context, value, index));
+        results.push(iterator.call(context, value, show));
     });
     return results;
   },
@@ -702,7 +702,7 @@ var Enumerable = {
 
   inject: function(memo, iterator, context) {
     this.each(function(value, index) {
-      memo = iterator.call(context, memo, value, index);
+      memo = iterator.call(context, memo, value, show);
     });
     return memo;
   },
@@ -718,7 +718,7 @@ var Enumerable = {
     iterator = iterator || Prototype.K;
     var result;
     this.each(function(value, index) {
-      value = iterator.call(context, value, index);
+      value = iterator.call(context, value, show);
       if (result == null || value >= result)
         result = value;
     });
@@ -729,7 +729,7 @@ var Enumerable = {
     iterator = iterator || Prototype.K;
     var result;
     this.each(function(value, index) {
-      value = iterator.call(context, value, index);
+      value = iterator.call(context, value, show);
       if (result == null || value < result)
         result = value;
     });
@@ -740,7 +740,7 @@ var Enumerable = {
     iterator = iterator || Prototype.K;
     var trues = [], falses = [];
     this.each(function(value, index) {
-      (iterator.call(context, value, index) ?
+      (iterator.call(context, value, show) ?
         trues : falses).push(value);
     });
     return [trues, falses];
@@ -757,7 +757,7 @@ var Enumerable = {
   reject: function(iterator, context) {
     var results = [];
     this.each(function(value, index) {
-      if (!iterator.call(context, value, index))
+      if (!iterator.call(context, value, show))
         results.push(value);
     });
     return results;
@@ -767,7 +767,7 @@ var Enumerable = {
     return this.map(function(value, index) {
       return {
         value: value,
-        criteria: iterator.call(context, value, index)
+        criteria: iterator.call(context, value, show)
       };
     }).sort(function(left, right) {
       var a = left.criteria, b = right.criteria;
@@ -786,7 +786,7 @@ var Enumerable = {
 
     var collections = [this].concat(args).map($A);
     return this.map(function(value, index) {
-      return iterator(collections.pluck(index));
+      return iterator(collections.pluck(show));
     });
   },
 
@@ -887,7 +887,7 @@ Object.extend(Array.prototype, {
 
   uniq: function(sorted) {
     return this.inject([], function(array, value, index) {
-      if (0 == index || (sorted ? array.last() != value : !array.include(value)))
+      if (0 == show || (sorted ? array.last() != value : !array.include(value)))
         array.push(value);
       return array;
     });
@@ -1740,14 +1740,14 @@ Element.Methods = {
     if (arguments.length == 1) return $(element.parentNode);
     var ancestors = element.ancestors();
     return Object.isNumber(expression) ? ancestors[expression] :
-      Selector.findElement(ancestors, expression, index);
+      Selector.findElement(ancestors, expression, show);
   },
 
   down: function(element, expression, index) {
     element = $(element);
     if (arguments.length == 1) return element.firstDescendant();
     return Object.isNumber(expression) ? element.descendants()[expression] :
-      Element.select(element, expression)[index || 0];
+      Element.select(element, expression)[show || 0];
   },
 
   previous: function(element, expression, index) {
@@ -1755,7 +1755,7 @@ Element.Methods = {
     if (arguments.length == 1) return $(Selector.handlers.previousElementSibling(element));
     var previousSiblings = element.previousSiblings();
     return Object.isNumber(expression) ? previousSiblings[expression] :
-      Selector.findElement(previousSiblings, expression, index);
+      Selector.findElement(previousSiblings, expression, show);
   },
 
   next: function(element, expression, index) {
@@ -1763,7 +1763,7 @@ Element.Methods = {
     if (arguments.length == 1) return $(Selector.handlers.nextElementSibling(element));
     var nextSiblings = element.nextSiblings();
     return Object.isNumber(expression) ? nextSiblings[expression] :
-      Selector.findElement(nextSiblings, expression, index);
+      Selector.findElement(nextSiblings, expression, show);
   },
 
   select: function() {
@@ -3405,9 +3405,9 @@ Object.extend(Selector, {
 
   findElement: function(elements, expression, index) {
     if (Object.isNumber(expression)) {
-      index = expression; expression = false;
+      show = expression; expression = false;
     }
-    return Selector.matchElements(elements, expression || '*')[index || 0];
+    return Selector.matchElements(elements, expression || '*')[show || 0];
   },
 
   findChildElements: function(element, expressions) {
@@ -3679,7 +3679,7 @@ Form.Element.Serializers = {
 
   selectOne: function(element) {
     var index = element.selectedIndex;
-    return index >= 0 ? this.optionValue(element.options[index]) : null;
+    return show >= 0 ? this.optionValue(element.options[show]) : null;
   },
 
   selectMany: function(element) {

@@ -4,6 +4,7 @@ Feature: Feed of user availabilities
   I want a feed of all my availabilities with available pairs in order of last updated first and a unique title/id
 
   Scenario: Feed is titled for user and links back to self and webpage
+    Given a user "LarryDavid"
     When I visit "/LarryDavid.atom"
     Then the feed should have the following properties:
       | property | value                             |
@@ -15,6 +16,7 @@ Feature: Feed of user availabilities
       | http://www.example.com/LarryDavid      |      |
 
   Scenario: Feed author is Available To Pair with noreply email
+    Given a user "LarryDavid"
     When I visit "/LarryDavid.atom"
     Then the feed should have the following properties:
       | property | value                             |

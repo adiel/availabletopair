@@ -3,22 +3,46 @@ Given /^no availabilities in the system$/ do
   Availability.delete_all
 end
 
+def ensure_user(username,contact = '')
+  user = Test::User.find(:all, :conditions => ["username = :username", {:username => username}])[0]
+  if user.nil?
+    user = Test::User.new(:username => username,
+                          :openid_identifier => 'a',
+                          :persistence_token => 's',
+                          :single_access_token => 'd',
+                          :perishable_token => 'f')
+  end
+  user.contact = contact
+  user.save!
+  user
+end
+
+class Test::User < ActiveRecord::Base
+    # This is here to bypass authlogic and go direct to ActiveRecord
+  has_many :availabilities
+  has_many :pairs
+end
+
 Given /^only the following availabilities in the system$/ do |table|
   Given "no availabilities in the system"
   table.rows.each do |row|
-    Availability.create(:developer => row[0], :project => row[1], :start_time => row[2], :end_time => row[3], :contact => row[4])
+    user = ensure_user(row[0],row[4])
+    Availability.create(:user_id => user.id, :project => row[1], :start_time => row[2], :end_time => row[3])
   end
 end
 
 Given /^the following availabilities in the system with an end time (\d*) minutes? in the past:$/ do |mins,table|
   table.rows.each do |row|
-    a = Availability.create(:developer => row[0], :project => row[1], :contact => 'asdf', :start_time => Time.now.utc - 120, :end_time => Time.now.utc - (60 * mins.to_i))
+    user = ensure_user(row[0],'asdf')
+    Availability.create(:user_id => user.id, :project => row[1], :start_time => Time.now.utc - 120, :end_time => Time.now.utc - (60 * mins.to_i))
+
   end
 end
 
 Given /^the following availabilities in the system with an end time (\d*) minutes? in the future:$/ do |mins,table|
   table.rows.each do |row|
-    a = Availability.create(:developer => row[0], :project => row[1], :contact => 'asdf',:start_time => Time.now.utc - 60, :end_time => Time.now.utc + (60 * mins.to_i))
+    user = ensure_user(row[0],'asdf')
+    Availability.create(:user_id => user.id, :project => row[1],:start_time => Time.now.utc - 60, :end_time => Time.now.utc + (60 * mins.to_i))
   end
 end
 

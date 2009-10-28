@@ -17,21 +17,12 @@ describe PairRepository do
     end
 
     it "should set developer as pair developer" do
-      master_availability.developer = "masterdev"
-      pair_availability.developer = "pairdev"
+      master_availability.user_id = 54321
+      pair_availability.user_id = 98765
 
       pair = PairRepository.new.create(master_availability,pair_availability)
 
-      pair.developer.should eql pair_availability.developer
-    end
-
-    it "should set contact as pair contact" do
-      master_availability.contact = "master@xp.com"
-      pair_availability.contact = "pair@xp.com"
-
-      pair = PairRepository.new.create(master_availability,pair_availability)
-
-      pair.contact.should eql pair_availability.contact
+      pair.user_id.should eql pair_availability.user_id
     end
 
     describe "and the start time of the pair is later than that of the master" do

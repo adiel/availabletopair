@@ -26,6 +26,7 @@ class AvailabilitiesController < ApplicationController
   # GET /availabilities/new
   # GET /availabilities/new.xml
   def new
+    return unless require_user
     @availability = Availability.new
 
     respond_to do |format|
@@ -34,15 +35,27 @@ class AvailabilitiesController < ApplicationController
     end
   end
 
+  def check_user_edit
+    if current_user.id != @availability.user_id
+      redirect_to root_url
+      return false
+    end
+    true
+  end
+
   # GET /availabilities/1/edit
   def edit
+    return unless require_user
     @availability = Availability.find(params[:id])
+    return unless check_user_edit
   end
 
   # POST /availabilities
   # POST /availabilities.xml
   def create
+    return unless require_user
     @availability = Availability.new(params[:availability])
+    @availability.user_id = current_user.id
 
     respond_to do |format|
       if @availability.save
@@ -59,9 +72,12 @@ class AvailabilitiesController < ApplicationController
   # PUT /availabilities/1
   # PUT /availabilities/1.xml
   def update
+    return unless require_user
     @availability = Availability.find(params[:id])
-
+    return unless check_user_edit
+    
     respond_to do |format|
+      # todo, could you hack in a diff user id here?
       if @availability.update_attributes(params[:availability])
         flash[:notice] = 'Availability was successfully updated.'
         format.html { redirect_to(@availability) }
@@ -74,9 +90,12 @@ class AvailabilitiesController < ApplicationController
   end
 
   # DELETE /availabilities/1
-  # DELETE /availabilities/1.xml
+  #
+  #DELETE /availabilities/1.xml
   def destroy
+    return unless require_user
     @availability = Availability.find(params[:id])
+    return unless check_user_edit
     @availability.destroy
 
     respond_to do |format|

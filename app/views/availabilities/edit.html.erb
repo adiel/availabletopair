@@ -4,11 +4,7 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :developer %><br />
-    <%= f.text_field :developer %>
-  </p>
-  <p>
-    <%= f.label :project %><br />
+    <%= f.label :project, 'Project (optional)' %><br />
     <%= f.text_field :project %>
   </p>
   <p>
@@ -18,12 +14,8 @@
   <p>
     <%= f.label :end_time %><br />
     <%= f.datetime_select :end_time %>
-    </p>
-  <p>
-    <%= f.label :contact %><br />
-    <%= f.text_field :contact %>
   </p>
-  <p>
+  <p class="submit">
     <%= f.submit 'Update' %>
   </p>
 <% end %>

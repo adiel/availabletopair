@@ -1,12 +1,11 @@
-<h1><%= link_to(h(@availability.developer),"/" + h(@availability.developer)) %> is available to pair on <%= project_link(@availability) %> for <span class="duration"><%= display_duration(@availability) %></span> from <span class="time"><%=h display_when(@availability) %></span> | <%= link_to 'Edit', edit_availability_path(@availability) %></h1>
-<% if @availability.pairs.length == 0 %>
-    <p>
-      No developers are available to pair on <%= project_link(@availability) %> with <%= link_to(h(@availability.developer),"/" + h(@availability.developer)) %> over this period.
-    </p>
-<% else %>
-    <p>
-      Available to pair with <%= link_to(h(@availability.developer),"/" + h(@availability.developer)) %>:
-    </p>
+<h1>
+    <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> is available to pair on <%= project_link(@availability) %> for <span class="duration"><%= display_duration(@availability) %></span> from <span class="time"><%=h display_when(@availability) %></span>
+    <% if mine?(@availability) %>
+       | <%= link_to 'Edit', edit_availability_path(@availability) %>
+    <% end %>
+</h1>
+
+    <h2>Pairs available:</h2>
 
     <table class="pairs">
       <tr>
@@ -20,17 +19,23 @@
 
     <% @availability.pairs.each do |pair| %>
       <tr>
-        <td><%= link_to(h(pair.developer),"/" + h(pair.developer)) %></td>
+        <td><%= link_to(h(pair.user.username),"/" + h(pair.user.username)) %></td>
         <td><%= project_link(pair) %></td>
         <td><%=h display_when(pair) %></td>
         <td><%=h display_duration(pair) %></td>
         <td><%= display_date_time(pair.updated_at) %></td>
-        <td><%= contact_link(pair) %></td>
+        <td><%= contact_link(pair.user) %></td>
+      </tr>
+    <% end %>
+    <% if @availability.pairs.length == 0 %>
+      <tr>
+        <td colspan="6">
+          No developers are available to pair on <%= project_link(@availability) %> with <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> over this period.
+        </td>
       </tr>
     <% end %>
     </table>
-<% end %>
-<p>Subscribe to updates of <%=h @availability.developer %>'s available pairs (<a href="/<%=h @availability.developer%>.atom">atom</a>)</p>
+<p>Subscribe to updates of <%=h @availability.user.username %>'s available pairs (<a href="/<%=h @availability.user.username%>.atom">atom</a>)</p>
 <div class="nav">
   <%= link_to 'Home', availabilities_path %> | <%= link_to 'Make yourself available', new_availability_path %>
 </div>

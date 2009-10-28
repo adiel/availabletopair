@@ -9,20 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091023233000) do
+ActiveRecord::Schema.define(:version => 20091027153900) do
 
   create_table "availabilities", :force => true do |t|
-    t.string   "developer"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string   "contact"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "project"
+    t.integer  "user_id"
   end
 
-  add_index "availabilities", ["developer", "start_time", "end_time"], :name => "availabilities_pair_search_index"
-  add_index "availabilities", ["developer"], :name => "availabilities_name_index"
+  add_index "availabilities", ["start_time", "end_time"], :name => "availabilities_pair_search_index"
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
@@ -39,18 +37,36 @@ ActiveRecord::Schema.define(:version => 20091023233000) do
     t.string  "salt",       :null => false
   end
 
-  create_table "pair", :force => true do |t|
+  create_table "pairs", :force => true do |t|
     t.integer  "availability_id"
     t.integer  "available_pair_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "developer"
     t.string   "project"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string   "contact"
+    t.integer  "user_id"
   end
 
-  add_index "pair", ["availability_id"], :name => "pairs_availability_id_index"
+  add_index "pairs", ["availability_id"], :name => "pairs_availability_id_index"
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "openid_identifier",                  :null => false
+    t.string   "persistence_token",                  :null => false
+    t.string   "single_access_token",                :null => false
+    t.string   "perishable_token",                   :null => false
+    t.integer  "login_count",         :default => 0, :null => false
+    t.integer  "failed_login_count",  :default => 0, :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
+    t.string   "contact"
+  end
 
 end

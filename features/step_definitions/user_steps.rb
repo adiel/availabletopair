@@ -1,3 +1,7 @@
+Given /^a user "([^\"]*)"$/ do |username|
+  ensure_user(username)
+end
+
 When /^(?:I )?visit "([^\"]*)"(?: again)?$/ do |path|
   visit path
 end
@@ -89,7 +93,7 @@ end
 Then /^the feed should show as updated at the published time of the entry at position (\d*)$/ do |entry_position|
   doc = Nokogiri::XML(response.body)
   published = AtomHelper.published_text(doc,entry_position)
-  doc.xpath("/xmlns:feed/xmlns:updated").text.should eql (published)   
+  doc.xpath("/xmlns:feed/xmlns:updated").text.should eql(published)   
 end
 
 Then /^the title of the entry at position (\d*) should contain the updated time$/ do |entry_position|

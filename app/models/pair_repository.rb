@@ -20,8 +20,7 @@ class PairRepository
   def update(pair,master_availability,pair_availability)
     pair.availability_id = master_availability.id
     pair.available_pair_id = pair_availability.id
-    pair.developer = pair_availability.developer
-    pair.contact = pair_availability.contact
+    pair.user_id = pair_availability.user_id
     pair.project = master_availability.project || pair_availability.project
     pair.start_time = latest_start_time(master_availability, pair_availability)
     pair.end_time = earliest_end_time(master_availability, pair_availability)
