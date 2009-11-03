@@ -36,7 +36,7 @@ Feature: List  availabilities
     Then I should see the following availabilites listed in order
       | developer       | project         |  when                          | dev time | pairs available | contact                        |
       | LarryDavid      | Curb            | Fri Dec 13, 2019 21:00 - 05:00 | 8h 00m   | Yes(1)         | http://github.com/LarryDavid   |
-      | Prof Farnsworth | anything        | Fri Dec 13, 2019 21:15 - 01:30 | 4h 15m   | Yes(3)         | http://github.com/philip_j_fry |
+      | ProfFarnsworth | anything        | Fri Dec 13, 2019 21:15 - 01:30 | 4h 15m   | Yes(3)         | http://github.com/philip_j_fry |
       | Philip.J.Fry    | Futurama        | Fri Dec 13, 2019 21:30 - 02:30 | 5h 00m   | Yes(2)         | http://github.com/philip_j_fry |
       | Bender          | Futurama        | Fri Dec 13, 2019 22:00 - 04:30 | 6h 30m   | Yes(2)         | http://github.com/philip_j_fry |
 

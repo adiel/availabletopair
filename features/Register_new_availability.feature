@@ -5,7 +5,8 @@ Feature: Register new availability
 
   Scenario: Anonymous user tries to add new availability and is redirected to login
     Given no availabilities in the system
-    When I am on the homepage
+    When I log out
+    And I am on the homepage
     And I follow "Make yourself available"
     Then I should see "You must be logged in to access this page"
 
