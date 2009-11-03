@@ -1,9 +1,50 @@
+class ApplicationController < ActionController::Base
+  def current_user_session
+    $webrat_user_session
+  end
+end
+
+def ensure_user(username,contact = 'cucumber')
+  user = User.find(:all, :conditions => ["username = :username", {:username => username}])[0]
+  if user.nil?
+    user = User.new(:username => username,
+                          :password => 'cucumber',
+                          :password_confirmation => 'cucumber',
+                          :contact => contact,
+                          :email => "#{username}@example.com",
+                          :openid_identifier => username)
+  end
+  user.contact = contact
+  user.save!
+  user
+end
+
 Given /^a user "([^\"]*)"$/ do |username|
   ensure_user(username)
 end
 
 When /^(?:I )?visit "([^\"]*)"(?: again)?$/ do |path|
   visit path
+end
+
+When /check the published date of the feed entry at position (\d*)$/ do |entry_position|
+  published_text = AtomHelper.published_text(response.body,entry_position)
+  published_text.should_not eql("")
+  @published_dates ||= {}
+  @published_dates[entry_position] = Time.parse(published_text)
+end
+
+
+When /^I log in as "([^\"]*)"$/ do |username|
+  When "I am on the homepage"
+  ensure_user(username)
+  $webrat_user_session = UserSession.new(:username => username, :password => 'cucumber')
+  $webrat_user_session.save
+  When "I am on the homepage"
+end
+
+When /^I log out$/  do
+  $webrat_user_session = nil
 end
 
 Then /^My path should be "([^\"]*)"$/ do |path|
@@ -54,22 +95,15 @@ Then /^the feed should have the following links:$/ do |table|
   table.rows.each do |row|
     link = doc.xpath("/xmlns:feed/xmlns:link[@href = '#{row[0]}']")
     link.length.should eql(1)
-    link.xpath("@rel").text.should eql(row[1]) 
+    link.xpath("@rel").text.should eql(row[1])
   end
 end
 
 Then /^the feed should have the following text nodes:$/ do |table|
   doc = Nokogiri::XML(response.body)
   table.rows.each do |row|
-    doc.xpath(row[0]).text.should eql(row[1]) 
+    doc.xpath(row[0]).text.should eql(row[1])
   end
-end
-
-When /check the published date of the feed entry at position (\d*)$/ do |entry_position|
-  published_text = AtomHelper.published_text(response.body,entry_position)
-  published_text.should_not eql("")
-  @published_dates ||= {}
-  @published_dates[entry_position] = Time.parse(published_text)
 end
 
 When /(?:I )?touch the availability at position (\d*) of the feed$/ do |entry_position|

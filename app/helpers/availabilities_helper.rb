@@ -55,5 +55,41 @@ module AvailabilitiesHelper
   def pairs_updated(availability)
     availability.pairs.length > 0 ? availability.pairs[0].updated_at : availability.updated_at
   end
+
+  def pair_status(pair)
+    if (!pair.accepted && !pair.suggested)
+      return "Open"
+    elsif (pair.accepted && pair.suggested)
+      return "Paired"
+    else
+      if (pair.accepted)
+        user = current_user_accepted(pair) ? "You" : pair.availability.user.username
+      else
+        user = current_user_suggested(pair) ? "You" : pair.user.username
+      end
+      return "#{user} suggested pairing"
+    end
+  end
+
+  def button_to_suggest_accept(pair)
+    if (pair.accepted)
+      action = "cancel"
+      text = pair.suggested ? "Cancel pairing" : "Cancel"
+    else
+      action = "suggest"
+      text = pair.suggested ? "Accept" : "Suggest pairing"
+    end
+    button_to(text, {:controller => 'pairs', :action => action, :id => pair.id}, :method => :post)
+  end
+
+  private
+
+  def current_user_accepted(pair)
+    return (!current_user.nil? && pair.availability.user_id == current_user.id)
+  end
+
+  def current_user_suggested(pair)
+    return (!current_user.nil? && pair.user_id == current_user.id)
+  end
 end
 

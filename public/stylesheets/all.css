@@ -68,8 +68,14 @@ select {
 input {
    width:35em;
 }
-.submit input {
+table input, .submit input {
    width:auto;
+}
+table input {
+    font-size:1.1em;
+    cursor:pointer;
+    margin:-2px;
+    padding:1px;
 }
 
 .username input, .email input{

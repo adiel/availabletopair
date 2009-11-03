@@ -5,7 +5,7 @@ module ApplicationHelper
     'http://' + request.env["HTTP_HOST"]
   end
 
-  def mine?(availability)
+  def mine? (availability)
     !current_user.nil? && current_user.id == availability.user_id
   end
   

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091027153900) do
+ActiveRecord::Schema.define(:version => 20091102351300) do
 
   create_table "availabilities", :force => true do |t|
     t.datetime "start_time"
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20091027153900) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "project"
+    t.datetime "pairs_updated", :default => '2009-10-19 10:29:27'
     t.integer  "user_id"
   end
 
@@ -46,6 +47,8 @@ ActiveRecord::Schema.define(:version => 20091027153900) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "user_id"
+    t.boolean  "accepted",          :default => false, :null => false
+    t.boolean  "suggested",         :default => false, :null => false
   end
 
   add_index "pairs", ["availability_id"], :name => "pairs_availability_id_index"

@@ -10,19 +10,7 @@
     <th>Updated</th>
     <th colspan="2">&nbsp;</th>
   </tr>
-
-<% @availabilities.each do |availability| %>
-  <tr>
-    <td><%= link_to(h(availability.user.username), "/" + h(availability.user.username)) %></td>
-    <td><%= project_link(availability) %></td>
-    <td><%= link_to(display_when(availability),availability) %></td>
-    <td><%=h display_duration(availability) %></td>
-    <td><%= pairs_link(availability) %></td>
-    <td><%= display_date_time(availability.updated_at) %></td>
-    <td><%= mine?(availability) ? link_to('Edit', edit_availability_path(availability)) : "" %></td>
-    <td><%= mine?(availability) ? link_to('Delete', availability, :confirm => 'Are you sure?', :method => :delete) : "" %></td>
-  </tr>
-<% end %>
+<%= render :partial => 'list' %>
 </table>
 
 <div class="nav">

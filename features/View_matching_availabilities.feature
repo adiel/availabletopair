@@ -51,15 +51,14 @@ Scenario: One pair is found where both will work on only a specific project
         | MalcolmTucker   | The Thick Of It | December 1, 2019 22:00      | December 1, 2019 22:20      | http://github.com/malcolm_tucker  |
         | Bender          | Futurama        | December 13, 2019 22:00     | December 14, 2019 04:30     | http://github.com/bender          |
         | Philip.J.Fry    | Futurama        | December 13, 2019 21:30     | December 14, 2019 02:30     | http://github.com/philip_j_fry    |
-        | Prof Farnsworth |                 | December 13, 2019 21:15     | December 14, 2019 01:30     | http://github.com/prof_farnsworth |
+        | ProfFarnsworth |                 | December 13, 2019 21:15     | December 14, 2019 01:30     | http://github.com/prof_farnsworth |
       When I am on the list availabilities page
       And I follow "Fri Dec 13, 2019 22:00 - 04:30"
       Then I should see /Bender is available to pair on Futurama on Fri Dec 13, 2019 22:00 \- 04:30/
       And I should see the following matching pairs
         | developer       | project  | when                           | dev time     | contact                           |
-        | Prof Farnsworth | Futurama | Fri Dec 13, 2019 22:00 - 01:30 | 3h 30m       | http://github.com/prof_farnsworth |
+        | ProfFarnsworth | Futurama | Fri Dec 13, 2019 22:00 - 01:30 | 3h 30m       | http://github.com/prof_farnsworth |
         | Philip.J.Fry    | Futurama | Fri Dec 13, 2019 22:00 - 02:30 | 4h 30m       | http://github.com/philip_j_fry    |
-
 
   Scenario: Show availability shows link to atom feed
     Given only the following availabilities in the system
@@ -70,3 +69,4 @@ Scenario: One pair is found where both will work on only a specific project
     Then I should see "Subscribe to updates of Bender's available pairs (atom)"
     When I follow "atom"
     Then My path should be "/Bender.atom"
+

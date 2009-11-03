@@ -15,6 +15,7 @@
     <th>Dev time</th>
     <th>Updated</th>
     <th>Contact</th>
+    <th colspan="2">Status</th>
   </tr>
 
 <% @availability.pairs.each do |pair| %>
@@ -25,6 +26,8 @@
     <td><%=h display_duration(pair) %></td>
     <td><%= display_date_time(pair.updated_at) %></td>
     <td><%= contact_link(pair.user) %></td>
+    <td><%= pair_status(pair)  %></td>
+    <td><%= mine?(@availability) ? button_to_suggest_accept(pair) : "" %></td>
   </tr>
 <% end %>
 <% if @availability.pairs.length == 0 %>

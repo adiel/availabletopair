@@ -31,7 +31,7 @@ Feature: List  availabilities
      | LarryDavid      | Curb            | December 13, 2019 21:00     | December 14, 2019 05:00       | http://github.com/larry_david     |
      | Bender          | Futurama        | December 13, 2019 22:00     | December 14, 2019 04:30     | http://github.com/bender          |
      | Philip.J.Fry    | Futurama        | December 13, 2019 21:30     | December 14, 2019 02:30     | http://github.com/philip_j_fry    |
-     | Prof Farnsworth |                 | December 13, 2019 21:15     | December 14, 2019 01:30     | http://github.com/prof_farnsworth |
+     | ProfFarnsworth |                 | December 13, 2019 21:15     | December 14, 2019 01:30     | http://github.com/prof_farnsworth |
     When I am on the list availabilities page
     Then I should see the following availabilites listed in order
       | developer       | project         |  when                          | dev time | pairs available | contact                        |

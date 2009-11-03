@@ -3,26 +3,6 @@ Given /^no availabilities in the system$/ do
   Availability.delete_all
 end
 
-def ensure_user(username,contact = '')
-  user = Test::User.find(:all, :conditions => ["username = :username", {:username => username}])[0]
-  if user.nil?
-    user = Test::User.new(:username => username,
-                          :openid_identifier => 'a',
-                          :persistence_token => 's',
-                          :single_access_token => 'd',
-                          :perishable_token => 'f')
-  end
-  user.contact = contact
-  user.save!
-  user
-end
-
-class Test::User < ActiveRecord::Base
-    # This is here to bypass authlogic and go direct to ActiveRecord
-  has_many :availabilities
-  has_many :pairs
-end
-
 Given /^only the following availabilities in the system$/ do |table|
   Given "no availabilities in the system"
   table.rows.each do |row|
@@ -46,8 +26,11 @@ Given /^the following availabilities in the system with an end time (\d*) minute
   end
 end
 
+When "I visit the edit page for the only availability in the system" do
+  visit "/availabilities/#{Availability.find(:all)[0].id}/edit"
+end
 
-Then /^I should see the following availabilites listed in order$/ do |table|
+Then /^I should see the following availabilites listed in order:?$/ do |table|
 
   table.rows.each_with_index do |row,index|
     row_selector = ".availabilities tr:nth-child(#{index + 2})"
