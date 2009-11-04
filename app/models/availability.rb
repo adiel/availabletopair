@@ -18,4 +18,10 @@ class Availability < ActiveRecord::Base
     end_time - start_time
   end
 
+  def has_accepted_pair?
+    pairs.any? do |pair|
+      pair.accepted && pair.suggested
+    end
+  end
+
 end
