@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   # GET /username
   # GET /username.atom
   def index
-    @user = User.find(:all,:conditions => ["username = :username",{:username => params[:id]}])[0]
+    @user = User.find(:all,:conditions => {:username => params[:id]})[0]
     if @user.nil?
       redirect_to root_url
       return

@@ -1,5 +1,10 @@
 class PairsController < ApplicationController
 
+  def initialize(pair_connector = PairConnector.new)
+    super()
+    @pair_connector = pair_connector
+  end
+
   private
 
   def check_ownership(pair)
@@ -8,23 +13,6 @@ class PairsController < ApplicationController
       return false
     end
     true
-  end
-
-
-  def update_pairing_status(pair,accepted)
-    pair.accepted = accepted
-    pair.save
-    reciprocal_pair = pair.find_reciprocal_pair
-    reciprocal_pair.suggested = accepted
-    reciprocal_pair.save
-  end
-
-  def cancel_pairing(pair)
-    update_pairing_status(pair, false)
-  end
-
-  def accept_pairing(pair)
-    update_pairing_status(pair, true)
   end
   
   public
@@ -36,7 +24,7 @@ class PairsController < ApplicationController
     pair = Pair.find(params[:id])
     return unless check_ownership(pair)
 
-    accept_pairing(pair)
+    @pair_connector.accept_pairing(pair)
 
     redirect_to availability_url(pair.availability)
 
@@ -49,7 +37,7 @@ class PairsController < ApplicationController
     pair = Pair.find(params[:id])
     return unless check_ownership(pair)
 
-    cancel_pairing(pair)
+    @pair_connector.cancel_pairing(pair)
 
     redirect_to availability_url(pair.availability)
 

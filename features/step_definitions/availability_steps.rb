@@ -57,3 +57,9 @@ Then /^I should see the following matching pairs$/ do |table|
 end
 
 
+When /^logged in as "([^\"]*)", I visit my only availability$/ do |username|
+  When "I log in as \"#{username}\""
+  And "I visit \"/#{username}\""
+  And "I follow \"Yes\""
+end
+

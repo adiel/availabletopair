@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 class FakePair
-  attr_accessor :id,:accepted, :suggested, :availability, :saved, :save_count, :reciprocal_pair
+  attr_accessor :id,:accepted, :suggested, :availability, :accept, :saved, :save_count, :reciprocal_pair, :availability_id, :available_pair_id
 
   def save
     @saved = self.clone
     @save_count ||= 0
-    @save_count += 1    
+    @save_count += 1
   end
 
   def find_reciprocal_pair
@@ -36,6 +36,7 @@ describe PairsController do
   before do
 
     availability = FakeAvailability.new
+    other_availability = FakeAvailability.new
     pair = FakePair.new
     reciprocal_pair = FakePair.new
     user_session = FakeUserSession.new
@@ -46,10 +47,13 @@ describe PairsController do
     reciprocal_pair.id = rand(100)
     user.id = rand(100)
     availability.id = rand(100)
-    other_user.id = availability.id * 2
+    other_availability.id = availability.id + 1
+    other_user.id = availability.id + 1
     user_session.user = user
     user_session.user_id = user.id
     pair.availability = availability
+    pair.availability_id = availability.id
+    pair.available_pair_id = other_availability.id
     pair.reciprocal_pair = reciprocal_pair
 
   end
@@ -98,8 +102,8 @@ describe PairsController do
         describe "and the pairing has not been suggested" do
 
           before do
+            pair.suggested = false
             pair.accepted = false
-            pair.accepted = true
           end
 
           it "should save the pair as accepted" do
@@ -118,6 +122,24 @@ describe PairsController do
             reciprocal_pair.saved.suggested.should be true
             reciprocal_pair.save_count.should be(1)
 
+          end
+        end
+
+        describe "and the pairing has been suggested" do
+
+          before do
+            pair.suggested = true
+            pair.accepted = true
+          end
+
+          it "should clear all other suggested pairs for this availability" do
+            post :suggest, :id => pair.id
+            raise "TODO: missing test"
+          end
+
+          it "should clear all other suggested pairs for the pair's availability" do
+            post :suggest, :id => pair.id
+            raise "TODO: missing test"
           end
         end
       end

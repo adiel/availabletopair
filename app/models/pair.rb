@@ -10,6 +10,4 @@ class Pair < ActiveRecord::Base
     Pair.find(:all, :conditions => ["availability_id = :availability_id and available_pair_id = :available_pair_id",
                                     {:available_pair_id => self.availability_id, :availability_id => self.available_pair_id}])[0]
   end
-
- 
 end

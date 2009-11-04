@@ -11,11 +11,16 @@ Feature: Suggest pairing
     When I log in as "Bender"
     And I visit "/Bender"
     And I follow "Yes"
-    Then I should see "Open"
-    Then I should not see "Suggested"
+    Then I should see the following pair statuses:
+      | developer  | status |
+      | PhilipJFry | Open   |
     When I press "Suggest pairing"
-    Then I should see "You suggested pairing"
+    Then I should see the following pair statuses:
+      | developer  | status                |
+      | PhilipJFry | You suggested pairing |
     When I press "Cancel"
-    Then I should not see "You suggested pairing"
-    And I should see "Open"
-    
+    Then I should see the following pair statuses:
+      | developer  | status |
+      | PhilipJFry | Open   |
+
+  Scenario: User suggests pairing from looking at the pair's availability page
