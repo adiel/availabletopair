@@ -26,6 +26,13 @@ Given /^the following availabilities in the system with an end time (\d*) minute
   end
 end
 
+Given /^the following availabilities in the system with an end time (\d*) seconds? in the future:$/ do |secs,table|
+  table.rows.each do |row|
+    user = ensure_user(row[0],'asdf')
+    Availability.create(:user_id => user.id, :project => row[1],:start_time => Time.now.utc - 60, :end_time => Time.now.utc + (secs.to_i))
+  end
+end
+
 When "I visit the edit page for the only availability in the system" do
   visit "/availabilities/#{Availability.find(:all)[0].id}/edit"
 end
@@ -63,3 +70,11 @@ When /^logged in as "([^\"]*)", I visit my only availability$/ do |username|
   And "I follow \"Yes\""
 end
 
+
+When /^I select a time (\d*) mins? in the past as the "([^\"]*)" date and time$/ do |mins,datetime_label|
+  When "I select \"#{Time.now - (mins.to_i * 60)}\" as the \"#{datetime_label}\" date and time"
+end
+
+When /^I wait (\d*) seconds$/ do |sec|
+  sleep sec.to_i
+end

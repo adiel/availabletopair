@@ -9,12 +9,12 @@ Feature: List user availabilities
       | Philip.J.Fry  | futurama        | January 1, 2020 22:00   | January 1, 2020 23:00   | http://github.com/philip_j_fry |
       | Bender        | futurama        | November 1, 2019 22:00  | November 2, 2019 05:00  | http://github.com/Bender       |
       | LarryDavid    | curb            | December 13, 2019 22:00 | December 14, 2019 00:00 | http://github.com/LarryDavid   |
-      | LarryDavid    | curb            | December 13, 2019 21:00 | December 14, 2019 00:00 | http://github.com/LarryDavid   |
+      | LarryDavid    | curb            | December 13, 2019 21:00 | December 13, 2019 21:30 | http://github.com/LarryDavid   |
    And I visit "/LarryDavid"
    Then I should see "All LarryDavid's availability"
    And I should see the following availabilites listed in order
       | developer     | project         | when                           | dev time  | pairs available | contact                        |
-      | LarryDavid    | curb            | Fri Dec 13, 2019 21:00 - 00:00 | 3h 00m    | No              | http://github.com/LarryDavid   |
+      | LarryDavid    | curb            | Fri Dec 13, 2019 21:00 - 21:30 | 0h 30m    | No              | http://github.com/LarryDavid   |
       | LarryDavid    | curb            | Fri Dec 13, 2019 22:00 - 00:00 | 2h 00m    | No              | http://github.com/LarryDavid   |
 
   Scenario: Developer name on all availabilities links to user page
@@ -45,12 +45,17 @@ Feature: List user availabilities
 
   Scenario: Availabilities with end time in the past should not show
     Given no availabilities in the system
-    And the following availabilities in the system with an end time 2 minutes in the past:
+    And the following availabilities in the system with an end time 2 seconds in the future:
       | developer     | project  |
       | PhilipJFry  | futurama |
-    And the following availabilities in the system with an end time 2 minutes in the future:
-      | developer     | project         |
-      | PhilipJFry | the thick of it |
+    When I wait 2 seconds
     When I visit "/PhilipJFry"                                  
-    Then I should see "the thick of it"
-    But I should not see "futurama"
+    Then I should not see "futurama"
+
+  Scenario: Availabilities with end time just in future should show
+    Given no availabilities in the system
+    And the following availabilities in the system with an end time 1 minute in the future:
+      | developer     | project         |
+      | Bender        | the thick of it |
+    When I visit "/Bender"
+    But I should see "the thick of it"

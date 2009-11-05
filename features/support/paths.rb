@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /the list availabilities page/
       '/availabilities'
+    when /the new availability page/
+      '/availabilities/new'
 
     # Add more mappings here.
     # Here is a more fancy example:

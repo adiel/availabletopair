@@ -24,8 +24,9 @@ module AvailabilitiesHelper
     url =~ /\A([\w\.\-\+]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   end
 
-  def display_duration(availability)
-    "%dh %02dm" % [(availability.duration_sec / 3600).floor, ((availability.duration_sec % 3600) / 60).to_i]
+  def display_duration(availability,pad_hours = false)
+    format = pad_hours ? "%02dh %02dm" : "%dh %02dm"
+    format % [(availability.duration_sec / 3600).floor, ((availability.duration_sec % 3600) / 60).to_i]
   end
 
   def display_date_time(time)
@@ -37,7 +38,7 @@ module AvailabilitiesHelper
   end
 
   def display_when(availability)
-    "#{display_date_time(availability.start_time)} - #{display_time(availability.end_time)}"
+    "#{display_date_time(availability.start_time)} - #{display_time(availability.end_time)} GMT"
   end
 
   def display_when_time(availability)

@@ -25,7 +25,7 @@
             The following developers are available to pair on <%= project_link(availability) %> with <%=h availability.user.username %> on <a href="<%= http_root %>/availabilities/<%=h availability.id %>"><%=h display_when(availability) %></a>:
             <ul>
               <% availability.pairs.each do |pair| %>
-              <li><%=h display_duration(pair) %> from <%=h display_when_time(pair) %> - <%= h pair.user.username %> on <%=h display_project(pair) %> (updated: <%= display_date_time(pair.updated_at)%>)</li>
+              <li><%=h display_duration(pair,true) %> from <%=h display_when_time(pair) %> - <strong><%= h pair.user.username %></strong> on <%=h display_project(pair) %> - <strong><%= pair_status(pair) %></strong> (updated: <%= display_date_time(pair.updated_at)%>)</li>
               <% end %>
             </ul>
         <% end %>

@@ -18,7 +18,80 @@ Feature: Register new availability
     And I select "December 25, 2014 10:00" as the "Start time" date and time
     And I select "December 25, 2014 12:30" as the "End time" date and time
     And I press "Publish availability"
-    Then I should see "jeffosmith is available to pair on Cucumber on Thu Dec 25, 2014 10:00 - 12:30 (2h 30m)"
+    Then I should see "jeffosmith is available to pair on Cucumber on Thu Dec 25, 2014 10:00 - 12:30 GMT (2h 30m)"
+
+  Scenario: User cannot add a new availability with end date in the past
+    Given no availabilities in the system
+    When I log in as "jeffosmith"
+    And I follow "Make yourself available"
+    And I select a time 5 mins in the past as the "Start time" date and time
+    And I select a time 1 min in the past as the "End time" date and time
+    And I press "Publish availability"
+    And I should see "End time is in the past"
+
+  Scenario: User cannot add a new availability with end date the same as the start date
+    Given no availabilities in the system
+    When I log in as "jeffosmith"
+    And I follow "Make yourself available"
+    And I select "December 25, 2014 10:00" as the "Start time" date and time
+    And I select "December 25, 2014 10:00" as the "End time" date and time
+    And I press "Publish availability"
+    And I should see "End time must be after start time"
+
+  Scenario: User cannot add a new availability with end date before the start date
+      Given no availabilities in the system
+      When I log in as "jeffosmith"
+      And I follow "Make yourself available"
+      And I select "December 25, 2014 10:00" as the "Start time" date and time
+      And I select "December 25, 2014 09:59" as the "End time" date and time
+      And I press "Publish availability"
+      And I should see "End time must be after start time"
+
+    Scenario: User cannot add a new availability longer than 12hrs
+      Given no availabilities in the system
+      When I log in as "jeffosmith"
+      And I follow "Make yourself available"
+      And I select "December 25, 2014 10:00" as the "Start time" date and time
+      And I select "December 25, 2014 22:01" as the "End time" date and time
+      And I press "Publish availability"
+      And I should see "12hrs is the maximum for one availability (you have 12h 01m)"
+      When I select "December 25, 2014 22:00" as the "End time" date and time
+      And I press "Publish availability"
+      Then I should see "jeffosmith is available to pair on anything on Thu Dec 25, 2014 10:00 - 22:00 GMT (12h 00m)"
+
+  Scenario: User cannot add a new availability that overlaps at the start of an existing availability
+      Given only the following availabilities in the system
+        | developer   | project  | start time                    | end time                   | contact                      |
+        | jeffosmith  |          | December 25, 2014 10:00       | December 25, 2014 11:00    | http://github.com/jeffosmith |
+      When I log in as "jeffosmith"
+      And I follow "Make yourself available"
+      And I select "December 25, 2014 08:00" as the "Start time" date and time
+      And I select "December 25, 2014 10:01" as the "End time" date and time
+      And I press "Publish availability"
+      And I should see "You have already declared yourself available for some of this time"
+
+    Scenario: User cannot add a new availability that overlaps at the end of an existing availability
+      Given only the following availabilities in the system
+        | developer   | project  | start time                    | end time                   | contact                      |
+        | jeffosmith  |          | December 25, 2014 10:00       | December 25, 2014 11:00    | http://github.com/jeffosmith |
+      When I log in as "jeffosmith"
+      And I follow "Make yourself available"
+      And I select "December 25, 2014 10:59" as the "Start time" date and time
+      And I select "December 25, 2014 11:30" as the "End time" date and time
+      And I press "Publish availability"
+      And I should see "You have already declared yourself available for some of this time"
+
+    Scenario: User can add a new availability that has contiguous availabilities on either side
+      Given only the following availabilities in the system
+        | developer   | project  | start time                    | end time                   | contact                      |
+        | jeffosmith  |          | December 25, 2014 10:05       | December 25, 2014 10:15    | http://github.com/jeffosmith |
+        | jeffosmith  |          | December 25, 2014 10:30       | December 25, 2014 11:45    | http://github.com/jeffosmith |
+      When I log in as "jeffosmith"
+      And I follow "Make yourself available"
+      And I select "December 25, 2014 10:15" as the "Start time" date and time
+      And I select "December 25, 2014 10:30" as the "End time" date and time
+      And I press "Publish availability"
+      Then I should see "jeffosmith is available to pair on anything on Thu Dec 25, 2014 10:15 - 10:30 GMT (0h 15m)"
 
    Scenario: An availability can be edited by its owner
     Given only the following availabilities in the system

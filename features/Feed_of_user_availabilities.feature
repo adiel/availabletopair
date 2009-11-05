@@ -35,11 +35,11 @@ Feature: Feed of user availabilities
     When I visit "/LarryDavid.atom"
     Then I should see the following feed entries with content:
       | title                                              | content                                                                                        |
-      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 | No developers are available to pair on curb with LarryDavid on Fri Dec 13, 2019 21:59 - 00:00. |
+      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 | No developers are available to pair on curb with LarryDavid on Fri Dec 13, 2019 21:59 - 00:00 GMT. |
     When I visit "/PhllilJFry.atom"
     Then I should see the following feed entries with content:
       | title                                              | content                                                                                            |
-      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 | No developers are available to pair on futurama with PhllilJFry on Sat Dec 14, 2019 21:59 - 00:00. |
+      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 | No developers are available to pair on futurama with PhllilJFry on Sat Dec 14, 2019 21:59 - 00:00 GMT. |
 
   Scenario: When no pairs are available content should link to availability from datetime
     Given only the following availabilities in the system
@@ -62,10 +62,11 @@ Feature: Feed of user availabilities
       | LarryDavid    | curb            | December 13, 2019 21:59 | December 14, 2019 00:00 | http://github.com/LarryDavid   |
       | JeffGarlin    | curb            | December 13, 2019 23:00 | December 14, 2019 01:00 | http://github.com/JeffGarlin   |
       | LarryCharles  |                 | December 13, 2019 23:30 | December 14, 2019 02:00 | http://github.com/LarryCharles |
+    And "LarryDavid" has suggested pairing with "LarryCharles" where possible
     When I visit "/LarryDavid.atom"
     Then I should see the following feed entries with content:
       | title                                              | content |
-      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 | The following developers are available to pair on curb with LarryDavid on Fri Dec 13, 2019 21:59 - 00:00:(\s*)0h 30m from 23:30 to 00:00 - LarryCharles on curb \(updated: [^\)]*\)(\s*)1h 00m from 23:00 to 00:00 - JeffGarlin on curb \(updated: [^\)]*\)|
+      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 | The following developers are available to pair on curb with LarryDavid on Fri Dec 13, 2019 21:59 - 00:00 GMT:(\s*)00h 30m from 23:30 to 00:00 - LarryCharles on curb - LarryDavid suggested pairing \(updated: [^\)]*\)(\s*)01h 00m from 23:00 to 00:00 - JeffGarlin on curb - Open \(updated: [^\)]*\)|
 
   Scenario: Single availability with no pairs shows published as updated_at of availability
     Given only the following availabilities in the system
@@ -85,15 +86,15 @@ Feature: Feed of user availabilities
       | LarryDavid    | curb            | December 14, 2019 21:59 | December 15, 2019 00:00 | http://github.com/LarryDavid   |
     And I visit "/larrydavid.atom"
     And I see the following feed entries:
-      | title                                              |
-      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 |
-      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 |
+      | title                                                  |
+      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 GMT |
+      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 GMT |
     When I touch the availability at position 2 of the feed
     And visit "/LarryDavid.atom" again
     Then I should see the following feed entries:
-      | title                                              |
-      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 |
-      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 |
+      | title                                                  |
+      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 GMT |
+      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 GMT |
 
   Scenario: Multiple availabilities have feed updated date as last updated
     Given only the following availabilities in the system
@@ -133,8 +134,8 @@ Feature: Feed of user availabilities
     And visit "/LarryDavid.atom"
     Then I should see the following feed entries:
       | title                                              |
-      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 |
-      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 |
+      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 GMT |
+      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 GMT |
 
  Scenario: Updates to a pair that do not affect the shared dev time do not affect updated date
     Given only the following availabilities in the system
@@ -148,8 +149,8 @@ Feature: Feed of user availabilities
     And visit "/LarryDavid.atom"
     Then I should see the following feed entries:
       | title                                              |
-      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 |
-      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 |    
+      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 GMT |
+      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 GMT |
 
   Scenario: Multiple availabilities have feed updated date as latest pair updated
     Given only the following availabilities in the system
@@ -157,20 +158,20 @@ Feature: Feed of user availabilities
       | LarryDavid    | curb            | December 13, 2019 21:59 | December 14, 2019 00:00 | http://github.com/LarryDavid   |
       | LarryDavid    | curb            | December 14, 2019 21:59 | December 15, 2019 00:00 | http://github.com/LarryDavid   |
       | JeffGarlin    | curb            | December 13, 2019 21:59 | December 13, 2019 23:00 | http://github.com/LarryDavid   |
-      | LarryCharles  | curb            | December 14, 2019 21:59 | December 15, 2019 23:00 | http://github.com/LarryDavid   |
+      | LarryCharles  | curb            | December 14, 2019 21:59 | December 15, 2019 01:00 | http://github.com/LarryDavid   |
     When I visit "/JeffGarlin.atom"
     And I extend the start time of the availability at position 1 of the feed by 10 min
     And visit "/LarryDavid.atom"
     Then I should see the following feed entries:
       | title                                              |
-      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 |
-      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 |
+      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 GMT |
+      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 GMT |
     And the feed should show as updated at the published time of the entry at position 1
     When I visit "/LarryCharles.atom"
     And I extend the start time of the availability at position 1 of the feed by 10 min
     And visit "/LarryDavid.atom"
     Then I should see the following feed entries:
       | title                                              |
-      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 |
-      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 |
+      | Pairs available for Sat Dec 14, 2019 21:59 - 00:00 GMT |
+      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 GMT |
     Then the feed should show as updated at the published time of the entry at position 1
