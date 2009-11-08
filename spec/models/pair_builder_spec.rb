@@ -144,7 +144,7 @@ describe PairBuilder do
 
       it "should have the matching tags as csv in alphabetical order" do
         pair = PairBuilder.new.create(master_availability,pair_availability)
-        pair.tags.should eql("cuthbert,dibble")
+        pair.tags.should eql("cuthbert, dibble")
       end
     end
 

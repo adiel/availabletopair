@@ -17,7 +17,7 @@ class PairBuilder
         matching.push master_tag.clone
       end
     end
-    matching.sort_by{|t|t.tag}.join(',')
+    matching.sort_by{|t|t.tag}.join(', ')
   end
 
   public

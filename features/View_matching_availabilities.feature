@@ -82,9 +82,9 @@ Scenario: One pair is found where both will work on only a specific project
       And I follow "Fri Dec 13, 2019 18:00 - 00:00"
       Then I should see the following matching pairs
         | developer      | project  | when                             | dev time     | contact                           | tags                       |
-        | MalcolmTucker  |          | Fri Dec 13, 2019 21:00 - 00:00   | 3h 00m       | http://github.com/malcolm_tucker  | css,html,javascript,jquery |
-        | PhilipJFry     |          | Fri Dec 13, 2019 22:00 - 00:00   | 2h 00m       | http://github.com/philip_j_fry    | css,html,javascript        |
-        | LarryDavid     |          | Fri Dec 13, 2019 20:00 - 00:00   | 4h 00m       | http://github.com/larry_david     | rails,rspec                |
+        | MalcolmTucker  |          | Fri Dec 13, 2019 21:00 - 00:00   | 3h 00m       | http://github.com/malcolm_tucker  | css, html, javascript, jquery |
+        | PhilipJFry     |          | Fri Dec 13, 2019 22:00 - 00:00   | 2h 00m       | http://github.com/philip_j_fry    | css, html, javascript        |
+        | LarryDavid     |          | Fri Dec 13, 2019 20:00 - 00:00   | 4h 00m       | http://github.com/larry_david     | rails, rspec                |
         | ProfFarnsworth |          | Fri Dec 13, 2019 23:00 - 00:00   | 1h 00m       | http://github.com/prof_farnsworth | cucumber                   |
 
 

@@ -66,7 +66,7 @@ Feature: Feed of user availabilities
     When I visit "/LarryDavid.atom"
     Then I should see the following feed entries with content:
       | title                                              | content |
-      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 | The following developers are available to pair on curb with LarryDavid on Fri Dec 13, 2019 21:59 - 00:00 GMT:(\s*)00h 30m from 23:30 to 00:00 - LarryCharles on curb - Status: LarryDavid suggested pairing - Tags: nbc,seinfeld \(updated: [^\)]*\)(\s*)01h 00m from 23:00 to 00:00 - JeffGarlin on curb - Status: Open - Tags: nbc,seinfeld \(updated: [^\)]*\)|
+      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 | The following developers are available to pair on curb with LarryDavid on Fri Dec 13, 2019 21:59 - 00:00 GMT:(\s*)00h 30m from 23:30 to 00:00 - LarryCharles on curb - Status: LarryDavid suggested pairing - Tags: nbc, seinfeld \(updated: [^\)]*\)(\s*)01h 00m from 23:00 to 00:00 - JeffGarlin on curb - Status: Open - Tags: nbc, seinfeld \(updated: [^\)]*\)|
 
   Scenario: Single availability with no pairs shows published as updated_at of availability
     Given only the following availabilities in the system

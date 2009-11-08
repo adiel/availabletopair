@@ -14,4 +14,4 @@ Feature: List tag availabilities
    And I should see the following availabilites listed in order
       | developer     | project         | when                           | dev time  | pairs available | contact                        | tags          |
       | LarryDavid    | curb            | Fri Dec 13, 2019 21:00 - 21:30 | 0h 30m    | No              | http://github.com/LarryDavid   | ruby          |
-      | LarryDavid    | curb            | Fri Dec 13, 2019 22:00 - 00:00 | 2h 00m    | No              | http://github.com/LarryDavid   | on,rails,ruby |
+      | LarryDavid    | curb            | Fri Dec 13, 2019 22:00 - 00:00 | 2h 00m    | No              | http://github.com/LarryDavid   | on, rails, ruby |

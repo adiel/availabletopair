@@ -100,7 +100,7 @@ module AvailabilitiesHelper
   end
   
   def display_tags(availability)
-	availability.tags.length == 0 ? 'none' : availability.tags.sort_by{|t|t.tag}.join(',')
+	  availability.tags.length == 0 ? 'none' : availability.tags.sort_by{|t|t.tag}.join(', ')
   end
 
   private
