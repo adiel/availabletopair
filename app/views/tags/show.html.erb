@@ -1,8 +1,8 @@
 <% content_for :head_links do %>
-    <link href="<%=http_root%>/<%=h @user.username%>.atom" title="Available to Pair - Atom" type="application/atom+xml" rel="alternate"/>
+    <link href="<%=http_root%>/tags/<%=h @tag%>.atom" title="Available to Pair - Atom" type="application/atom+xml" rel="alternate"/>
 <% end %>
 
-<h1>All <%= @user.username %>'s availability</h1>
+<h1>Availabilities for tag: <%=h @tag %></h1>
 
 <table class="availabilities">
   <tr>
@@ -17,7 +17,7 @@
   </tr>
 <%= render :partial => '/availabilities/list' %>
 </table>
-<p>Subscribe to updates of <%=@user.username %>'s available pairs (<a href="/<%=@user.username%>.atom">atom</a>)</p>
+<p>Subscribe to available pairs for <%=h @tag %>(<a href="/tags/<%=@tag%>.atom">atom</a>)</p>
 <div class="nav">
     <%= link_to 'Make yourself available', new_availability_path %>
 </div>

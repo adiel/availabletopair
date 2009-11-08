@@ -58,15 +58,15 @@ Feature: Feed of user availabilities
 
   Scenario: Single availability with pairs is listed with summary title and pair details in content
     Given only the following availabilities in the system
-      | developer     | project         | start time              | end time                | contact                        |
-      | LarryDavid    | curb            | December 13, 2019 21:59 | December 14, 2019 00:00 | http://github.com/LarryDavid   |
-      | JeffGarlin    | curb            | December 13, 2019 23:00 | December 14, 2019 01:00 | http://github.com/JeffGarlin   |
-      | LarryCharles  |                 | December 13, 2019 23:30 | December 14, 2019 02:00 | http://github.com/LarryCharles |
+      | developer     | project         | start time              | end time                | contact                        | tags         |
+      | LarryDavid    | curb            | December 13, 2019 21:59 | December 14, 2019 00:00 | http://github.com/LarryDavid   | seinfeld,nbc |
+      | JeffGarlin    | curb            | December 13, 2019 23:00 | December 14, 2019 01:00 | http://github.com/JeffGarlin   | seinfeld,nbc | 
+      | LarryCharles  |                 | December 13, 2019 23:30 | December 14, 2019 02:00 | http://github.com/LarryCharles | seinfeld,nbc |
     And "LarryDavid" has suggested pairing with "LarryCharles" where possible
     When I visit "/LarryDavid.atom"
     Then I should see the following feed entries with content:
       | title                                              | content |
-      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 | The following developers are available to pair on curb with LarryDavid on Fri Dec 13, 2019 21:59 - 00:00 GMT:(\s*)00h 30m from 23:30 to 00:00 - LarryCharles on curb - LarryDavid suggested pairing \(updated: [^\)]*\)(\s*)01h 00m from 23:00 to 00:00 - JeffGarlin on curb - Open \(updated: [^\)]*\)|
+      | Pairs available for Fri Dec 13, 2019 21:59 - 00:00 | The following developers are available to pair on curb with LarryDavid on Fri Dec 13, 2019 21:59 - 00:00 GMT:(\s*)00h 30m from 23:30 to 00:00 - LarryCharles on curb - Status: LarryDavid suggested pairing - Tags: nbc,seinfeld \(updated: [^\)]*\)(\s*)01h 00m from 23:00 to 00:00 - JeffGarlin on curb - Status: Open - Tags: nbc,seinfeld \(updated: [^\)]*\)|
 
   Scenario: Single availability with no pairs shows published as updated_at of availability
     Given only the following availabilities in the system

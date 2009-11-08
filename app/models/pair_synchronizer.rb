@@ -2,7 +2,7 @@ class PairSynchronizer
   
   def initialize(pair_matcher = nil, pair_repository = nil)
     @pair_matcher = pair_matcher || PairMatcher.new
-    @pair_repository = pair_repository || PairRepository.new
+    @pair_repository = pair_repository || PairBuilder.new
   end
 
   private

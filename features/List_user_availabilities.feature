@@ -3,7 +3,7 @@ Feature: List user availabilities
   As an open source developer
   I want to see all my availabilities listed with whether there are pairs available
 
-  Scenario: Only the specified user's availabilities are listed on the users' availabilities page soonest first
+  Scenario: Only the specified user's availabilities are listed on the users' availabilities page last updated first
     Given only the following availabilities in the system
       | developer     | project         | start time              | end time                | contact                        |
       | Philip.J.Fry  | futurama        | January 1, 2020 22:00   | January 1, 2020 23:00   | http://github.com/philip_j_fry |

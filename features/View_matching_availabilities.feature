@@ -15,7 +15,7 @@ Feature: View matching availabilities
       Then I should see /Bender is available to pair on anything on Fri Dec 13, 2019 22:00 \- 04:30/
       And I should see the following matching pairs
         | developer    | project  | when                           | dev time     | contact                          |
-        | Philip.J.Fry | anything | Fri Dec 13, 2019 22:00 - 02:30 | 4h 30m       | http://github.com/larry_david |
+        | Philip.J.Fry | anything | Fri Dec 13, 2019 22:00 - 02:30 | 4h 30m       | http://github.com/philip_j_fry |
 
 
 Scenario: One pair is found where both will work on only a specific project
@@ -30,7 +30,7 @@ Scenario: One pair is found where both will work on only a specific project
     Then I should see /Bender is available to pair on Futurama on Fri Dec 13, 2019 22:00 \- 04:30/
     And I should see the following matching pairs
       | developer    | project  | when                           | dev time     | contact                          |
-      | Philip.J.Fry | Futurama | Fri Dec 13, 2019 22:00 - 02:30 | 4h 30m       | http://github.com/larry_david |
+      | Philip.J.Fry | Futurama | Fri Dec 13, 2019 22:00 - 02:30 | 4h 30m       | http://github.com/philip_j_fry |
 
   Scenario: No pairs are found for a project
     Given only the following availabilities in the system
@@ -51,7 +51,7 @@ Scenario: One pair is found where both will work on only a specific project
         | MalcolmTucker   | The Thick Of It | December 1, 2019 22:00      | December 1, 2019 22:20      | http://github.com/malcolm_tucker  |
         | Bender          | Futurama        | December 13, 2019 22:00     | December 14, 2019 04:30     | http://github.com/bender          |
         | Philip.J.Fry    | Futurama        | December 13, 2019 21:30     | December 14, 2019 02:30     | http://github.com/philip_j_fry    |
-        | ProfFarnsworth |                 | December 13, 2019 21:15     | December 14, 2019 01:30     | http://github.com/prof_farnsworth |
+        | ProfFarnsworth |                  | December 13, 2019 21:15     | December 14, 2019 01:30     | http://github.com/prof_farnsworth |
       When I am on the list availabilities page
       And I follow "Fri Dec 13, 2019 22:00 - 04:30"
       Then I should see /Bender is available to pair on Futurama on Fri Dec 13, 2019 22:00 \- 04:30/
@@ -69,4 +69,23 @@ Scenario: One pair is found where both will work on only a specific project
     Then I should see "Subscribe to updates of Bender's available pairs (atom)"
     When I follow "atom"
     Then My path should be "/Bender.atom"
+
+  Scenario: Pairs are ordered by most matching tags
+      Given only the following availabilities in the system
+        | developer       | project | start time                  | end time                    | contact                           | tags |
+        | Bender          |         | December 13, 2019 18:00     | December 14, 2019 00:00     | http://github.com/bender          | rails,rspec,cucumber,css,javascript,jquery,html |
+        | LarryDavid      |         | December 13, 2019 20:00     | December 14, 2019 00:00     | http://github.com/larry_david     | sinatra,rails,rspec,ramaze                      |
+        | MalcolmTucker   |         | December 13, 2019 21:00     | December 14, 2019 00:00     | http://github.com/malcolm_tucker  | css,html,javascript,jquery                      |
+        | PhilipJFry      |         | December 13, 2019 22:00     | December 14, 2019 00:00     | http://github.com/philip_j_fry    | css,html,javascript,flash                       |
+        | ProfFarnsworth  |         | December 13, 2019 23:00     | December 14, 2019 00:00     | http://github.com/prof_farnsworth | cucumber,zuchini,aubergine                      |
+      When I am on the list availabilities page
+      And I follow "Fri Dec 13, 2019 18:00 - 00:00"
+      Then I should see the following matching pairs
+        | developer      | project  | when                             | dev time     | contact                           | tags                       |
+        | MalcolmTucker  |          | Fri Dec 13, 2019 21:00 - 00:00   | 3h 00m       | http://github.com/malcolm_tucker  | css,html,javascript,jquery |
+        | PhilipJFry     |          | Fri Dec 13, 2019 22:00 - 00:00   | 2h 00m       | http://github.com/philip_j_fry    | css,html,javascript        |
+        | LarryDavid     |          | Fri Dec 13, 2019 20:00 - 00:00   | 4h 00m       | http://github.com/larry_david     | rails,rspec                |
+        | ProfFarnsworth |          | Fri Dec 13, 2019 23:00 - 00:00   | 1h 00m       | http://github.com/prof_farnsworth | cucumber                   |
+
+
 

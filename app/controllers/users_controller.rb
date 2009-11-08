@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
  
   private
+
   def sort_availabilities_and_pairs
     @availabilities.each do |availability|
-      availability.pairs.sort!{ |p1, p2| p1.updated_at <=> p2.updated_at}.reverse!
+      availability.sort_pairs_by_matching_tag_count_and_updated_at_desc
     end
     @availabilities.sort! do |a1, a2|
       a1_updated = a1.pairs.length == 0 ? a1.updated_at : a1.pairs[0].updated_at
@@ -22,14 +23,15 @@ class UsersController < ApplicationController
       return
     end
     @availabilities = Availability.find(:all,
-                                        :order => "start_time",
                                         :conditions => ["user_id = :user_id and end_time > :end_time" ,
                                                         {:user_id => @user.id,:end_time => Time.now.utc}])
     respond_to do |format|
+      sort_availabilities_and_pairs
+      render_args = Availability.render_args
       format.html # new.html.erb
-      format.atom  do
-          sort_availabilities_and_pairs
-      end
+      format.xml {render :xml => @availabilities.to_xml(render_args)}
+      format.js {render :json => @availabilities.to_json(render_args)}
+      format.atom
     end
   end
 

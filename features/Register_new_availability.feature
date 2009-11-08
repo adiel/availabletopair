@@ -15,10 +15,11 @@ Feature: Register new availability
     When I log in as "jeffosmith"
     And I follow "Make yourself available"
     And I fill in "Cucumber" for "Project"
+    And I fill in "available,to,pair" for "Tags"
     And I select "December 25, 2014 10:00" as the "Start time" date and time
     And I select "December 25, 2014 12:30" as the "End time" date and time
     And I press "Publish availability"
-    Then I should see "jeffosmith is available to pair on Cucumber on Thu Dec 25, 2014 10:00 - 12:30 GMT (2h 30m)"
+    Then I should see "jeffosmith is available to pair on Cucumber on Thu Dec 25, 2014 10:00 - 12:30 GMT (2h 30m) - Tags: available,pair,to"
 
   Scenario: User cannot add a new availability with end date in the past
     Given no availabilities in the system

@@ -30,7 +30,7 @@ describe Availability do
 
     it "should sync pairs" do
       
-      availability = Availability.new
+      availability = Availability.new(:user => User.new, :start_time => Time.now, :end_time => Time.now + 1000)
       pair_synchronizer = mock(:pair_synchronizer)
       pair_synchronizer.should_receive(:synchronize_pairs).with(availability)
 

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PairRepository do
+describe PairBuilder do
   master_availability = Availability.new(:start_time => Time.now, :end_time => Time.now)
   pair_availability = Availability.new(:start_time => Time.now, :end_time => Time.now)
 
@@ -10,7 +10,7 @@ describe PairRepository do
       master_availability.id = 543
       pair_availability.id = 654
 
-      pair = PairRepository.new.create(master_availability,pair_availability)
+      pair = PairBuilder.new.create(master_availability,pair_availability)
 
       pair.availability_id.should eql(master_availability.id)
       pair.available_pair_id.should eql(pair_availability.id)
@@ -20,7 +20,7 @@ describe PairRepository do
       master_availability.user_id = 54321
       pair_availability.user_id = 98765
 
-      pair = PairRepository.new.create(master_availability,pair_availability)
+      pair = PairBuilder.new.create(master_availability,pair_availability)
 
       pair.user_id.should eql pair_availability.user_id
     end
@@ -33,8 +33,8 @@ describe PairRepository do
       end
 
       it "should use the pair's start time" do
-        pair = PairRepository.new.create(master_availability,pair_availability)
-        pair.start_time.should be (pair_availability.start_time)
+        pair = PairBuilder.new.create(master_availability,pair_availability)
+        pair.start_time.should be(pair_availability.start_time)
       end
 
     end
@@ -47,8 +47,8 @@ describe PairRepository do
       end
 
       it "should use the master's start time" do
-        pair = PairRepository.new.create(master_availability,pair_availability)
-        pair.start_time.should be (master_availability.start_time)
+        pair = PairBuilder.new.create(master_availability,pair_availability)
+        pair.start_time.should be(master_availability.start_time)
       end
 
     end
@@ -61,8 +61,8 @@ describe PairRepository do
       end
 
       it "should use the masters's end time" do
-        pair = PairRepository.new.create(master_availability,pair_availability)
-        pair.end_time.should be (master_availability.end_time)
+        pair = PairBuilder.new.create(master_availability,pair_availability)
+        pair.end_time.should be(master_availability.end_time)
       end
 
     end
@@ -75,8 +75,8 @@ describe PairRepository do
       end
 
       it "should use the pair's end time" do
-        pair = PairRepository.new.create(master_availability,pair_availability)
-        pair.end_time.should be (pair_availability.end_time)
+        pair = PairBuilder.new.create(master_availability,pair_availability)
+        pair.end_time.should be(pair_availability.end_time)
       end
 
     end
@@ -89,7 +89,7 @@ describe PairRepository do
       end
 
       it "should set the project nil" do
-        pair = PairRepository.new.create(master_availability,pair_availability)
+        pair = PairBuilder.new.create(master_availability,pair_availability)
         pair.project.should eql nil
       end
 
@@ -103,7 +103,7 @@ describe PairRepository do
       end
 
       it "should use the master's project" do
-        pair = PairRepository.new.create(master_availability,pair_availability)
+        pair = PairBuilder.new.create(master_availability,pair_availability)
         pair.project.should eql(master_availability.project)
       end
 
@@ -117,8 +117,34 @@ describe PairRepository do
       end
 
       it "should use the pair's project" do
-        pair = PairRepository.new.create(master_availability,pair_availability)
+        pair = PairBuilder.new.create(master_availability,pair_availability)
         pair.project.should eql(pair_availability.project)
+      end
+    end
+    
+    describe "and there are no matching tags" do
+
+      before do
+        master_availability.tags = []
+        pair_availability.tags = []
+      end
+
+      it "should have empty tags" do
+        pair = PairBuilder.new.create(master_availability,pair_availability)
+        pair.tags.should eql("")
+      end
+    end
+    
+    describe "and only some tags match" do
+
+      before do
+        master_availability.tags = [Tag.new(:tag => "grub"),Tag.new(:tag => "cuthbert"),Tag.new(:tag => "dibble")]
+        pair_availability.tags = [Tag.new(:tag => "dibble"),Tag.new(:tag => "cuthbert"),Tag.new(:tag => "dibble")]
+      end
+
+      it "should have the matching tags as csv in alphabetical order" do
+        pair = PairBuilder.new.create(master_availability,pair_availability)
+        pair.tags.should eql("cuthbert,dibble")
       end
     end
 

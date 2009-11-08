@@ -50,6 +50,6 @@ Then /^I should see the following pair statuses:$/ do |table|
   table.rows.each_with_index do |row,index|
     row_selector = ".pairs tr:nth-child(#{index + 2})"
     Then "I should see \"#{row[0]}\" within \"#{row_selector} td:nth-child(1)\""
-    Then "I should see \"#{row[1]}\" within \"#{row_selector} td:nth-child(7)\""
+    Then "I should see \"#{row[1]}\" within \"#{row_selector} td:nth-child(8)\""
   end
 end

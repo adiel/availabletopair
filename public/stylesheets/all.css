@@ -82,8 +82,8 @@ table input {
     width:15em;
 }
 
-#availability_project {
-width:22.4em;
+#availability_project, #availability_tags {
+width:35em;
 }
 
 
@@ -137,4 +137,11 @@ form label {
 
 .duration, .time, .project {
     font-weight:bold;
+}
+
+tr.paired, tr.paired td {
+    background-color:#66ff66;
+}
+tr.suggested, tr.suggested td {
+    background-color:#ffff66;
 }

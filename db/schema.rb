@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091102351300) do
+ActiveRecord::Schema.define(:version => 20091106231200) do
 
   create_table "availabilities", :force => true do |t|
     t.datetime "start_time"
@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(:version => 20091102351300) do
   end
 
   add_index "availabilities", ["start_time", "end_time"], :name => "availabilities_pair_search_index"
+
+  create_table "availabilities_tags_links", :force => true do |t|
+    t.integer "availability_id", :null => false
+    t.integer "tag_id",          :null => false
+  end
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
@@ -49,9 +54,16 @@ ActiveRecord::Schema.define(:version => 20091102351300) do
     t.integer  "user_id"
     t.boolean  "accepted",          :default => false, :null => false
     t.boolean  "suggested",         :default => false, :null => false
+    t.string   "tags"
   end
 
   add_index "pairs", ["availability_id"], :name => "pairs_availability_id_index"
+
+  create_table "tags", :force => true do |t|
+    t.string   "tag",        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"

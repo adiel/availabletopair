@@ -59,16 +59,32 @@ module AvailabilitiesHelper
 
   def pair_status(pair)
     if (!pair.accepted && !pair.suggested)
-      return "Open"
+      return :open
     elsif (pair.accepted && pair.suggested)
-      return "Paired"
+      return :paired
     else
-      if (pair.accepted)
-        user = current_user_accepted(pair) ? "You" : pair.availability.user.username
-      else
-        user = current_user_suggested(pair) ? "You" : pair.user.username
-      end
-      return "#{user} suggested pairing"
+      :suggested
+    end
+  end
+
+  def build_suggested_status(pair)
+    if (pair.accepted)
+      user = current_user_accepted(pair) ? "You" : pair.availability.user.username
+    else
+      user = current_user_suggested(pair) ? "You" : pair.user.username
+    end
+    "#{user} suggested pairing"
+  end
+
+  def display_pair_status(pair)
+    status = pair_status(pair)
+    case(status)
+      when :open
+        "Open"
+      when :paired
+        "Paired"
+      when :suggested
+        build_suggested_status(pair)
     end
   end
 
@@ -81,6 +97,10 @@ module AvailabilitiesHelper
       text = pair.suggested ? "Accept" : "Suggest pairing"
     end
     button_to(text, {:controller => 'pairs', :action => action, :id => pair.id}, :method => :post)
+  end
+  
+  def display_tags(availability)
+	availability.tags.length == 0 ? 'none' : availability.tags.sort_by{|t|t.tag}.join(',')
   end
 
   private

@@ -4,8 +4,12 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :project, 'Project (optional)' %><br />
+    <%= f.label :project, 'Project' %>(optional)<br />
     <%= f.text_field :project %>
+  </p>
+  <p>
+    <%= f.label :tags, 'Tags' %>(optional, comma seperated) - e.g. programming languages, spoken languages, interests, trends<br />
+    <%= f.text_field(:tags, :value => @availability.tags.join(','))  %>
   </p>
   <p>
     <%= f.label :start_time %><br />

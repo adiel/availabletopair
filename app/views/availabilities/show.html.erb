@@ -1,5 +1,5 @@
 <p>
-    <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> is available to pair on <span class="project"><%= project_link(@availability) %></span> on <span class="time"><%=h display_when(@availability) %></span> (<span class="duration"><%= display_duration(@availability) %></span>)
+    <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> is available to pair on <span class="project"><%= project_link(@availability) %></span> on <span class="time"><%=h display_when(@availability) %></span> (<span class="duration"><%= display_duration(@availability) %></span>) - Tags: <strong><%=h display_tags(@availability) %></strong>
     <% if mine?(@availability) %>
        | <%= link_to 'Edit', edit_availability_path(@availability) %>
     <% end %>
@@ -11,6 +11,7 @@
   <tr>
     <th>Who</th>
     <th>What</th>
+    <th>Shared tags</th>
     <th>When</th>
     <th>Dev time</th>
     <th>Updated</th>
@@ -19,14 +20,15 @@
   </tr>
 
 <% @availability.pairs.each do |pair| %>
-  <tr>
+  <tr class="<%= pair_status(pair) %>">
     <td><%= link_to(h(pair.user.username),"/" + h(pair.user.username)) %></td>
     <td><%= project_link(pair) %></td>
+    <td><%= pair.tags %></td>
     <td><%=h display_when(pair) %></td>
     <td><%=h display_duration(pair) %></td>
     <td><%= display_date_time(pair.updated_at) %></td>
     <td><%= contact_link(pair.user) %></td>
-    <td><%= pair_status(pair)  %></td>
+    <td><%= display_pair_status(pair)  %></td>
     <td><%= mine?(@availability) ? button_to_suggest_accept(pair) : "" %></td>
   </tr>
 <% end %>

@@ -1,4 +1,7 @@
 class AvailabilitiesController < ApplicationController
+
+  public
+
   # GET /availabilities
   # GET /availabilities.xml
   def index
@@ -7,7 +10,8 @@ class AvailabilitiesController < ApplicationController
                                                              {:end_time => Time.now.utc}])
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @availabilities }
+      format.xml  { render :xml => @availabilities.to_xml(Availability.render_args)}
+      format.js  { render :json => @availabilities.to_json(Availability.render_args)}
     end
   end
 
@@ -15,24 +19,19 @@ class AvailabilitiesController < ApplicationController
   # GET /availabilities/1.xml
   def show
     @availability = Availability.find(params[:id])
-    @availability.pairs.sort! {|p1,p2| p1.updated_at <=> p2.updated_at}.reverse!
+    @availability.sort_pairs_by_matching_tag_count_and_updated_at_desc
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @availability }
+      format.xml  { render :xml => @availability.to_xml(Availability.render_args)}
+      format.js  { render :json => @availability.to_json(Availability.render_args)}
     end
   end
   
   # GET /availabilities/new
-  # GET /availabilities/new.xml
   def new
     return unless require_user
     @availability = Availability.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @availability }
-    end
   end
 
   def check_user_edit
@@ -50,57 +49,55 @@ class AvailabilitiesController < ApplicationController
     return unless check_user_edit
   end
 
+  #TODO: unit tests
+  def read_tags_from_params
+    tags = []
+    params[:availability][:tags].split(',').each do |text|
+      existing_tag = Tag.find(:all, :conditions => {:tag => text})[0]
+      tags.push existing_tag || Tag.new(:tag => text.strip)
+    end
+    params[:availability][:tags] = tags
+  end
+
   # POST /availabilities
-  # POST /availabilities.xml
   def create
     return unless require_user
+    read_tags_from_params
     @availability = Availability.new(params[:availability])
     @availability.user_id = current_user.id
 
-    respond_to do |format|
-      if @availability.save
-        flash[:notice] = 'Availability was successfully created.'
-        format.html { redirect_to(@availability) }
-        format.xml  { render :xml => @availability, :status => :created, :location => @availability }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @availability.errors, :status => :unprocessable_entity }
-      end
+    if @availability.save
+      flash[:notice] = 'Availability was successfully created.'
+      redirect_to(@availability)
+    else
+      render :action => "new"
     end
   end
 
   # PUT /availabilities/1
-  # PUT /availabilities/1.xml
   def update
     return unless require_user
     @availability = Availability.find(params[:id])
     return unless check_user_edit
     
-    respond_to do |format|
-      # todo, could you hack in a diff user id here?
-      if @availability.update_attributes(params[:availability])
-        flash[:notice] = 'Availability was successfully updated.'
-        format.html { redirect_to(@availability) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @availability.errors, :status => :unprocessable_entity }
-      end
+    # todo, could you hack in a diff user id here?
+    read_tags_from_params
+    if @availability.update_attributes(params[:availability])
+      flash[:notice] = 'Availability was successfully updated.'
+      redirect_to(@availability)
+    else
+      render :action => "edit"
     end
   end
 
   # DELETE /availabilities/1
-  #
-  #DELETE /availabilities/1.xml
   def destroy
     return unless require_user
     @availability = Availability.find(params[:id])
     return unless check_user_edit
     @availability.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(availabilities_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(availabilities_url)
   end
+
 end
