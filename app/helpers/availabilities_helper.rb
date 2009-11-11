@@ -38,7 +38,7 @@ module AvailabilitiesHelper
   end
 
   def display_when(availability)
-    "#{display_date_time(availability.start_time)} - #{display_time(availability.end_time)} GMT"
+    "#{display_date_time(availability.start_time)}-#{display_time(availability.end_time)} GMT"
   end
 
   def display_when_time(availability)
@@ -100,7 +100,17 @@ module AvailabilitiesHelper
   end
   
   def display_tags(availability)
-	  availability.tags.length == 0 ? 'none' : availability.tags.sort_by{|t|t.tag}.join(', ')
+	if availability.tags.length == 0
+      'none'
+    else
+      tag_links = []
+      tags = availability.tags.sort_by{|t|t.tag}
+      tags.each do|t|
+        tag_links << link_to(h(t.tag),"#{http_root}/tags/#{CGI::escape(t.tag)}")
+      end
+      tag_links.join(', ')
+    end
+
   end
 
   private

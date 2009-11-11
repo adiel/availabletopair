@@ -1,0 +1,7 @@
+<feed  xmlns="http://www.w3.org/2005/Atom" >
+  <title>Available To Pair - <%= h @tag%></title>
+  <id><%= http_root %>/<%= h @tag%></id>
+  <link href="<%= http_root %>/<%= CGI::escape(@tag)%>.atom" rel="self" />
+  <link href="<%= http_root %>/<%= CGI::escape(@tag)%>" />
+<%= render :partial => 'availabilities/atom' %>
+</feed>

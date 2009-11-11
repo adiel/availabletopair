@@ -14,8 +14,8 @@ Feature: List user availabilities
    Then I should see "All LarryDavid's availability"
    And I should see the following availabilites listed in order
       | developer     | project         | when                           | dev time  | pairs available | contact                        |
-      | LarryDavid    | curb            | Fri Dec 13, 2019 21:00 - 21:30 | 0h 30m    | No              | http://github.com/LarryDavid   |
-      | LarryDavid    | curb            | Fri Dec 13, 2019 22:00 - 00:00 | 2h 00m    | No              | http://github.com/LarryDavid   |
+      | LarryDavid    | curb            | Fri Dec 13, 2019 21:00-21:30 | 0h 30m    | No              | http://github.com/LarryDavid   |
+      | LarryDavid    | curb            | Fri Dec 13, 2019 22:00-00:00 | 2h 00m    | No              | http://github.com/LarryDavid   |
 
   Scenario: Developer name on all availabilities links to user page
     Given only the following availabilities in the system
@@ -38,7 +38,7 @@ Feature: List user availabilities
       | Bender        |                 | December 13, 2019 22:00     | December 14, 2019 04:30 | http://github.com/bender       |
       | Philip.J.Fry  |                 | December 13, 2019 21:30     | December 14, 2019 02:30 | http://github.com/philip_j_fry |
     When I am on the list availabilities page
-    And I follow "Fri Dec 13, 2019 21:30 - 02:30"
+    And I follow "Fri Dec 13, 2019 21:30-02:30"
     And I follow "Bender"
     Then My path should be "/Bender"
     And I should see "All Bender's availability"

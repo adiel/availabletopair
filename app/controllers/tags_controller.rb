@@ -18,6 +18,7 @@ class TagsController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @availabilities.to_xml(Availability.render_args)}
       format.js  { render :json => @availabilities.to_json(Availability.render_args)}
+      format.atom 
     end
   end
   

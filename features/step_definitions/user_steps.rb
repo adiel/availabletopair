@@ -77,7 +77,7 @@ Then /^The only entry's content should link to availability page from time perio
   entries = doc.xpath('/xmlns:feed/xmlns:entry')
 
   only_availability = Availability.find(:all)[0]
-  expected_link_text = "#{only_availability.start_time.strftime("%a %b %d, %Y %H:%M")} - #{only_availability.end_time.strftime("%H:%M")} GMT"
+  expected_link_text = "#{only_availability.start_time.strftime("%a %b %d, %Y %H:%M")}-#{only_availability.end_time.strftime("%H:%M")} GMT"
                         
   content = entries[0].xpath("xmlns:content").text
   content.should match(/<a href="http:\/\/www.example.com\/availabilities\/#{only_availability.id}">#{expected_link_text}<\/a>/)

@@ -1,5 +1,5 @@
 <p>
-    <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> is available to pair on <span class="project"><%= project_link(@availability) %></span> on <span class="time"><%=h display_when(@availability) %></span> (<span class="duration"><%= display_duration(@availability) %></span>) - Tags: <strong><%=h display_tags(@availability) %></strong>
+    <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> is available to pair on <span class="project"><%= project_link(@availability) %></span> on <span class="time"><%= display_when(@availability) %></span> (<span class="duration"><%= display_duration(@availability) %></span>) - Tags: <strong><%= display_tags(@availability) %></strong>
     <% if mine?(@availability) %>
        | <%= link_to 'Edit', edit_availability_path(@availability) %>
     <% end %>
@@ -24,7 +24,7 @@
     <td><%= link_to(h(pair.user.username),"/" + h(pair.user.username)) %></td>
     <td><%= project_link(pair) %></td>
     <td><%= pair.tags %></td>
-    <td><%=h display_when(pair) %></td>
+    <td><%= display_when(pair) %></td>
     <td><%=h display_duration(pair) %></td>
     <td><%= display_date_time(pair.updated_at) %></td>
     <td><%= contact_link(pair.user) %></td>
@@ -34,7 +34,7 @@
 <% end %>
 <% if @availability.pairs.length == 0 %>
   <tr>
-    <td colspan="8">
+    <td colspan="9">
       No developers are available to pair on <%= project_link(@availability) %> with <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> over this period.
     </td>
   </tr>

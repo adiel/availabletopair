@@ -2,7 +2,7 @@
     <tr>
     <td><%= link_to(h(availability.user.username), "/" + h(availability.user.username)) %></td>
     <td><%= project_link(availability) %></td>
-    <td><%=h display_tags(availability) %></td>
+    <td><%= display_tags(availability) %></td>
     <td><%= link_to(display_when(availability),availability) %></td>
     <td><%=h display_duration(availability) %></td>
     <td><%= pairs_link(availability) %></td>

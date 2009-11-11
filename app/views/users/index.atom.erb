@@ -1,35 +1,7 @@
 <feed  xmlns="http://www.w3.org/2005/Atom" >
   <title><%=h @user.username %> is Available To Pair</title>
   <id><%= http_root %>/<%= h @user.username%></id>
-  <link href="<%= http_root %>/<%= h @user.username%>.atom" rel="self" />
-  <link href="<%= http_root %>/<%= h @user.username%>" />
-  <author>
-    <name>Available To Pair</name>
-    <email>noreply@availabletopair.com</email>
-  </author>
-<% unless @availabilities.length == 0 %>
-  <updated><%= pairs_updated(@availabilities[0]).xmlschema %></updated>
-<%end%>
-  <% @availabilities.each do |availability| %>
-  <entry>
-    <title type="text" >Pairs available for <%=h display_when(availability) %> (updated: <%= display_date_time(pairs_updated(availability))%>)</title>
-    <link href="<%= http_root %>/availabilities/<%=h availability.id %>" />
-    <published><%= pairs_updated(availability).xmlschema %></published>
-    <updated><%= pairs_updated(availability).xmlschema %></updated>
-    <id>http://availabletopair.com/<%=h availability.id %>/<%=h pairs_updated(availability).xmlschema %></id>
-    <content type="html">
-        <![CDATA[
-        <% if availability.pairs.length == 0 %>
-            No developers are available to pair on <%= project_link(availability) %> with <%=h availability.user.username%> on <a href="<%= http_root %>/availabilities/<%=h availability.id %>"><%=h display_when(availability) %></a>.
-        <% else %>
-            The following developers are available to pair on <%= project_link(availability) %> with <%=h availability.user.username %> on <a href="<%= http_root %>/availabilities/<%=h availability.id %>"><%=h display_when(availability) %></a>:
-            <ul>
-              <% availability.pairs.each do |pair| %>
-              <li><strong><%=h display_duration(pair,true) %></strong> from <strong><%=h display_when_time(pair) %></strong> - <strong><%= h pair.user.username %></strong> on <strong><%=h display_project(pair) %></strong> - Status: <strong><%= display_pair_status(pair) %></strong> - Tags: <strong><%= pair.tags %></strong> (updated: <%= display_date_time(pair.updated_at)%>)</li>
-              <% end %>
-            </ul>
-        <% end %>
-        ]]>  
-    </content>
-  </entry><% end %>
+  <link href="<%= http_root %>/<%= CGI::escape(@user.username)%>.atom" rel="self" />
+  <link href="<%= http_root %>/<%= CGI::escape(@user.username)%>" />
+<%= render :partial => 'availabilities/atom' %>
 </feed>

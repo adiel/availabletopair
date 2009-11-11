@@ -19,7 +19,7 @@ Feature: Register new availability
     And I select "December 25, 2014 10:00" as the "Start time" date and time
     And I select "December 25, 2014 12:30" as the "End time" date and time
     And I press "Publish availability"
-    Then I should see "jeffosmith is available to pair on Cucumber on Thu Dec 25, 2014 10:00 - 12:30 GMT (2h 30m) - Tags: available, pair, to"
+    Then I should see "jeffosmith is available to pair on Cucumber on Thu Dec 25, 2014 10:00-12:30 GMT (2h 30m) - Tags: available, pair, to"
 
   Scenario: User cannot add a new availability with end date in the past
     Given no availabilities in the system
@@ -58,7 +58,7 @@ Feature: Register new availability
       And I should see "12hrs is the maximum for one availability (you have 12h 01m)"
       When I select "December 25, 2014 22:00" as the "End time" date and time
       And I press "Publish availability"
-      Then I should see "jeffosmith is available to pair on anything on Thu Dec 25, 2014 10:00 - 22:00 GMT (12h 00m)"
+      Then I should see "jeffosmith is available to pair on anything on Thu Dec 25, 2014 10:00-22:00 GMT (12h 00m)"
 
   Scenario: User cannot add a new availability that overlaps at the start of an existing availability
       Given only the following availabilities in the system
@@ -92,7 +92,7 @@ Feature: Register new availability
       And I select "December 25, 2014 10:15" as the "Start time" date and time
       And I select "December 25, 2014 10:30" as the "End time" date and time
       And I press "Publish availability"
-      Then I should see "jeffosmith is available to pair on anything on Thu Dec 25, 2014 10:15 - 10:30 GMT (0h 15m)"
+      Then I should see "jeffosmith is available to pair on anything on Thu Dec 25, 2014 10:15-10:30 GMT (0h 15m)"
 
    Scenario: An availability can be edited by its owner
     Given only the following availabilities in the system
@@ -133,4 +133,4 @@ Feature: Register new availability
     When I make a request to delete the only availability in the system
     And I should see the following availabilites listed in order:
       | who         | what          | when                           | dev time | pairs | contact                        |
-      | PhilipJFry  | original proj | Wed Jan 01, 2020 22:00 - 23:00 | 1h 00m   | No    | http://github.com/philip_j_fry |
+      | PhilipJFry  | original proj | Wed Jan 01, 2020 22:00-23:00 | 1h 00m   | No    | http://github.com/philip_j_fry |

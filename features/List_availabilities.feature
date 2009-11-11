@@ -10,7 +10,7 @@ Feature: List  availabilities
     When I am on the list availabilities page
     Then I should see the following availabilites listed in order
       | developer     | project  | when                           | dev time         | pairs available | contact                        |
-      | Philip.J.Fry  | futurama | Wed Jan 01, 2020 22:00 - 23:00 | 1h 00m           | No              | http://github.com/philip_j_fry |
+      | Philip.J.Fry  | futurama | Wed Jan 01, 2020 22:00-23:00 | 1h 00m           | No              | http://github.com/philip_j_fry |
 
   Scenario: Multiple availabilities are listed on the availabilities page soonest first
     Given only the following availabilities in the system
@@ -21,9 +21,9 @@ Feature: List  availabilities
     When I am on the list availabilities page
     Then I should see the following availabilites listed in order
       | developer     | project         |  when                          | dev time | pairs available | contact                        |
-      | Bender        | futurama        | Fri Nov 01, 2019 22:00 - 05:00 | 7h 00m    | No              | http://github.com/Bender       |
-      | LarryDavid    | curb            | Fri Dec 13, 2019 21:59 - 00:00 | 2h 01m    | No              | http://github.com/LarryDavid   |
-      | Philip.J.Fry  | futurama        | Wed Jan 01, 2020 22:00 - 23:00 | 1h 00m    | No              | http://github.com/philip_j_fry |
+      | Bender        | futurama        | Fri Nov 01, 2019 22:00-05:00 | 7h 00m    | No              | http://github.com/Bender       |
+      | LarryDavid    | curb            | Fri Dec 13, 2019 21:59-00:00 | 2h 01m    | No              | http://github.com/LarryDavid   |
+      | Philip.J.Fry  | futurama        | Wed Jan 01, 2020 22:00-23:00 | 1h 00m    | No              | http://github.com/philip_j_fry |
 
   Scenario: An availability is listed with two matching pairs
     Given only the following availabilities in the system
@@ -35,10 +35,10 @@ Feature: List  availabilities
     When I am on the list availabilities page
     Then I should see the following availabilites listed in order
       | developer       | project         |  when                          | dev time | pairs available | contact                        |
-      | LarryDavid      | Curb            | Fri Dec 13, 2019 21:00 - 05:00 | 8h 00m   | Yes(1)         | http://github.com/LarryDavid   |
-      | ProfFarnsworth | anything        | Fri Dec 13, 2019 21:15 - 01:30 | 4h 15m   | Yes(3)         | http://github.com/philip_j_fry |
-      | Philip.J.Fry    | Futurama        | Fri Dec 13, 2019 21:30 - 02:30 | 5h 00m   | Yes(2)         | http://github.com/philip_j_fry |
-      | Bender          | Futurama        | Fri Dec 13, 2019 22:00 - 04:30 | 6h 30m   | Yes(2)         | http://github.com/philip_j_fry |
+      | LarryDavid      | Curb            | Fri Dec 13, 2019 21:00-05:00 | 8h 00m   | Yes(1)         | http://github.com/LarryDavid   |
+      | ProfFarnsworth | anything        | Fri Dec 13, 2019 21:15-01:30 | 4h 15m   | Yes(3)         | http://github.com/philip_j_fry |
+      | Philip.J.Fry    | Futurama        | Fri Dec 13, 2019 21:30-02:30 | 5h 00m   | Yes(2)         | http://github.com/philip_j_fry |
+      | Bender          | Futurama        | Fri Dec 13, 2019 22:00-04:30 | 6h 30m   | Yes(2)         | http://github.com/philip_j_fry |
 
   Scenario: Availabilities with end time in the past should not show
     Given no availabilities in the system
