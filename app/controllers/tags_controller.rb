@@ -12,7 +12,9 @@ class TagsController < ApplicationController
   # GET /tags/sometag.js
   def show
 	@tag = params[:id]
-    @availabilities = Availability.find(:all, :order => :start_time, :include => :tags, :conditions => ['tags.tag = :tag',{:tag => @tag}])
+    @availabilities = Availability.find(:all, :order => :start_time, :include => :tags,
+                                        :conditions => ['tags.tag = :tag and end_time > :end_time',
+                                                       {:tag => @tag,:end_time => Time.now.utc}])
 
     respond_to do |format|
       format.html # show.html.erb
