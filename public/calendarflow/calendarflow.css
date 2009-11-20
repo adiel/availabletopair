@@ -89,6 +89,7 @@
     font-size:12px;
     overflow:hidden;
     color:white;
+    border:1px solid white;
 }
 .calendarFlow .event h3 {
     margin:0;

@@ -106,7 +106,7 @@
             element.css("width",(this.settings.dayWidth - 1) + "px");
 
             var css = {"height":this.settings.dayHeight + "px",
-                       "background-image":"url(calendarFlow/events_bg_" + this.calculateHourHeight() + ".gif)"};
+                       "background-image":"url(/calendarFlow/events_bg_" + this.calculateHourHeight() + ".gif)"};
             $('<div class="prevDay"/>').css(css).appendTo(element);
             $('<div class="currentDay"/>').css(css).appendTo(element);
             $('<div class="nextDay"/>').css(css).appendTo(element);
@@ -149,14 +149,16 @@
             return 'event_' + dayOffset + '_' + event.id;
         },
 
-        buildEventElement:function (event, dayOffset, dayElement, top, height) {
+        buildEventElement:function (event, dayOffset, dayElement, top, height, overlapping, overlapPosition) {
             var eventElement = $('<div/>');
             eventElement.attr('class','event ' + this.buildEventClassName(event, dayOffset));
             eventElement.attr('title',this.eventSummary(event));
+            var left = (Math.floor(this.settings.dayWidth / overlapping) * overlapPosition);
             eventElement.css({"position":"absolute",
                 "top": top + "px",
-                "left":"0px",
-                "height":height + "px"});
+                "left": left +  "px",
+                "height":height + "px",
+                "width" : Math.floor(100 / overlapping) + "%"});
 
             var titleElement = $('<h3/>');
             titleElement.html(event.title);
@@ -178,6 +180,18 @@
         renderEvent : function(event,dayOffset,context) {
             this.removeExistingEvent(event,dayOffset,context);
 
+            var that = this;
+            var overlappingEvents = 0;
+            var overlapPosition = 0;
+            $.each(that.events,function(index) {
+                if (this.start_time < event.end_time && this.end_time > event.start_time) {
+                    overlappingEvents ++;
+                    if (this.id == event.id) {
+                        overlapPosition = overlappingEvents - 1;
+                    }
+                }
+            });
+
             var startTime = this.parseISODate(event.start_time);
             var endTime = this.parseISODate(event.end_time);
 
@@ -187,11 +201,20 @@
             var height = Math.floor(this.getEventLengthMins(startTime, endTime) * (this.settings.dayHeight / 1440));
 
             var dayElement = $(".dayEvents_" + this.formatDateForClassName(startTime),context);
-            this.buildEventElement(event, dayOffset, dayElement, top, height).prependTo(dayElement);
+            this.buildEventElement(event, dayOffset, dayElement, top, height,overlappingEvents,overlapPosition).prependTo(dayElement);
+        },
+
+        saveEvents:function (events) {
+            this.events = this.events || {};
+            var that = this;
+            $.each(events, function() {
+                that.events[this.event.id] = this.event;
+            });
+            return that;
         },
 
         renderEvents : function(events,context) {
-            var that = this;
+            var that = this.saveEvents(events);
             jQuery.each(events,function() {
                 that.renderEvent(this.event,-1);
                 that.renderEvent(this.event,0);
