@@ -91,8 +91,7 @@ class Availability < ActiveRecord::Base
                         :include => {
                           :user => {
                             :only => :username
-                          },
-                          :tags => {:only => :tag}
+                          }
                         }
                       } 
                     }
