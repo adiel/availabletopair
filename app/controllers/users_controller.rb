@@ -22,9 +22,25 @@ class UsersController < ApplicationController
       redirect_to root_url
       return
     end
+
     @availabilities = Availability.find(:all,
                                         :conditions => ["user_id = :user_id and end_time > :end_time" ,
-                                                        {:user_id => @user.id,:end_time => Time.now.utc}])
+                                                        {:user_id => @user.id,:end_time => Time.now.utc }])
+
+    from_date = params[:from_date].nil? ? nil : Date.parse(params[:from_date]);
+    to_date = params[:to_date].nil? ? nil : Date.parse(params[:to_date]);
+    to_date += 1 unless to_date.nil?
+
+    unless from_date.nil? && to_date.nil?
+
+      @availabilities = @availabilities.find_all do |a|
+        (from_date.nil? || (a.start_time >= from_date && a.start_time < to_date)) ||
+        (to_date.nil? || (a.end_time >= from_date && a.end_time < to_date))
+      end
+
+    end
+
+
     respond_to do |format|
       sort_availabilities_and_pairs
       render_args = Availability.render_args
