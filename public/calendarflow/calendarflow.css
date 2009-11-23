@@ -1,10 +1,10 @@
-.calendarFlow {
+.cal-flow {
     font-family:Arial,Helvetica;
     overflow:hidden;
     position:relative;
     cursor:move;
 }
-.calendarFlow .calendarEventsWrapper {
+.cal-flow-calendarEventsWrapper {
     height:100%;
     width:100%;
     position:relative;
@@ -12,35 +12,35 @@
     z-index:0;
     background-color:white;
 }
-.calendarFlow .timelineWrapper{
+.cal-flow-timelineWrapper{
     position:relative;
     top:-22px;
 }
-.calendarFlow  .events {
+.cal-flow-events {
     z-index:0;
 }
-.calendarFlow .timeline,.calendarFlow  .events {
+.cal-flow-timeline,.cal-flow-events {
     position:relative;
 }
-.calendarFlow .dayHeaders .dayHeader,.calendarFlow .events .day {
+.cal-flow-dayHeaders .cal-flow-dayHeader,.cal-flow-events .cal-flow-day {
     position:absolute;
     text-align:center;
 }
-.calendarFlow  .dayHeaders {
+.cal-flow-dayHeaders {
     position:relative;
 }
-.calendarFlow .dayHeaders .dayHeader {
+.cal-flow-dayHeaders .cal-flow-dayHeader {
     z-index:1;
     width:45px;
     height:14px;
     margin:3px 0;
     font-size:11px;
 }
-.calendarFlow .events .day  {
+.cal-flow-events .cal-flow-day  {
     height:100%;
     border-left:1px solid #999;
 }
-.calendarFlow .daysWrapper{
+.cal-flow-daysWrapper{
     height:20px;
     position:relative;
     z-index:3;
@@ -49,7 +49,7 @@
     overflow:hidden;
 }
 
-.calendarFlow .timeline {
+.cal-flow-timeline {
     clear:both;
     width:45px;
     position:relative;
@@ -60,29 +60,29 @@
     color:#fff;
     opacity:0.6;
 }
-.calendarFlow .timeline .time {
+.cal-flow-timeline .cal-flow-time {
     width:45px;
     z-index:3;
     overflow:hidden;
 }
-.calendarFlow .events .sun,.calendarFlow .events .sat{
+.cal-flow-events .cal-flow-sun,.cal-flow-events .cal-flow-sat{
     background-color:#ddffdd;
 }
-.calendarFlow .events .prevDay, .events .currentDay,.calendarFlow .events .nextDay  {
+.cal-flow-events .cal-flow-prevDay, .cal-flow-events .cal-flow-currentDay,.cal-flow-events .cal-flow-nextDay  {
     border:0;
 }
-.calendarFlow .events .currentDay{
+.cal-flow-events .cal-flow-currentDay{
     border-bottom:1px solid blue;
     border-top:1px solid blue;
 }
-.calendarFlow .events .prevDay,.calendarFlow .events .nextDay  {
+.cal-flow-events .cal-flow-prevDay,.cal-flow-events .cal-flow-nextDay  {
     background-color:#eee;
 }
-.calendarFlow .events .mon .prevDay,.calendarFlow .events .sun .prevDay,.calendarFlow .events .fri .nextDay,.calendarFlow .events .sat .nextDay  {
+.cal-flow-events .cal-flow-mon .cal-flow-prevDay,.cal-flow-events .cal-flow-sun .cal-flow-prevDay,.cal-flow-events .cal-flow-fri .cal-flow-nextDay,.cal-flow-events .cal-flow-sat .cal-flow-nextDay  {
     background-color:#eeffee;
 }
-.calendarFlow abbr {border-bottom:none;}
-.calendarFlow .event {
+.cal-flow abbr {border-bottom:none;}
+.cal-flow-event {
     text-align:left;
     background-color:#85a3e1;
     width:100%;
@@ -91,7 +91,7 @@
     color:white;
     border:1px solid white;
 }
-.calendarFlow .event h3 {
+.cal-flow-event h3 {
     margin:0;
     padding:3px;
     font-size:12px;
@@ -101,7 +101,7 @@
 
 }
 
-.calendarFlow .controls {
+.cal-flow-controls {
     position:absolute;
     top:50px;
     left:100px;
@@ -110,13 +110,13 @@
     opacity:0.5;
     z-index:1000;
 }
-.calendarFlow .controls span {
+.cal-flow-controls span {
     display:block;
     cursor:pointer;
     margin:2px;
     padding:2px;
     font-size:12px;
 }
-.calendarFlow .events .date_1 {
+.cal-flow-events .cal-flow-date_1 {
     border-left:1px solid red;   
 }
