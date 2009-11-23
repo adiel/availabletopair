@@ -24,8 +24,8 @@ class UsersController < ApplicationController
     end
 
     @availabilities = Availability.find(:all,
-                                        :conditions => ["user_id = :user_id and end_time > :end_time" ,
-                                                        {:user_id => @user.id,:end_time => Time.now.utc }])
+                                        :conditions => ["user_id = :user_id",
+                                                        {:user_id => @user.id}])
 
     from_date = params[:from_date].nil? ? nil : Date.parse(params[:from_date]);
     to_date = params[:to_date].nil? ? nil : Date.parse(params[:to_date]);

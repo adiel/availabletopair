@@ -90,8 +90,10 @@
     overflow:hidden;
     color:white;
     border:1px solid white;
+    cursor:default;
+    z-index:100;
 }
-.cal-flow-event h3 {
+.cal-flow-event h3, .qtip-content h3 {
     margin:0;
     padding:3px;
     font-size:12px;
@@ -103,12 +105,10 @@
 
 .cal-flow-controls {
     position:absolute;
-    top:50px;
-    left:100px;
-    border:1px solid black;
-    background:#ccc;
-    opacity:0.5;
+    left:60px;
+    opacity:0.3;
     z-index:1000;
+    display:none;
 }
 .cal-flow-controls span {
     display:block;
@@ -119,4 +119,30 @@
 }
 .cal-flow-events .cal-flow-date_1 {
     border-left:1px solid red;   
+}
+.cal-flow-controls .ui-slider-horizontal {
+    width:200px;
+    top:95px;
+    left:20px;
+}
+.cal-flow-controls .ui-slider-vertical {
+    height:70px;
+    top:15px;
+}
+.cal-flow-eventDetails  {
+    width:200px;
+    height:200px;
+    position:absolute;
+    background:#fff;
+    border:1px solid #ccc;
+    z-index:1001;
+    text-align:left;
+}
+.qtip-content {
+    overflow-y:auto ! important;
+    width:auto;
+    height:200px;
+}
+.qtip-content h3 {
+    border-color:#ccc;
 }
