@@ -152,7 +152,12 @@ tr.suggested, tr.suggested td {
     font-style:italic;
 }
 
+#eventsCalendar {
+    width:100%;height:100%;
+}
+
 /* Additions to calendarflow */
+
 
 
 .calendarFlow .event .summary {

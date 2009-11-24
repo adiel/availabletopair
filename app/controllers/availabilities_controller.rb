@@ -8,6 +8,9 @@ class AvailabilitiesController < ApplicationController
     @availabilities = Availability.find(:all, :order => "start_time")#,
                                               #:conditions => ["end_time > :end_time",
                                               #               {:end_time => Time.now.utc}])
+
+    Availability.filter_by_start_and_end_date!(@availabilities,params)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @availabilities.to_xml(Availability.render_args)}

@@ -8,7 +8,7 @@
 
 <% end %>
 <div id="calendarInstructions">You can pick up and drag this calendar (like a map)</div>
-<div id="eventsCalendar" style="width:100%;height:100%;"></div>
+<div id="eventsCalendar"></div>
 <script type="text/javascript">
 
     $(document).ready(function(){
@@ -70,7 +70,7 @@
         });
 
         var resizeCalendar = function() {
-            $("#eventsCalendar").css("height", ($(window).height() - $("#eventsCalendar").position().top - 100) + "px");
+            $("#eventsCalendar").css("height", ($(window).height() - $("#eventsCalendar").position().top - 50) + "px");
         };
 
         var resizeTimer = null;

@@ -97,6 +97,22 @@ class Availability < ActiveRecord::Base
                     }
           }
   end
+
+  def self.filter_by_start_and_end_date!(availabilities,params)
+    from_date = params[:from_date].nil? ? nil : Date.parse(params[:from_date]);
+    to_date = params[:to_date].nil? ? nil : Date.parse(params[:to_date]);
+    to_date += 1 unless to_date.nil?
+
+    unless from_date.nil? && to_date.nil?
+
+      availabilities = availabilities.find_all do |a|
+        (from_date.nil? || (a.start_time >= from_date && a.start_time < to_date)) ||
+                (to_date.nil? || (a.end_time >= from_date && a.end_time < to_date))
+      end
+
+    end
+    availabilities
+  end
   
 
 end
