@@ -93,7 +93,7 @@ class Availability < ActiveRecord::Base
                             :only => :username
                           }
                         }
-                      } 
+                      }
                     }
           }
   end

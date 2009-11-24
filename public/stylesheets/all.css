@@ -145,3 +145,27 @@ tr.paired, tr.paired td {
 tr.suggested, tr.suggested td {
     background-color:#ffff66;
 }
+
+#calendarInstructions {
+    float:right;
+    margin-top:-30px;
+    font-style:italic;
+}
+
+/* Additions to calendarflow */
+
+
+.calendarFlow .event .summary {
+    font-size:13px;
+}
+
+.calendarFlow .event .summary span  {
+    font-weight:normal;
+}
+.calendarFlow .event .summary p  {
+    font-weight:bold;
+}
+.calendarFlow .event a  {
+    color:#fff;
+    text-decoration:underline;
+}

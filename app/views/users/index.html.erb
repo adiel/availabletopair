@@ -2,7 +2,7 @@
     <link href="<%=http_root%>/<%=h @user.username%>.atom" title="Available to Pair - Atom" type="application/atom+xml" rel="alternate"/>
 <% end %>
 
-<h1>All <%= @user.username %>'s availability</h1>
+<h1>All <%=h @user.username %>'s availability</h1>
 
 <table class="availabilities">
   <tr>
@@ -17,6 +17,9 @@
   </tr>
 <%= render :partial => '/availabilities/list' %>
 </table>
+
+<%= render :partial => "/availabilities/calendar" %>
+
 <p>Subscribe to updates of <%=@user.username %>'s available pairs (<a href="/<%=@user.username%>.atom">atom</a>)</p>
 <div class="nav">
     <%= link_to 'Make yourself available', new_availability_path %>
