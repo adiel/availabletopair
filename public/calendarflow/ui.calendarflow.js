@@ -107,7 +107,7 @@
             element.css("width",(this.settings.dayWidth - 1) + "px");
 
             var css = {"height":this.settings.dayHeight + "px",
-                       "background-image":"url(/calendarFlow/events_bg_" + this.calculateHourHeight() + ".gif)"};
+                       "background-image":"url(/calendarflow/events_bg_" + this.calculateHourHeight() + ".gif)"};
             $('<div class="cal-flow-prevDay"/>').css(css).appendTo(element);
             $('<div class="cal-flow-currentDay"/>').css(css).appendTo(element);
             $('<div class="cal-flow-nextDay"/>').css(css).appendTo(element);
