@@ -1,7 +1,7 @@
-(function($)
-    {jQuery.calendarFlow = {
+(function($) {
+    jQuery.calendarFlow = {};
 
-        dayHeightOptions : [336,720,1440],
+    jQuery.calendarFlow.datetime = {
 
         dayName : function (date) {
             switch (date.getUTCDay()) {
@@ -22,12 +22,20 @@
             }
         },
 
-        dayClass : function (date) {
-            return "cal-flow-" + this.dayName(date).toLowerCase();
+        getMinutesThroughTheDay : function(time) {
+            return (time.getUTCHours() * 60) + time.getUTCMinutes();
         },
 
-        getCSSTop:function (element) {
-            return element.css("top").replace(/px/, '');
+        addDays : function(date, interval) {
+            var result = new Date(date);
+            result.setDate(date.getDate() + interval);
+            return result;
+        },
+
+        setTimeToMidnight : function(date) {
+            date.setHours(0);
+            date.setMinutes(0);
+            date.setSeconds(0);
         },
 
         parseISODate : function(time) {
@@ -42,104 +50,67 @@
             return date.toUTCString()
         },
 
-        formatTimeForDisplay : function (date) {
-            return date.getHours() + ":" + date.getMinutes();
+        dayClass : function(date) {
+            return "cal-flow-" + this.dayName(date).toLowerCase();
         },
 
-        tooFarLeft : function(dayElement,context) {
-            return ((dayElement.offset().left - context.offset().left) < (-1 * this.settings.preLoadSize));
+        dateOnly : function(time) {
+            return time.toString().replace(/[0-9][0-9]:[0-9][0-9]:[0-9][0-9]/, '').replace(/\+[0-9][0-9][0-9][0-9]/, '').replace(/\(.*\)/, '').replace(/GMT|UTC/, '');
+        }
+    };
+
+    jQuery.calendarFlow.positioning = {
+
+        getCSSTop : function(element) {
+            return element.css("top").replace(/px/, '');
         },
 
-        tooFarRight : function(dayElement,context) {
-            var visibleWidth = context.width();
-            return (dayElement.offset().left > visibleWidth + this.settings.preLoadSize);
+        tooFarLeft : function(dayElement,container,preLoadSize) {
+            return ((dayElement.offset().left - container.offset().left) < (-1 * preLoadSize));
         },
 
-        tooHigh : function (context) {
-            var topPosition = this.getCSSTop($(".cal-flow-events",context));
-            var halfTheVisibleHeight = (context.height() / 2);
-            var theTopOfTheCurrentDay = -this.settings.dayHeight;
+        tooFarRight : function(dayElement,container,preLoadSize) {
+            var visibleWidth = container.width();
+            return (dayElement.offset().left > visibleWidth + preLoadSize);
+        },
+
+        tooHigh : function(container,dayHeight) {
+            var topPosition = this.getCSSTop($(".cal-flow-events",container));
+            var halfTheVisibleHeight = (container.height() / 2);
+            var theTopOfTheCurrentDay = -dayHeight;
             return topPosition > theTopOfTheCurrentDay + halfTheVisibleHeight;
         },
 
-        tooLow : function (context) {
-            var topPosition = this.getCSSTop($(".cal-flow-events",context));
-            var halfTheVisibleHeight = (context.height() / 2);
-            var theTopOfTheNextDay = (-this.settings.dayHeight*2);
+        tooLow : function(container,dayHeight) {
+            var topPosition = this.getCSSTop($(".cal-flow-events",container));
+            var halfTheVisibleHeight = (container.height() / 2);
+            var theTopOfTheNextDay = (-dayHeight*2);
             return topPosition < theTopOfTheNextDay + halfTheVisibleHeight;
-        },
-
-        eventSummary : function (event) {
-            return event.title + ' from ' +
-                   this.formatDateForDisplay(this.parseISODate(event.start_time)) + " - " +
-                   this.formatDateForDisplay(this.parseISODate(event.end_time));
-        },
-
-        dateOnly:function (time) {
-            return time.toString().replace(/[0-9][0-9]:[0-9][0-9]:[0-9][0-9]/, '').replace(/\+[0-9][0-9][0-9][0-9]/, '').replace(/\(.*\)/, '').replace(/GMT|UTC/, '');
-        },
-
-        newDayHeader : function(date) {
-
-            var displayDate = date.getDate();
-            if (this.settings.dayWidth > 30) {
-                displayDate = (date.getMonth() + 1) + '/' + displayDate;
-                if (this.settings.dayWidth > 70) {
-                    displayDate = date.toString().substring(0,3) + ' ' + displayDate;
-                    if (this.settings.dayWidth > 150) {
-                        displayDate = this.dateOnly(date); 
-                    }
-                }
-            }
-            var element = $('<div class="cal-flow-dayHeader ' + this.dayClass(date) + '"><abbr title="' + this.dateOnly(date) + '">' + displayDate + '</abbr></div>');
-            element.css("width",this.settings.dayWidth + "px");
-            return element;
-        },
-
-
-
-        calculateHourHeight:function () {
-            return Math.floor(this.settings.dayHeight / 24);
-        },
-
-        newDayEvents : function(date) {
-            var element = $('<div class="cal-flow-day ' + this.dayClass(date) + ' cal-flow-dayEvents_' + this.formatDateForClassName(date) + ' cal-flow-date_' + date.getUTCDate() + '"></div>');
-            element.css("width",(this.settings.dayWidth - 1) + "px");
-
-            var css = {"height":this.settings.dayHeight + "px",
-                       "background-image":"url(/calendarflow/events_bg_" + this.calculateHourHeight() + ".gif)"};
-            $('<div class="cal-flow-prevDay"/>').css(css).appendTo(element);
-            $('<div class="cal-flow-currentDay"/>').css(css).appendTo(element);
-            $('<div class="cal-flow-nextDay"/>').css(css).appendTo(element);
-
-            return element;
-        },
-
-        loadEventsRange : function(fromDate,toDate,context) {
-            this.settings.findEventsCallback(fromDate,toDate,context);
-        },
+        }
+    };
+    
+    jQuery.calendarFlow.eventRenderer = {
+        datetime : jQuery.calendarFlow.datetime,
         
-        loadEvents : function(date,context) {
-            this.settings.findEventsCallback(date,date,context);
+        eventSummary : function(event) {
+            return event.title + ' from ' +
+                   this.datetime.formatDateForDisplay(this.datetime.parseISODate(event.start_time)) + " - " +
+                   this.datetime.formatDateForDisplay(this.datetime.parseISODate(event.end_time));
         },
 
-
-        removeExistingEvent:function (event,dayOffset,context) {
-            $("." + this.buildEventClassName(event,dayOffset), context).remove();
+        removeExistingEvent : function(event,dayOffset,container) {
+            $("." + this.buildEventClassName(event,dayOffset),container).remove();
         },
 
-        plotEventStartTime:function (startTime, dayOffset) {
-            var positionInCurrentDay = Math.floor(this.getMinutesThroughTheDay(startTime) * (this.settings.dayHeight / 1440)) + this.settings.dayHeight;
-            return positionInCurrentDay - (dayOffset  * this.settings.dayHeight);
+        plotEventStartTime : function(startTime, dayOffset,dayHeight) {
+            var positionInCurrentDay = Math.floor(this.datetime.getMinutesThroughTheDay(startTime) * (dayHeight / 1440)) + dayHeight;
+            return positionInCurrentDay - (dayOffset  * dayHeight);
         },
 
-        getMinutesThroughTheDay:function (time) {
-            return (time.getUTCHours() * 60) + time.getUTCMinutes();
-        },
-
-        getEventLengthMins:function (startTime, endTime) {
+        getEventLengthMins : function(startTime, endTime) {
             // TODO: This only supports events shorter than 24 hrs
-            var lengthMins = this.getMinutesThroughTheDay(endTime) - this.getMinutesThroughTheDay(startTime);
+            var lengthMins = this.datetime.getMinutesThroughTheDay(endTime) -
+                             this.datetime.getMinutesThroughTheDay(startTime);
             if (lengthMins < 0) {
                 lengthMins += 1440; // Into the next day
             }
@@ -161,43 +132,18 @@
            el.style.overflow = curOverflow;
 
            return isOverflowing;
-        },        
+        },
 
-        buildEventElement:function (event, dayOffset, dayElement, top, height, overlapping, overlapPosition) {
-            var that = this;
+        buildEventElement : function(event, dayOffset, dayElement, top, height, overlapping, overlapPosition,dayWidth) {
             var eventElement = $('<div/>');
             eventElement.attr('class','cal-flow-event ' + this.buildEventClassName(event, dayOffset));
-            var width = Math.floor(this.settings.dayWidth / overlapping);
+            var width = Math.floor(dayWidth / overlapping);
             var left = (width * overlapPosition);
             eventElement.css({"position":"absolute",
                 "top": top + "px",
                 "left": left +  "px",
                 "height":height + "px",
                 "width" : (width - 1) + "px"});
-
-            /*
-            eventElement.mouseover(function() {
-                if (!that.isOverflowing(eventElement[0]) || $(".cal-flow-eventDetails").length > 0) return;
-                var eventDetails = $("<div class=\"cal-flow-eventDetails\">asdf</div>");
-                eventDetails.html(eventElement.html());
-
-                eventDetails.css({
-                    top:(top - 30) + "px",
-                    left:(left - 20) + "px"
-                });
-                eventElement.parent().append(eventDetails);
-
-                var hideEventDetailsTimeout;
-                eventDetails.mousemove(function() {
-                    clearTimeout(hideEventDetailsTimeout);
-                });
-                eventDetails.mouseout(function() {
-                    hideEventDetailsTimeout = setTimeout(function() {
-                        eventDetails.remove();
-                    },100);
-                });
-            });
-            */
 
             var titleElement = $('<h3/>');
             titleElement.html(event.title);
@@ -210,13 +156,7 @@
             return eventElement;
         },
 
-        addDays:function (date, interval) {
-            var result = new Date(date);
-            result.setDate(date.getDate() + interval);
-            return result;
-        },
-
-        addEventTooltip:function (eventElement) {
+        addEventTooltip : function(eventElement) {
             if (this.isOverflowing(eventElement[0])) {
                 eventElement.qtip(
                 {
@@ -232,13 +172,12 @@
             }
         },
 
-        renderEvent : function(event,dayOffset,context) {
-            this.removeExistingEvent(event,dayOffset,context);
+        renderEvent : function(event,dayOffset,container,dayHeight,dayWidth,events) {
+            this.removeExistingEvent(event,dayOffset,container);
 
-            var that = this;
             var overlappingEvents = 0;
             var overlapPosition = 0;
-            $.each(that.events,function(index) {
+            $.each(events,function(index) {
                 if (this.start_time < event.end_time && this.end_time > event.start_time) {
                     overlappingEvents ++;
                     if (this.id == event.id) {
@@ -247,62 +186,118 @@
                 }
             });
 
-            var startTime = this.parseISODate(event.start_time);
-            var endTime = this.parseISODate(event.end_time);
+            var startTime = this.datetime.parseISODate(event.start_time);
+            var endTime = this.datetime.parseISODate(event.end_time);
 
-            startTime = this.addDays(startTime, dayOffset);
+            startTime = this.datetime.addDays(startTime, dayOffset);
 
-            var top = this.plotEventStartTime(startTime, dayOffset);
-            var height = Math.floor(this.getEventLengthMins(startTime, endTime) * (this.settings.dayHeight / 1440));
+            var top = this.plotEventStartTime(startTime, dayOffset, dayHeight);
+            var height = Math.floor(this.getEventLengthMins(startTime, endTime) * (dayHeight / 1440));
 
-            var dayElement = $(".cal-flow-dayEvents_" + this.formatDateForClassName(startTime),context);
-            var eventElement = this.buildEventElement(event, dayOffset, dayElement, top, height,overlappingEvents,overlapPosition,context)
+            var dayElement = $(".cal-flow-dayEvents_" + this.datetime.formatDateForClassName(startTime),container);
+            var eventElement = this.buildEventElement(event, dayOffset, dayElement, top, height,overlappingEvents,overlapPosition,dayWidth);
             dayElement.prepend(eventElement);
 
             this.addEventTooltip(eventElement);
-        },
+        }
 
-        saveEvents:function (events) {
+    };
+
+    jQuery.calendarFlow.Calendar = function(container,settings) {
+
+        this.container = container;
+        this.settings = settings;
+        this.dayHeightOptions = [336,720,1440];
+        this.datetime = jQuery.calendarFlow.datetime;
+        this.positioning = jQuery.calendarFlow.positioning;
+        this.eventRenderer = jQuery.calendarFlow.eventRenderer;
+
+        this.saveEvents = function(events) { 
             this.events = this.events || {};
             var that = this;
             $.each(events, function() {
                 that.events[this.event.id] = this.event;
             });
-        },
+        };
 
-        renderEvents : function(events,context) {
+        this.renderEvents = function(events) {
             this.saveEvents(events);
             var that = this;
             jQuery.each(events,function() {
-                that.renderEvent(this.event,-1,context);
-                that.renderEvent(this.event,0,context);
-                that.renderEvent(this.event,1,context);
+                that.eventRenderer.renderEvent(this.event,-1,that.container,that.settings.dayHeight,that.settings.dayWidth,that.events);
+                that.eventRenderer.renderEvent(this.event,0,that.container,that.settings.dayHeight,that.settings.dayWidth,that.events);
+                that.eventRenderer.renderEvent(this.event,1,that.container,that.settings.dayHeight,that.settings.dayWidth,that.events);
+
+                // TODO, this one is only needed if the event crosses midnight.
+                that.eventRenderer.renderEvent(this.event,2,that.container,that.settings.dayHeight,that.settings.dayWidth,that.events);
             });
-        },
+        };
 
-        setTimeToMidnight:function (date) {
-            date.setHours(0);
-            date.setMinutes(0);
-            date.setSeconds(0);
-        },
+        this.loadEventsRange = function(fromDate,toDate,findEventsCallback) {
+            // TODO: Clear out this.events for this date range, or removed events will be re-rendered.
+            findEventsCallback(fromDate,toDate,this);
+        };
 
-        readDateFromDayHeader:function (dayHeader) {
+
+
+        /* DAY BUILDER */
+
+        this.newDayHeader = function(date) {
+
+            var displayDate = date.getDate();
+            if (this.settings.dayWidth > 30) {
+                displayDate = (date.getMonth() + 1) + '/' + displayDate;
+                if (this.settings.dayWidth > 70) {
+                    displayDate = date.toString().substring(0,3) + ' ' + displayDate;
+                    if (this.settings.dayWidth > 150) {
+                        displayDate = this.datetime.dateOnly(date);
+                    }
+                }
+            }
+            var element = $('<div class="cal-flow-dayHeader ' + this.datetime.dayClass(date) + '">' +
+                                '<abbr title="' + this.datetime.dateOnly(date) + '">' + displayDate + '</abbr>' +
+                            '</div>');
+            element.css("width",this.settings.dayWidth + "px");
+            return element;
+        };
+
+        this.newDayEvents = function(date) {
+            var element = $('<div class="cal-flow-day ' + this.datetime.dayClass(date) +
+                                       ' cal-flow-dayEvents_' + this.datetime.formatDateForClassName(date) +
+                                       ' cal-flow-date_' + date.getUTCDate() + '"></div>');
+            element.css("width",(this.settings.dayWidth - 1) + "px");
+
+            var hourHeight = Math.floor(this.settings.dayHeight / 24);
+            var css = {"height":this.settings.dayHeight + "px",
+                       "background-image":"url(/calendarflow/events_bg_" + hourHeight + ".gif)"};
+            $('<div class="cal-flow-prevDay"/>').css(css).appendTo(element);
+            $('<div class="cal-flow-currentDay"/>').css(css).appendTo(element);
+            $('<div class="cal-flow-nextDay"/>').css(css).appendTo(element);
+
+            return element;
+        };
+
+
+
+        /* HEADERS */        
+
+        this.readDateFromDayHeader = function(dayHeader) {
             var parsed = Date.parse($("abbr", dayHeader).attr("title"));
             var date = new Date(parsed);
-            this.setTimeToMidnight(date);
+            this.datetime.setTimeToMidnight(date);
             date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
             return date;
-        },
+        };
 
-        readHoursFromTimeHeader:function (timeHeader) {
+        this.readHoursFromTimeHeader = function(timeHeader) {
             return Number($(timeHeader).text().substring(0,2));
-        },
+        };
 
-        readMinsFromTimeHeader:function (timeHeader) {
+        this.readMinsFromTimeHeader = function(timeHeader) {
             return Number($(timeHeader).text().substring(3,5));
-        },
+        };
 
-        readOffsetFromTimeHeader:function (timeHeader) {
+        this.readOffsetFromTimeHeader = function(timeHeader) {
             if ($(timeHeader).hasClass("offset_-1")) {
                 return -1;
             }
@@ -312,78 +307,117 @@
             else {
                 return 0;
             }
-        },
+        };
 
-        positionNextDayElements:function (lastEventElement, dayHeader, dayEvents) {
+
+        /* DAY MANAGER */
+
+        this.positionNextDayElements=function(lastEventElement, dayHeader, dayEvents) {
             var oldLeft = Number(lastEventElement.css("left").replace(/px/, ''));
             var newLeft = (oldLeft + this.settings.dayWidth) + "px";
             $(dayHeader).css("left", newLeft);
             $(dayEvents).css("left", newLeft);
-        },
+        };
 
-        positionPreviousDayElements:function (firstEventElement, dayHeader, dayEvents) {
+        this.positionPreviousDayElements=function(firstEventElement, dayHeader, dayEvents) {
             var oldLeft = Number(firstEventElement.css("left").replace(/px/, ''));
             var newLeft = (oldLeft - this.settings.dayWidth) + "px";
             $(dayHeader).css("left", newLeft);
             $(dayEvents).css("left", newLeft);
-        },
+        };
 
-        newDayAhead : function (firstEventElement, firstDayElement, lastDayElement, lastEventElement,context) {
+        this.newDayAhead = function(firstEventElement, firstDayElement, lastDayElement, lastEventElement) {
             firstEventElement.remove();
             firstDayElement.remove();
 
             var dateOfLastDay = this.readDateFromDayHeader(lastDayElement);
-            var nextDay = this.addDays(dateOfLastDay,1);
+            var nextDay = this.datetime.addDays(dateOfLastDay,1);
 
-            var dayHeader = this.newDayHeader(nextDay).appendTo($(".cal-flow-dayHeaders",context));
-            var dayEvents = this.newDayEvents(nextDay).appendTo($(".cal-flow-events",context));
+            var dayHeader = this.newDayHeader(nextDay).appendTo($(".cal-flow-dayHeaders",this.container));
+            var dayEvents = this.newDayEvents(nextDay).appendTo($(".cal-flow-events",this.container));
 
             this.positionNextDayElements(lastEventElement, dayHeader, dayEvents);
 
             return nextDay;
-        },
+        };
 
-        newDayBehind : function (firstEventElement, firstDayElement, lastDayElement, lastEventElement,context) {
+        this.newDayBehind = function(firstEventElement, firstDayElement, lastDayElement, lastEventElement) {
             lastEventElement.remove();
             lastDayElement.remove();
 
             var dateOfFirstDay = this.readDateFromDayHeader(firstDayElement);
-            var previousDay = this.addDays(dateOfFirstDay,-1);
+            var previousDay = this.datetime.addDays(dateOfFirstDay,-1);
 
-            var dayHeader = this.newDayHeader(previousDay).prependTo($(".cal-flow-dayHeaders",context));
-            var dayEvents = this.newDayEvents(previousDay).prependTo($(".cal-flow-events",context));
+            var dayHeader = this.newDayHeader(previousDay).prependTo($(".cal-flow-dayHeaders",this.container));
+            var dayEvents = this.newDayEvents(previousDay).prependTo($(".cal-flow-events",this.container));
 
             this.positionPreviousDayElements(firstEventElement, dayHeader, dayEvents);
 
             return previousDay;
-        },
+        };
 
-        drawInitialDays : function (context) {
-            var index,date,dayHeader,dayEvents,left,firstDay,lastDay;
-            index = 0 - Math.floor(this.settings.preLoadSize / this.settings.dayWidth) + 2;
+        this.drawInitialDays = function() {
+            var dayIndex,date,dayHeader,dayEvents,left,firstDay,lastDay;
+            var noOfExtraDaysToDisplayOnLeft = Math.floor(this.settings.preLoadSize / this.settings.dayWidth) - 2;
+            dayIndex = 0 - noOfExtraDaysToDisplayOnLeft;
             do {
                 firstDay = firstDay || date;
                 lastDay = date;
-                date = this.setTimeToMidnight(new Date(this.currentPosition));
-                date = this.addDays(this.currentPosition,index);
+                date = this.datetime.setTimeToMidnight(new Date(this.currentPosition));
+                date = this.datetime.addDays(this.currentPosition,dayIndex);
                 dayHeader = this.newDayHeader(date);
                 dayEvents = this.newDayEvents(date);
 
-                left = (this.settings.dayWidth * index) + "px";
+                left = (this.settings.dayWidth * dayIndex) + "px";
                 $(dayHeader).css("left", left);
                 $(dayEvents).css("left", left);
 
-                dayHeader.appendTo($(".cal-flow-dayHeaders",context));
-                dayEvents.appendTo($(".cal-flow-events",context));
+                dayHeader.appendTo($(".cal-flow-dayHeaders",this.container));
+                dayEvents.appendTo($(".cal-flow-events",this.container));
 
-                index ++;
+                dayIndex ++;
             }
-            while (!this.tooFarLeft(dayEvents,context) && !this.tooFarRight(dayEvents,context) && index < 100);
-            
-            this.loadEventsRange(firstDay,lastDay,context);
-        },
+            while (!this.positioning.tooFarLeft(dayEvents,this.container,this.settings.preLoadSize) &&
+                   !this.positioning.tooFarRight(dayEvents,this.container,this.settings.preLoadSize));
 
-        drawTimeline : function(context) {
+            this.loadEventsRange(firstDay,lastDay,this.settings.findEventsCallback);
+        };
+
+        this.drawExtraDays = function(firstNewDay,lastNewDay) {
+            var that = this;
+            var eventsElements = $(".cal-flow-events .cal-flow-day",this.container);
+            var daysElements = $(".cal-flow-dayHeaders .cal-flow-dayHeader",this.container);
+            var firstEventElement = $(eventsElements[0]);
+            var lastEventElement = $(eventsElements[eventsElements.length - 1]);
+            var firstDayElement = $(daysElements[0]);
+            var lastDayElement = $(daysElements[daysElements.length - 1]);
+
+            clearTimeout(this.redrawDaysTimeout);
+            if (this.positioning.tooFarLeft(firstEventElement,this.container,this.settings.preLoadSize)) {
+                var newDayAhead = this.newDayAhead(firstEventElement, firstDayElement, lastDayElement, lastEventElement);
+                firstNewDay = firstNewDay || newDayAhead;
+                lastNewDay = newDayAhead;
+
+                setTimeout(function() {that.drawExtraDays(firstNewDay,lastNewDay)},10);
+                return;
+            }
+            else if (this.positioning.tooFarRight(lastEventElement,this.container,this.settings.preLoadSize)) {
+                var newDayBehind = this.newDayBehind(firstEventElement, firstDayElement, lastDayElement, lastEventElement);
+                lastNewDay = lastNewDay || newDayBehind;
+                firstNewDay = newDayBehind;
+                setTimeout(function() {that.drawExtraDays(firstNewDay,lastNewDay)},10);
+                return;
+            }
+            if (firstNewDay && lastNewDay) {
+                this.loadEventsRange(firstNewDay,lastNewDay,this.settings.findEventsCallback);
+            }
+        };
+
+
+
+        /* TIMELINE */
+
+        this.drawTimeline = function() {
             var index,hour;
             for (index = 0;index < 72;index++) {
 
@@ -398,45 +432,35 @@
                 }
                 hour = (index % 24);
                 if(hour < 10) hour = ("0" + hour);
-                var offsetClass = "offset_" + (((index - hour) / 24) - 1); 
+                var offsetClass = "offset_" + (((index - hour) / 24) - 1);
                 var timeElement = $('<div class=\"cal-flow-time ' + offsetClass + '\">' + hour + ':00</div>');
                 timeElement.css({height:timeHeight});
-                $(".cal-flow-timeline",context).append(timeElement);
+                $(".cal-flow-timeline",this.container).append(timeElement);
             }
-        },
+        };
 
-        setDayWidth:function (width,context) {
-            if (this.settings.dayWidth != width) {
-                this.settings.dayWidth = width;
-                this.reset(context);
-            }
-        },
 
-        setDayHeight:function (height,context) {
-            if (this.settings.dayHeight != height) {
-                this.settings.dayHeight = height;
-                this.reset(context);
-            }
-        },
 
-        buildWidthScaleControl:function (context) {
+        /* SCALE */
+
+        this.buildWidthScaleControl=function() {
             var that = this;
             var widthSlider = $('<div/>');
             widthSlider.slider({
-                min:25,
+                min:15,
                 max:1000,
                 value:this.settings.dayWidth,
                 change: function(event, ui) {
                     clearTimeout(that.setDayWidthTimeout);
                     that.setDayWidthTimeout = setTimeout(function() {
-                        that.setDayWidth(Number(ui.value),context)
+                        that.setDayWidth(Number(ui.value),that.container)
                     },500);
                 }
             });
             return widthSlider;
-        },
-         
-        buildHeightScaleControl:function (context) {
+        };
+
+        this.buildHeightScaleControl=function() {
             var that = this;
             var heightSlider = $('<div/>');
             heightSlider.slider({
@@ -448,24 +472,44 @@
                 change: function(event, ui) {
                     clearTimeout(that.setDayHeightTimeout);
                     that.setDayHeightTimeout = setTimeout(function() {
-                        that.setDayHeight(that.dayHeightOptions[Number(ui.value)],context)
+                        that.setDayHeight(that.dayHeightOptions[Number(ui.value)],that.container)
                     },500);
                 }
             });
             return heightSlider;
-        },
+        };
 
-        wrapSlider:function (widthSlider) {
+        this.wrapSlider = function(widthSlider) {
             return $('<div class="cal-flow-controls"/>').append(widthSlider);
-        },
-        
-        buildScaleControls:function (context) {
-            var widthSlider = this.buildWidthScaleControl(context);
-            var heightSlider = this.buildHeightScaleControl(context);
-            return $([this.wrapSlider(widthSlider),this.wrapSlider(heightSlider)]);
-        },
+        };
 
-        drawInnerContainers : function(context) {
+        this.buildScaleControls=function() {
+            var widthSlider = this.buildWidthScaleControl(this.container);
+            var heightSlider = this.buildHeightScaleControl(this.container);
+            return $([this.wrapSlider(widthSlider),this.wrapSlider(heightSlider)]);
+        };
+
+        this.setScale = function() {
+            $('.cal-flow-calendarEventsWrapper',this.container).css({
+                top:'-' + ((this.settings.dayHeight * 3) + 20) + 'px'
+            });
+
+            $('.cal-flow-timeline, .cal-flow-events',this.container).css ({
+                height: (this.settings.dayHeight * 3) + "px",
+                top:"-" + (this.settings.dayHeight - 20) + "px"
+            });
+        };
+        
+        this.repositionScaleControls = function() {
+            $('.cal-flow-controls').css("top", (this.container.height() - 120) +  "px");
+            $('.cal-flow-controls').css("display", "block");
+        };
+
+        /** END SCALE **/
+
+
+
+        this.drawInnerContainers = function() {
             $(".cal-flow-daysWrapper,.cal-flow-timelineWrapper,.cal-flow-calendarEventsWrapper").remove();
             $('<div class="cal-flow-daysWrapper">' +
               '    <div class="cal-flow-dayHeaders"></div>' +
@@ -475,117 +519,77 @@
               '</div>' +
               '<div class="cal-flow-calendarEventsWrapper">' +
               '    <div class="cal-flow-events"></div>' +
-              '</div>').appendTo(context);
-        },
+              '</div>').appendTo(this.container);
+        };
 
-        redrawDays : function(context,firstNewDay,lastNewDay) {
-            var that = this;
-            var eventsElements = $(".cal-flow-events .cal-flow-day",context);
-            var daysElements = $(".cal-flow-dayHeaders .cal-flow-dayHeader",context);
-            var firstEventElement = $(eventsElements[0]);
-            var lastEventElement = $(eventsElements[eventsElements.length - 1]);
-            var firstDayElement = $(daysElements[0]);
-            var lastDayElement = $(daysElements[daysElements.length - 1]);
 
-            clearTimeout(this.redrawDaysTimeout);
-            if (this.tooFarLeft(firstEventElement,context)) {
-                var newDayAhead = this.newDayAhead(firstEventElement, firstDayElement, lastDayElement, lastEventElement,context);
-                firstNewDay = firstNewDay || newDayAhead;
-                lastNewDay = newDayAhead;
 
-                setTimeout(function() {that.redrawDays(context,firstNewDay,lastNewDay)},10);
-                return;
-            }
-            else if (this.tooFarRight(lastEventElement,context)) {
-                var newDayBehind = this.newDayBehind(firstEventElement, firstDayElement, lastDayElement, lastEventElement,context);
-                lastNewDay = lastNewDay || newDayBehind;
-                firstNewDay = newDayBehind;
-                setTimeout(function() {that.redrawDays(context,firstNewDay,lastNewDay)},10);
-                return;
-            }
-            if (firstNewDay && lastNewDay) {
-                this.loadEventsRange(firstNewDay,lastNewDay,context);
-            }
-        },
-
-        refocusCurrentDay : function(context) {
-            var events = $(".cal-flow-events",context);
+        this.refocusCurrentDay = function() {
+            var events = $(".cal-flow-events",this.container);
             var top = Number(events.css("top").replace(/px/,''));
             var left = Number(events.css("left").replace(/px/,''));
-            if (this.tooHigh(context)) {
+            if (this.positioning.tooHigh(this.container,this.settings.dayHeight)) {
                 events.css("left", left + this.settings.dayWidth + "px");
                 events.css("top", top - this.settings.dayHeight + "px");
-                this.syncAxes(context);
+                this.syncAxes(this.container);
             }
-            else if (this.tooLow(context)) {
+            else if (this.positioning.tooLow(this.container,this.settings.dayHeight)) {
                 events.css("left", left - this.settings.dayWidth + "px");
                 events.css("top", top + this.settings.dayHeight + "px");
-                this.syncAxes(context);
+                this.syncAxes(this.container);
             }
-        },
+        };
 
-        syncAxes : function(context) {
-            var top = Number($(".cal-flow-events",context).css("top").replace(/px/,''));
-            var left = Number($(".cal-flow-events",context).css("left").replace(/px/,''));
-            $(".cal-flow-timeline",context).css("top", top + "px");
-            $(".cal-flow-dayHeaders",context).css("left", left + "px");
-        },
+        this.syncAxes = function() {
+            var top = Number($(".cal-flow-events",this.container).css("top").replace(/px/,''));
+            var left = Number($(".cal-flow-events",this.container).css("left").replace(/px/,''));
+            $(".cal-flow-timeline",this.container).css("top", top + "px");
+            $(".cal-flow-dayHeaders",this.container).css("left", left + "px");
+        };
 
-        dragged : function(event, ui) {
-            var context = $(event.target).parent().parent();
-            this.syncAxes(context);
-        },
+        this.dragged = function(event, ui) {
+            this.syncAxes(this.container);
+        };
 
-        updateCurrentPosition:function (context) {
-            this.currentPosition = this.findCurrentPosition(context);
-        },
+        this.updateCurrentPosition = function() {
+            this.currentPosition = this.findCurrentPosition(this.container);
+        };
 
-        stopped : function(event, ui) {
-            var context = $(event.target).parent().parent();
-            this.redrawDays(context);
-            this.refocusCurrentDay(context);
-            this.syncAxes(context);
-            this.updateCurrentPosition(context);
-        },
+        this.stopped = function(event, ui) {
+            this.drawExtraDays(this.container);
+            this.refocusCurrentDay(this.container);
+            this.syncAxes(this.container);
+            this.updateCurrentPosition(this.container);
+        };
 
-        activateDraggable:function (context) {
+        this.activateDraggable = function() {
             var that = this;
-            $(".cal-flow-events",context).draggable({
-                drag: function(event,ui) {that.dragged(event,ui);},
+            $(".cal-flow-events",this.container).draggable({
+                drag : function(event,ui) {that.dragged(event,ui);},
                 stop : function(event,ui) {that.stopped(event,ui);},
                 cursor: "move"
             });
-        },
+        };
 
-        addRootClass:function (context) {
-            context.addClass("cal-flow");
-        },
+        this.addRootClass = function() {
+            this.container.addClass("cal-flow");
+        };
 
-        setScale : function(context) {
-            $('.cal-flow-calendarEventsWrapper',context).css({
-                top:'-' + ((this.settings.dayHeight * 3) + 20) + 'px'
-            });
 
-            $('.cal-flow-timeline, .cal-flow-events',context).css ({
-                height: (this.settings.dayHeight * 3) + "px",
-                top:"-" + (this.settings.dayHeight - 20) + "px"
-            });
-        },
-
-        findCurrentPosition : function(context) {
+        this.findCurrentPosition = function() {
             var dayHeader,timeHeader;
             var that = this;
-            $(".cal-flow-dayHeader",context).each(function() {
-                var leftOffset = ($(this).offset().left - context.offset().left);
-                var midpoint = context.width()/2;
+            $(".cal-flow-dayHeader",this.container).each(function() {
+                var leftOffset = ($(this).offset().left - that.container.offset().left);
+                var midpoint = that.container.width()/2;
                 if (leftOffset < midpoint && (leftOffset + that.settings.dayWidth) > midpoint) {
                     dayHeader = this;
                     return false;
                 }
             });
-            $(".cal-flow-time",context).each(function() {
-                var topOffset = ($(this).offset().top - context.offset().top);
-                var midpoint = context.height()/2;
+            $(".cal-flow-time",this.container).each(function() {
+                var topOffset = ($(this).offset().top - that.container.offset().top);
+                var midpoint = that.container.height()/2;
                 if (topOffset < midpoint & (topOffset + that.settings.dayHeight) > midpoint) {
                     timeHeader = this;
                     return false;
@@ -593,61 +597,69 @@
             });
             var date = this.readDateFromDayHeader(dayHeader);
             var offset = this.readOffsetFromTimeHeader(timeHeader);
-            date = this.addDays(date,offset);
+            date = this.datetime.addDays(date,offset);
             var hours = this.readHoursFromTimeHeader(timeHeader);
             var mins = this.readMinsFromTimeHeader(timeHeader);
             date.setHours(hours,mins);
 
-            return date;        
-        },
+            return date;
+        };
 
-        moveTo : function(time) {
 
-        },
+        this.setDayWidth = function(width) {
+            if (this.settings.dayWidth != width) {
+                this.settings.dayWidth = width;
+                this.reset(this.container);
+            }
+        };
 
-        repositionScaleControls : function(context) {
-            $('.cal-flow-controls').css("top", (context.height() - 120) +  "px");
-            $('.cal-flow-controls').css("display", "block");
-        },
+        this.setDayHeight = function(height) {
+            if (this.settings.dayHeight != height) {
+                this.settings.dayHeight = height;
+                this.reset(this.container);
+            }
+        };
 
-        reset:function (context) {
-            this.addRootClass(context);
-            this.drawInnerContainers(context);
-            this.setScale(context);
-            this.drawTimeline(context);
-            this.drawInitialDays(context);
-            this.activateDraggable(context);
-            this.updateCurrentPosition(context);
-            this.repositionScaleControls(context)
-        },
 
-        init : function(context,settings) {
-            if (context.length == 0) return;
-            this.settings = settings;
+        this.reset = function() {
+            this.addRootClass(this.container);
+            this.drawInnerContainers(this.container);
+            this.setScale(this.container);
+            this.drawTimeline(this.container);
+            this.drawInitialDays(this.container);
+            this.activateDraggable(this.container);
+            this.updateCurrentPosition(this.container);
+            this.repositionScaleControls(this.container)
+        };
+
+        this.init = function() {
+            if (this.container.length == 0) return;
             this.currentPosition = this.currentPosition || new Date();
-            this.setTimeToMidnight(this.currentPosition);
-            this.reset(context);
-            this.buildScaleControls(context).appendTo(context);
+            this.datetime.setTimeToMidnight(this.currentPosition);
+            this.reset(this.container);
+            this.buildScaleControls(this.container).appendTo(this.container);
 
             var that = this;
             var resizeTimer = null;
             $(window).resize(function() {
                 if (resizeTimer) clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(function() {that.repositionScaleControls(context)},200);
+                resizeTimer = setTimeout(function() {that.repositionScaleControls(this.container)},200);
             });
-            setTimeout(function() {that.repositionScaleControls(context)},200);
-        }
+            setTimeout(function() {that.repositionScaleControls(this.container)},200);
+        };
+
+        this.init(this.container,settings);
     };
 
     jQuery.fn.calendarFlow = function(options) {
         var settings = jQuery.extend({
                 "dayWidth"  : 150,
                 "dayHeight" : 1440,
-                "preLoadSize" : 2000,  //TODO: less for ie
+                "preLoadSize" : 1500,  //TODO: less for ie
                 "findEventsCallback"  : function() {return [];}
             },options);
         this.each(function(){
-            jQuery.calendarFlow.init($(this),settings);
+            this.calendarFlow = new jQuery.calendarFlow.Calendar($(this),settings);
         });
 
         return this;

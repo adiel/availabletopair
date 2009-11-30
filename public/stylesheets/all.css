@@ -139,8 +139,12 @@ form label {
     font-weight:bold;
 }
 
-tr.paired, tr.paired td {
+tr.paired, .paired td, span.paired {
     background-color:#66ff66;
+}
+span.paired {
+    padding:2px;
+    color:black;
 }
 tr.suggested, tr.suggested td {
     background-color:#ffff66;
@@ -174,3 +178,17 @@ tr.suggested, tr.suggested td {
     color:#fff;
     text-decoration:underline;
 }
+
+.cal-flow-summary form {
+   display:inline;
+}
+.cal-flow-summary div {
+    margin:1em;
+}
+.cal-flow-summary input {
+    width:auto;
+    margin:0 5px;
+    padding:2px;
+    font-size:0.9em;
+}
+.cal-flow-summary form div {display:inline;}

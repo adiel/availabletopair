@@ -17,7 +17,7 @@ module AvailabilitiesHelper
   end
 
   def http?(url)
-    url =~ /^http:\/\//
+    url =~ /^https?:\/\//
   end
   
   def email?(url)
