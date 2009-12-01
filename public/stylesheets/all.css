@@ -50,8 +50,10 @@ h2 {
 
 #header {
     font-size:2.5em;
-    padding:20px;
-    background-color:#DADADA;
+    padding:8px;
+    background:#ddffdd;
+    border-top:1px solid #999;
+    border-bottom:1px solid #999;
     font-family:Courier new,helvetica,arial,freesans,clean,sans-serif;;
 }
 
@@ -88,7 +90,7 @@ width:35em;
 
 
 #logo {float:left;}
-#how {float:right;}
+#how {float:right;font-size:0.8em;}
 .clear{
     clear:both;
     font-size:0;
