@@ -180,7 +180,7 @@
                 eventElement.qtip(
                 {
                     content: eventElement.html(),
-                    position:{ target: 'mouse', adjust: { x: 20, y: 20 } },
+                    position:{ target: 'mouse', adjust: { x: -50, y: -50 } },
                     hide: {
                         fixed: true
                     },
