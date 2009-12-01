@@ -2,7 +2,6 @@
     font-family:Arial,Helvetica;
     overflow:hidden;
     position:relative;
-    cursor:move;
 }
 .cal-flow-calendarEventsWrapper {
     height:100%;
@@ -90,7 +89,6 @@
     overflow:hidden;
     color:white;
     border:1px solid white;
-    cursor:default;
     z-index:100;
 }
 .cal-flow-event h3, .qtip-content h3 {

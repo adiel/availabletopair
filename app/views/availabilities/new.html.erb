@@ -12,11 +12,11 @@
   </p>   
   <p>
     <%= f.label :start_time %><br />
-    <%= f.datetime_select :start_time %>
+    <%= f.datetime_select :start_time, {:minute_step => 15} %>
   </p>
   <p>
     <%= f.label :end_time %><br />
-    <%= f.datetime_select :end_time %>
+    <%= f.datetime_select :end_time, {:minute_step => 15} %>
   </p>
   <p class="submit">
     <%= f.submit 'Publish availability' %>
