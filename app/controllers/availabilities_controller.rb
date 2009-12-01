@@ -9,7 +9,7 @@ class AvailabilitiesController < ApplicationController
                                               #:conditions => ["end_time > :end_time",
                                               #               {:end_time => Time.now.utc}])
 
-    Availability.filter_by_start_and_end_date!(@availabilities,params)
+    @availabilities = Availability.filter_by_start_and_end_date!(@availabilities,params)
     
     respond_to do |format|
       format.html # show.html.erb

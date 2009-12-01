@@ -15,7 +15,13 @@ class TagsController < ApplicationController
     @availabilities = Availability.find(:all, :order => :start_time, :include => :tags,
                                         :conditions => ['tags.tag = :tag and end_time > :end_time',
                                                        {:tag => @tag,:end_time => Time.now.utc}])
-
+    with_tags = [];
+    @availabilities.each do |a|
+      with_tags << Availability.find(a.id);
+    end
+    @availabilities = with_tags
+    @availabilities = Availability.filter_by_start_and_end_date!(with_tags,params)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @availabilities.to_xml(Availability.render_args)}

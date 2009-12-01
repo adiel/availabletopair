@@ -1,11 +1,10 @@
 <% content_for :head_links do %>
     <script type="text/javascript" src="/javascripts/jquery-1.3.2.min.js"></script>
     <script type="text/javascript" src="/javascripts/jquery-ui-1.7.2.custom.min.js"></script>
-    <script type="text/javascript" src="/calendarflow/ui.calendarflow.js"></script>
     <script type="text/javascript" src="/javascripts/jquery.qtip-1.0.0-rc3.min.js"></script>
+    <script type="text/javascript" src="/calendarflow/jquery.calendarflow.0.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/calendarflow/calendarflow.css?1" />
     <%= stylesheet_link_tag 'jquery-ui-1.7.2.custom' %>
-
 <% end %>
 <div id="calendarInstructions">You can pick up and drag this calendar (like a map)</div>
 <div id="eventsCalendar"></div>
@@ -49,7 +48,7 @@
         var convertAvailabilitiesToEvents = function(availabilities) {
             var events = [];
             $.each(availabilities, function() {
-                this.availability.title = this.availability.user.username + ' is available to pair';
+                this.availability.title = '<a href="/' + this.availability.user.username + '">' + this.availability.user.username + '</a>';
                 this.availability.summary = '<p>On: <span>' + ((this.availability.project) ? formatProject(this.availability.project) : "anything") + '</span></p>' +
                                             '<p>Tags: <span>' + formatTags(this.availability) + '</span></p>' +
                                             '<p>Pairs: <span>' + formatPairs(this.availability) + '</span></p>';

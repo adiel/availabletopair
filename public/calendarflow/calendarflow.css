@@ -141,6 +141,7 @@
 .qtip-content {
     overflow-y:auto ! important;
     width:auto;
+    min-width:200px;
     height:200px;
 }
 .qtip-content h3 {

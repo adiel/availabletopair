@@ -19,8 +19,6 @@
 </table>
 
 <%= render :partial => "/availabilities/calendar" %>
-
-<p>Subscribe to updates of <%=@user.username %>'s available pairs (<a href="/<%=@user.username%>.atom">atom</a>)</p>
 <div class="nav">
-    <%= link_to 'Make yourself available', new_availability_path %>
+    Subscribe to updates of <%=@user.username %>'s available pairs (<a href="/<%=@user.username%>.atom">atom</a>) | <%= link_to 'Make yourself available', new_availability_path %>
 </div>

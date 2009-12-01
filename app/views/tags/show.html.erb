@@ -19,8 +19,6 @@
 </table>
 
 <%= render :partial => "/availabilities/calendar" %>
-
-<p>Subscribe to available pairs for <%=h @tag %> (<a href="/tags/<%= CGI::escape(@tag)%>.atom">atom</a>)</p>
 <div class="nav">
-    <%= link_to 'Make yourself available', new_availability_path %>
+    Subscribe to available pairs for <%=h @tag %> (<a href="/tags/<%= CGI::escape(@tag)%>.atom">atom</a>) | <%= link_to 'Make yourself available', new_availability_path %>
 </div>

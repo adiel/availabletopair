@@ -183,7 +183,7 @@ tr.suggested, tr.suggested td {
    display:inline;
 }
 .cal-flow-summary div {
-    margin:1em;
+    margin:5px 10px;
 }
 .cal-flow-summary input {
     width:auto;
@@ -192,3 +192,6 @@ tr.suggested, tr.suggested td {
     font-size:0.9em;
 }
 .cal-flow-summary form div {display:inline;}
+.cal-flow-summary p {
+    margin:5px 10px;
+}

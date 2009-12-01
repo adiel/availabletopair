@@ -28,7 +28,7 @@ class UsersController < ApplicationController
                                         :conditions => ["user_id = :user_id",
                                                         {:user_id => @user.id}])
 
-    Availability.filter_by_start_and_end_date!(@availabilities,params)
+    @availabilities = Availability.filter_by_start_and_end_date!(@availabilities,params)
 
     respond_to do |format|
       sort_availabilities_and_pairs
