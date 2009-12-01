@@ -13,8 +13,7 @@ class TagsController < ApplicationController
   def show
 	@tag = params[:id]
     @availabilities = Availability.find(:all, :order => :start_time, :include => :tags,
-                                        :conditions => ['tags.tag = :tag and end_time > :end_time',
-                                                       {:tag => @tag,:end_time => Time.now.utc}])
+                                        :conditions => ['tags.tag = :tag',{:tag => @tag}])
     with_tags = [];
     @availabilities.each do |a|
       with_tags << Availability.find(a.id);
