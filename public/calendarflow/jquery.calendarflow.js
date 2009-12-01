@@ -1,3 +1,4 @@
+
 (function($) {
     /*global jQuery : false, window : false */
     jQuery.calendarFlow = {};
@@ -500,6 +501,7 @@
                 timeElement.css({height:timeHeight});
                 $(".cal-flow-timeline",this.container).append(timeElement);
             }
+
         };
 
 
@@ -585,7 +587,11 @@
               '</div>').appendTo(this.container);
         };
 
-
+         this.focusCurrentTime = function ($) {
+            var nowTop = -1 * (this.settings.dayHeight * ((new Date().getHours() - 3) / 24));
+            $(".cal-flow-events", this.container).css("top", nowTop + "px");
+            this.syncAxes();
+        };
 
         this.refocusCurrentDay = function() {
             var events = $(".cal-flow-events",this.container);
@@ -703,8 +709,10 @@
             this.setScale();
             this.drawTimeline();
             this.drawInitialDays();
-            this.activateDraggable();
             this.updateCurrentPosition();
+
+            this.focusCurrentTime($);
+            this.activateDraggable();
             this.repositionScaleControls();
             this.startVisibleEventsReloadTimeout();
         };
