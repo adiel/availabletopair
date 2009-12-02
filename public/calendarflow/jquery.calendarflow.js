@@ -587,8 +587,8 @@
               '</div>').appendTo(this.container);
         };
 
-         this.focusCurrentTime = function ($) {
-            var nowTop = -1 * (this.settings.dayHeight * ((new Date().getHours() - 3) / 24));
+         this.focusCurrentTime = function () {
+            var nowTop =-1 * (this.settings.dayHeight + (this.settings.dayHeight * ((new Date().getHours() - 3) / 24)));
             $(".cal-flow-events", this.container).css("top", nowTop + "px");
             this.syncAxes();
         };
@@ -711,7 +711,7 @@
             this.drawInitialDays();
             this.updateCurrentPosition();
 
-            this.focusCurrentTime($);
+            this.focusCurrentTime();
             this.activateDraggable();
             this.repositionScaleControls();
             this.startVisibleEventsReloadTimeout();
