@@ -75,10 +75,10 @@
     border-top:1px solid blue;
 }
 .cal-flow-events .cal-flow-prevDay,.cal-flow-events .cal-flow-nextDay  {
-    background-color:#eee;
+    background-color:#ddd;
 }
 .cal-flow-events .cal-flow-mon .cal-flow-prevDay,.cal-flow-events .cal-flow-sun .cal-flow-prevDay,.cal-flow-events .cal-flow-fri .cal-flow-nextDay,.cal-flow-events .cal-flow-sat .cal-flow-nextDay  {
-    background-color:#eeffee;
+    background-color:#aaffaa;
 }
 .cal-flow abbr {border-bottom:none;}
 .cal-flow-event {
