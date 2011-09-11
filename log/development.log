@@ -10749,3 +10749,149 @@ Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middle
 
 Started GET "/assets/all.css?body=1" for 127.0.0.1 at Sun Sep 11 12:31:41 +0100 2011
 Served asset /all.css - 304 Not Modified (0ms)
+
+
+Started GET "/availabilities/2/edit" for 127.0.0.1 at Sun Sep 11 18:46:15 +0100 2011
+  Processing by AvailabilitiesController#edit as HTML
+  Parameters: {"id"=>"2"}
+Completed   in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Sun Sep 11 18:46:15 +0100 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.4ms)
+Rendered devise/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 104ms (Views: 31.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/all.css?body=1" for 127.0.0.1 at Sun Sep 11 18:46:16 +0100 2011
+Served asset /all.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at Sun Sep 11 18:46:16 +0100 2011
+Served asset /defaults.js - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at Sun Sep 11 18:46:23 +0100 2011
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"qMDlRuU4sEooTndlLKd41iPSqwyBSupUmQZtp19hJBE=", "utf8"=>"\342\234\223", "user"=>{"remember_me"=>"0", "username"=>"adiel2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'adiel2' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "updated_at" = '2011-09-11 17:46:23.298205', "last_sign_in_at" = '2011-09-11 10:49:17.515881', "current_sign_in_at" = '2011-09-11 17:46:23.297608', "sign_in_count" = 3 WHERE "users"."id" = 2
+Redirected to http://localhost:3000/availabilities/2/edit
+Completed 302 Found in 192ms
+
+
+Started GET "/availabilities/2/edit" for 127.0.0.1 at Sun Sep 11 18:46:23 +0100 2011
+  Processing by AvailabilitiesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAvailability Load (1.8ms)[0m  SELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mTag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "availabilities_tags_links" ON "tags"."id" = "availabilities_tags_links"."tag_id" WHERE "availabilities_tags_links"."availability_id" = 2[0m
+Rendered availabilities/edit.html.erb within layouts/application (45.7ms)
+Completed 200 OK in 133ms (Views: 55.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at Sun Sep 11 18:46:23 +0100 2011
+Served asset /defaults.js - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/all.css?body=1" for 127.0.0.1 at Sun Sep 11 18:46:23 +0100 2011
+Served asset /all.css - 304 Not Modified (0ms)
+
+
+Started GET "/availabilities" for 127.0.0.1 at Sun Sep 11 21:15:41 +0100 2011
+  Processing by AvailabilitiesController#index as HTML
+  [1m[36mAvailability Load (0.2ms)[0m  [1mSELECT "availabilities".* FROM "availabilities" WHERE (end_time > '2011-09-11 20:15:41.517321') ORDER BY start_time[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "availabilities_tags_links" ON "tags"."id" = "availabilities_tags_links"."tag_id" WHERE "availabilities_tags_links"."availability_id" = 2[0m
+  [1m[35mPair Load (0.2ms)[0m  SELECT "pairs".* FROM "pairs" WHERE "pairs"."availability_id" = 2
+Rendered availabilities/_list.html.erb (108.6ms)
+Rendered availabilities/index.html.erb within layouts/application (115.1ms)
+Completed 200 OK in 142ms (Views: 132.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at Sun Sep 11 21:15:41 +0100 2011
+Served asset /defaults.js - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/assets/all.css?body=1" for 127.0.0.1 at Sun Sep 11 21:15:41 +0100 2011
+Served asset /all.css - 304 Not Modified (0ms)
+
+
+Started GET "/adiel2.atom" for 127.0.0.1 at Sun Sep 11 21:15:56 +0100 2011
+  Processing by UsersController#index as ATOM
+  Parameters: {"id"=>"adiel2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'adiel2'[0m
+  [1m[35mAvailability Load (0.1ms)[0m  SELECT "availabilities".* FROM "availabilities" WHERE (user_id = 2 and end_time > '2011-09-11 20:15:56.562013')
+  [1m[36mPair Load (0.2ms)[0m  [1mSELECT "pairs".* FROM "pairs" WHERE "pairs"."availability_id" = 2[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered availabilities/_atom.erb (12.2ms)
+Rendered users/index.atom.erb (13.6ms)
+Completed 200 OK in 57ms (Views: 20.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/availabilities/2" for 127.0.0.1 at Sun Sep 11 21:17:18 +0100 2011
+  Processing by AvailabilitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAvailability Load (0.1ms)[0m  SELECT "availabilities".* FROM "availabilities" WHERE "availabilities"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPair Load (0.3ms)[0m  [1mSELECT "pairs".* FROM "pairs" WHERE "pairs"."availability_id" = 2[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "availabilities_tags_links" ON "tags"."id" = "availabilities_tags_links"."tag_id" WHERE "availabilities_tags_links"."availability_id" = 2[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered availabilities/show.html.erb within layouts/application (88.8ms)
+Completed 200 OK in 113ms (Views: 98.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at Sun Sep 11 21:17:19 +0100 2011
+Served asset /defaults.js - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/all.css?body=1" for 127.0.0.1 at Sun Sep 11 21:17:19 +0100 2011
+Served asset /all.css - 304 Not Modified (0ms)
+
+
+Started GET "/adiel2.atom" for 127.0.0.1 at Sun Sep 11 21:30:41 +0100 2011
+  Processing by UsersController#index as ATOM
+  Parameters: {"id"=>"adiel2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'adiel2'[0m
+  [1m[35mAvailability Load (0.2ms)[0m  SELECT "availabilities".* FROM "availabilities" WHERE (user_id = 2 and end_time > '2011-09-11 20:30:41.658080')
+  [1m[36mPair Load (0.3ms)[0m  [1mSELECT "pairs".* FROM "pairs" WHERE "pairs"."availability_id" = 2[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered availabilities/_atom.erb (11.2ms)
+Rendered users/index.atom.erb (12.1ms)
+Completed 200 OK in 113ms (Views: 17.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/adiel2.atom" for 127.0.0.1 at Sun Sep 11 21:31:39 +0100 2011
+  Processing by UsersController#index as ATOM
+  Parameters: {"id"=>"adiel2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'adiel2'
+  [1m[36mAvailability Load (0.2ms)[0m  [1mSELECT "availabilities".* FROM "availabilities" WHERE (user_id = 2 and end_time > '2011-09-11 20:31:39.819327')[0m
+  [1m[35mPair Load (0.2ms)[0m  SELECT "pairs".* FROM "pairs" WHERE "pairs"."availability_id" = 2
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered availabilities/_atom.erb (10.9ms)
+Rendered users/index.atom.erb (11.7ms)
+Completed 200 OK in 95ms (Views: 17.5ms | ActiveRecord: 1.7ms)

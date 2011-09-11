@@ -85,14 +85,12 @@ Then /^I should see "([^\"]*)" within "([^\"]*)"$/ do |text, selector|
 end
 
 Then /^I should see \/([^\/]*)\/$/ do |regexp|
-  regexp = Regexp.new(regexp)
-  page.should have_content(regexp)
+  page.should have_xpath('//*', :text => Regexp.new(regexp))
 end
 
 Then /^I should see \/([^\/]*)\/ within "([^\"]*)"$/ do |regexp, selector|
   within(selector) do
-    regexp = Regexp.new(regexp)
-    page.should have_content(regexp)
+    page.should have_xpath('//*', :text => Regexp.new(regexp))
   end
 end
 
@@ -107,14 +105,12 @@ Then /^I should not see "([^\"]*)" within "([^\"]*)"$/ do |text, selector|
 end
 
 Then /^I should not see \/([^\/]*)\/$/ do |regexp|
-  regexp = Regexp.new(regexp)
-  page.should_not have_content(regexp)
+  page.should_not have_xpath('//*', :text => Regexp.new(regexp))
 end
 
 Then /^I should not see \/([^\/]*)\/ within "([^\"]*)"$/ do |regexp, selector|
   within(selector) do
-    regexp = Regexp.new(regexp)
-    page.should_not have_content(regexp)
+    page.should_not have_xpath('//*', :text => Regexp.new(regexp))
   end
 end
 
