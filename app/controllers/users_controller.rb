@@ -41,7 +41,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.create(params[:user])
+    @user.confirm!
     @user.save do |result|
       if result
         flash[:notice] = "Registration successful."

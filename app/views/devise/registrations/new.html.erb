@@ -1,0 +1,27 @@
+<h1>New user</h1>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <p><%= f.label :email %><br />
+  <%= f.email_field :email %></p>
+
+  <p><%= f.label :username %><br />
+  <%= f.text_field :username %></p>
+	
+  <p><%= f.label :password %><br />
+  <%= f.password_field :password %></p>
+
+  <p><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></p>
+
+  <p>
+    <%= f.label :contact %> (public) - Could be your page on SourceForge, GitHub, bitbucket etc, or an email address if you prefer.<br />
+    <%= f.text_field :contact%>
+  </p>
+
+  <p><%= f.submit "Sign up" %></p>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
+
+

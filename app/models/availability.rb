@@ -1,10 +1,11 @@
 class Availability < ActiveRecord::Base
+
   validates_presence_of :user_id,:start_time, :end_time
   belongs_to :user
   has_many :pairs
   has_many :availabilities_tags_links, :dependent => :destroy
   has_many :tags, :through => :availabilities_tags_links
-  strip_attributes!
+  #strip_attributes!
 
   MaxDurationHrs = 12
 
@@ -39,6 +40,7 @@ class Availability < ActiveRecord::Base
   end
 
   def validate
+    puts 'VALIDATING ****'
     validate_end_time_is_in_the_future
     validate_end_time_is_after_start_time
     validate_for_overlapping_availabilities

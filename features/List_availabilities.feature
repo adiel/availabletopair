@@ -49,7 +49,6 @@ Feature: List  availabilities
       | developer     | project         |
       | Bender | the thick of it |
     When I wait 2 seconds
-    And I log out
     And I am on the list availabilities page
     Then I should see "Bender"
     But I should not see "PhilipJFry"

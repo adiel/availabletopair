@@ -7,6 +7,7 @@
   <title>Available To Pair - <%= h(yield(:title) || "matchmaking for Extreme Programmers") %></title>
   <%= stylesheet_link_tag 'all' %>
   <%= yield(:head_links) %>
+  <%= javascript_include_tag :defaults %>
 </head>
 <body>
     <div id="header">
@@ -19,16 +20,19 @@
       <div id="user_nav">
         <% if current_user %>
           <%=h(current_user.username) %> |
-          <%= link_to "Profile", edit_user_path(:current) %> |
-          <%= link_to "Logout", logout_path %>
+          <%= link_to "Profile", '/users/edit' %> |
+          <%= link_to("Logout", destroy_user_session_path, :method => :get) %>
         <% else %>
-          <%= link_to "Register", new_user_path %> |
-          <%= link_to "Login", login_path %>
+          <%= link_to "Register", '/users/sign_up' %> |
+          <%= link_to "Login", '/users/sign_in' %>
         <% end %>
       </div>
       <div class="clear">&nbsp;</div>
     </div>
     <p style="color: green"><%= flash[:notice] %></p>
+    <p style="color: red"><%= flash[:alert] %></p>	
+    <p style="color: red"><%= flash[:error] %></p>
+
 
 <%= yield %>
 <% if ENV['RAILS_ENV'] == "production" %>

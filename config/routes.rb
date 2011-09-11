@@ -1,12 +1,12 @@
-ActionController::Routing::Routes.draw do |map|
-  map.root :controller => "availabilities"
-  map.resources :availabilities
-  map.resources :user_sessions
-  map.resources :users
-  map.resources :tags
-  map.login "login", :controller => "user_sessions", :action => "new"
-  map.logout "logout", :controller => "user_sessions", :action => "destroy"
-  map.connect ':id.:format', :controller => :users, :action => :index
-  map.connect 'pairs/:id/:action', :controller => :pairs, :conditions => { :method => :post }
+AvailableToPair::Application.routes.draw do
+  root :to => "availabilities#index"
+  resources :availabilities
+  devise_for :users
+
+  resources :users
+  resources :tags
+  
+  match ':id' => "users#index"
+  match 'pairs/:id/:action' => "pairs"
 
 end

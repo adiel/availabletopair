@@ -106,7 +106,7 @@ module AvailabilitiesHelper
       tag_links = []
       tags = availability.tags.sort_by{|t|t.tag}
       tags.each do|t|
-        tag_links << link_to(h(t.tag),"#{http_root}/tags/#{CGI::escape(t.tag)}")
+        tag_links << link_to(h(t.tag),"#{http_root}/tags/#{CGI::escape(t.tag).gsub(/\+/,"%20")}")
       end
       tag_links.join(', ')
     end

@@ -1,4 +1,5 @@
 class PairsController < ApplicationController
+  before_filter :authenticate_user!
 
   def initialize(pair_connector = PairConnector.new)
     super()
@@ -20,7 +21,6 @@ class PairsController < ApplicationController
   # POST /pairs/1/suggest
   def suggest
 
-    return unless require_user
     pair = Pair.find(params[:id])
     return unless check_ownership(pair)
 
@@ -33,7 +33,6 @@ class PairsController < ApplicationController
   # POST /pairs/1/cancel
   def cancel
 
-    return unless require_user
     pair = Pair.find(params[:id])
     return unless check_ownership(pair)
 
