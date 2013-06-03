@@ -5,9 +5,9 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 gem 'json'
+gem 'pg'
+gem 'unicorn'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,8 +30,12 @@ gem 'jquery-rails'
 
 gem 'devise'
 
-group :test, :development do
+group :test do
   gem "rspec-rails", "~> 2.6"
   gem 'cucumber-rails'
   gem 'database_cleaner'
+end
+
+group :development do
+  gem 'sqlite3'
 end
