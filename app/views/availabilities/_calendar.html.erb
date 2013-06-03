@@ -4,7 +4,7 @@
     <script type="text/javascript" src="/javascripts/jquery.qtip-1.0.0-rc3.min.js"></script>
     <script type="text/javascript" src="/calendarflow/jquery.calendarflow.js"></script>
     <link rel="stylesheet" type="text/css" href="/calendarflow/calendarflow.css?1" />
-    <%= stylesheet_link_tag 'jquery-ui-1.7.2.custom' %>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery-ui-1.7.2.custom.css" />
 <% end %>
 <div id="calendarInstructions">You can pick up and drag this calendar (like a map)</div>
 <div id="eventsCalendar"></div>
@@ -53,7 +53,7 @@
         var convertAvailabilitiesToEvents = function(availabilities) {
             var events = [];
             $.each(availabilities, function() {
-                var avail = this.availability;
+                var avail = this;
                 avail.title = '<a href="/' + avail.user.username + '">' + avail.user.username + '</a>';
                 avail.summary = '<p>On: <span>' + ((avail.project) ? formatProject(avail.project) : "anything") + '</span></p>' +
                                             '<p>Tags: <span>' + formatTags(avail) + '</span></p>' +

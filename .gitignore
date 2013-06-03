@@ -2,7 +2,7 @@
 db/*.sqlite3
 db/*.sqlite3-journal
 log/*.*
-tmp/
+tmp
 .sass-cache/
 .DS_Store
 .idea/
