@@ -4,7 +4,7 @@ class AmendAvailabilityReplaceDeveloperWithUserId < ActiveRecord::Migration
     # This is a breaking change as there was no concept of users
     # All existing availabilities must go
     Availability.delete_all
-    Pairs.delete_all
+    #Pairs.delete_all
 
     remove_column :availabilities, :developer
     remove_column :availabilities, :contact

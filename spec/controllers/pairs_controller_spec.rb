@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 class FakePair
   attr_accessor :id,:accepted, :suggested, :availability, :accept, :saved, :save_count, :reciprocal_pair
 
@@ -17,9 +18,7 @@ end
 class FakeAvailability
   attr_accessor :id,:user_id
 end
-class FakeUserSession
-  attr_accessor :user_id, :user
-end
+
 class FakeUser
   attr_accessor :id
 end
@@ -29,7 +28,6 @@ describe PairsController do
   availability = nil
   pair = nil
   reciprocal_pair = nil
-  user_session = nil
   user = nil
   other_user = nil
 
@@ -38,17 +36,17 @@ describe PairsController do
     availability = FakeAvailability.new
     pair = FakePair.new
     reciprocal_pair = FakePair.new
-    user_session = FakeUserSession.new
-    user = FakeUser.new
+    user = User.new
+    user.confirm!
     other_user = FakeUser.new
 
     pair.id = rand(100)
     reciprocal_pair.id = rand(100)
     user.id = rand(100)
+    user.username = 'sometestuser'
+    user.email = 'someone@example.org'
     availability.id = rand(100)
     other_user.id = availability.id + 1
-    user_session.user = user
-    user_session.user_id = user.id
     pair.availability = availability
     pair.reciprocal_pair = reciprocal_pair
 
@@ -58,7 +56,7 @@ describe PairsController do
 
     describe "and the user is not logged in" do
       before do
-        UserSession.stub!(:find).and_return(nil)
+        sign_out user
       end
 
       it "should redirect to the login page" do
@@ -70,7 +68,7 @@ describe PairsController do
     describe "and the user is logged in" do
 
       before do
-        UserSession.stub!(:find).and_return(user_session)
+        sign_in user
         Pair.stub!(:find).with(pair.id.to_s).once.and_return(pair)
       end
 
@@ -129,7 +127,7 @@ describe PairsController do
 
     describe "and the user is not logged in" do
       before do
-        UserSession.stub!(:find).and_return(nil)
+        sign_out user
       end
 
       it "should redirect to the login page" do
@@ -141,7 +139,7 @@ describe PairsController do
     describe "and the user is logged in" do
 
       before do
-        UserSession.stub!(:find).and_return(user_session)
+        sign_in user
         Pair.stub!(:find).with(pair.id.to_s).once.and_return(pair)
       end
 

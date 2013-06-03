@@ -5,10 +5,9 @@ Feature: Register new availability
 
   Scenario: Anonymous user tries to add new availability and is redirected to login
     Given no availabilities in the system
-    When I log out
     And I am on the homepage
     And I follow "Make yourself available"
-    Then I should see "You must be logged in to access this page"
+    Then I should see "You need to sign in or sign up before continuing"
 
   Scenario: User adds new availability
     Given no availabilities in the system
@@ -100,7 +99,7 @@ Feature: Register new availability
       | Bender        |                 | December 13, 2019 22:00     | December 14, 2019 04:30 | http://github.com/bender       |
     When I log in as "Bender"
     And I follow "Edit"
-    And I fill in "project" with "updated by user"
+    And I fill in "Project" with "updated by user"
     And I press "Update"
     Then I should see "Availability was successfully updated."
 

@@ -2,7 +2,7 @@
 module ApplicationHelper
 
   def http_root
-    'http://' + request.env["HTTP_HOST"]
+    'http://' + request.env["HTTP_HOST"].gsub(/\:\d+/,'')
   end
 
   def mine? (availability)

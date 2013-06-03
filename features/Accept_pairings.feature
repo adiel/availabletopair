@@ -10,7 +10,8 @@ Feature: Accept pairing
       | PhilipJFry    |                 | December 13, 2019 21:30     | December 14, 2019 02:30      | http://github.com/philip_j_fry   |
     When logged in as "Bender", I visit my only availability
     And I press "Suggest pairing"
-    And logged in as "PhilipJFry", I visit my only availability
+    And I log out
+	And logged in as "PhilipJFry", I visit my only availability
     Then I should see the following pair statuses:
       | developer  | status                |
       | Bender | Bender suggested pairing |
@@ -18,7 +19,8 @@ Feature: Accept pairing
     Then I should see the following pair statuses:
       | developer  | status |
       | Bender | Paired |
-    When logged in as "Bender", I visit my only availability
+    When I log out
+    And logged in as "Bender", I visit my only availability
     Then I should see the following pair statuses:
       | developer  | status |
       | PhilipJFry | Paired |

@@ -1,7 +1,19 @@
 <h1>New availability</h1>
 
-<% form_for(@availability) do |f| %>
-  <%= f.error_messages %>
+<%= form_for(@availability) do |f| %>
+  <% if @availability.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@availability.errors.count, "error") %> prohibited this availability from being saved:</h2>
+
+      <ul>
+      <% @availability.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
   <p>
     <%= f.label :project, 'Project' %>(optional) - e.g. project homepage on open source host<br />
     <%= f.text_field :project %>
@@ -21,7 +33,9 @@
   <p class="submit">
     <%= f.submit 'Publish availability' %>
   </p>
+
 <% end %>
+
 
 <div class="nav">
   <%= link_to 'Home', availabilities_path %>

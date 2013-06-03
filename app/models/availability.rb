@@ -1,21 +1,43 @@
-class Availability < ActiveRecord::Base
-  validates_presence_of :user_id,:start_time, :end_time
-  belongs_to :user
-  has_many :pairs
-  has_many :availabilities_tags_links, :dependent => :destroy
-  has_many :tags, :through => :availabilities_tags_links
-  strip_attributes!
 
+class StartAndEndDatesValidator < ActiveModel::Validator
+  # implement the method where the validation logic must reside
+  def validate(availability)
+    @availability = availability
+    
+    validate_end_time_is_in_the_future
+    validate_end_time_is_after_start_time
+    validate_for_overlapping_availabilities
+    validate_max_duration
+  end
+  
   MaxDurationHrs = 12
-
-  private
-
+  
+  def errors
+    @availability.errors
+  end
+  
+  def start_time
+    @availability.start_time
+  end
+  
+  def end_time
+    @availability.end_time
+  end
+  
+  def user
+    @availability.user
+  end
+  
+  def duration_sec
+    @availability.duration_sec
+  end
+  
   def display_duration
      "%02dh %02dm" % [(duration_sec / 3600).floor, ((duration_sec % 3600) / 60).to_i]
   end
 
-  def existing_availabilities_for_user_dont_overlap?
-    !user.availabilities.any? {|p| p != self && p.start_time < end_time && p.end_time > start_time}
+  def existing_availabilities_for_user_overlap?
+    user.availabilities.any? {|p| p != @availability && p.start_time < end_time && p.end_time > start_time}
   end
 
   def validate_end_time_is_in_the_future
@@ -27,7 +49,7 @@ class Availability < ActiveRecord::Base
   end
 
   def validate_for_overlapping_availabilities()
-    unless existing_availabilities_for_user_dont_overlap?
+    if existing_availabilities_for_user_overlap?
       errors.add("You have already declared yourself available", "for some of this time")
     end
   end
@@ -38,12 +60,18 @@ class Availability < ActiveRecord::Base
     end
   end
 
-  def validate
-    validate_end_time_is_in_the_future
-    validate_end_time_is_after_start_time
-    validate_for_overlapping_availabilities
-    validate_max_duration
-  end
+end
+
+
+class Availability < ActiveRecord::Base
+
+  validates_with StartAndEndDatesValidator
+  validates_presence_of :user_id,:start_time, :end_time
+  belongs_to :user
+  has_many :pairs
+  has_many :availabilities_tags_links, :dependent => :destroy
+  has_many :tags, :through => :availabilities_tags_links
+  #strip_attributes!
 
 
   public
@@ -116,3 +144,4 @@ class Availability < ActiveRecord::Base
   
 
 end
+

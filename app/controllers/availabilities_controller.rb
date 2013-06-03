@@ -1,4 +1,5 @@
 class AvailabilitiesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index,:show]
 
   public
 
@@ -33,7 +34,6 @@ class AvailabilitiesController < ApplicationController
   
   # GET /availabilities/new
   def new
-    return unless require_user
     @availability = Availability.new
   end
 
@@ -47,7 +47,6 @@ class AvailabilitiesController < ApplicationController
 
   # GET /availabilities/1/edit
   def edit
-    return unless require_user
     @availability = Availability.find(params[:id])
     return unless check_user_edit
   end
@@ -64,7 +63,6 @@ class AvailabilitiesController < ApplicationController
 
   # POST /availabilities
   def create
-    return unless require_user
     read_tags_from_params
     @availability = Availability.new(params[:availability])
     @availability.user_id = current_user.id
@@ -79,7 +77,6 @@ class AvailabilitiesController < ApplicationController
 
   # PUT /availabilities/1
   def update
-    return unless require_user
     @availability = Availability.find(params[:id])
     return unless check_user_edit
     
@@ -95,7 +92,6 @@ class AvailabilitiesController < ApplicationController
 
   # DELETE /availabilities/1
   def destroy
-    return unless require_user
     @availability = Availability.find(params[:id])
     return unless check_user_edit
     @availability.destroy

@@ -1,5 +1,5 @@
 <p>
-    <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> is available to pair on <span class="project"><%= project_link(@availability) %></span> on <span class="time"><%= display_when(@availability) %></span> (<span class="duration"><%= display_duration(@availability) %></span>) - Tags: <strong><%= display_tags(@availability) %></strong>
+    <%= link_to(h(@availability.user.username),"/" + h(@availability.user.username)) %> is available to pair on <span class="project"><%= project_link(@availability) %></span> on <span class="time"><%= display_when(@availability) %></span> (<span class="duration"><%= display_duration(@availability) %></span>) - Tags: <strong><%= display_tags(@availability).html_safe %></strong>
     <% if mine?(@availability) %>
        | <%= link_to 'Edit', edit_availability_path(@availability) %>
     <% end %>
